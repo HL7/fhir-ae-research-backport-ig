@@ -41,7 +41,7 @@ Description: "The contributing factors suspected to have increased the probabili
 * extension contains
     item 1..1
 * extension[item] ^short = "Item suspected to have increased the probability or severity of the adverse event"
-* extension[item].valueReference only Reference(Condition or Observation or AllergyIntolerance or FamilyMemberHistory or Immunization or Procedure or Device or DocumentReference or MedicationAdministration)
+* extension[item].valueReference only Reference(Condition or Observation or AllergyIntolerance or FamilyMemberHistory or Immunization or Procedure or Device or DocumentReference or MedicationAdministration or MedicationStatement)
 * extension[item].valueCodeableConcept from adverse-event-contributing-factor-vs (example)
 * extension[item].valueCodeableConcept ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * extension[item].valueCodeableConcept ^binding.extension.valueString = "AdverseEventContributingFactor"
@@ -113,9 +113,8 @@ Description: "Describes the entity that is suspected to have caused the adverse 
     Causality named causality 1..1
 * extension[instance] ^short = "Refers to the specific entity that is suspected of causing the adverse event"
 * extension[instance].valueCodeableConcept from http://snomed.info/sct (example)
-* extension[instance].valueReference only Reference(Immunization or Procedure or Substance or Medication or MedicationAdministration or Device or BiologicallyDerivedProduct or ResearchStudy)
+* extension[instance].valueReference only Reference(Immunization or Procedure or Substance or Medication or MedicationAdministration or MedicationStatement or Device or BiologicallyDerivedProduct or ResearchStudy)
 * extension[causality]
-
 
 
 //AdverseEvent.supportingInfo
@@ -126,7 +125,7 @@ Description: "Relevant past history for the subject. In a clinical care context,
 * extension contains
     item 1..1
 * extension[item] ^short = "Subject medical history or document relevant to this adverse event"
-* extension[item].valueReference only Reference(Condition or Observation or AllergyIntolerance or FamilyMemberHistory or Immunization or Procedure or DocumentReference or MedicationAdministration)
+* extension[item].valueReference only Reference(Condition or Observation or AllergyIntolerance or FamilyMemberHistory or Immunization or Procedure or DocumentReference or MedicationAdministration or MedicationStatement or QuestionnaireResponse)
 * extension[item].valueCodeableConcept from http://hl7.org/fhir/ValueSet/adverse-event-supporting-info (example)
 * extension[item].valueCodeableConcept ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * extension[item].valueCodeableConcept ^binding.extension.valueString = "Adverse Event Supporting Info "
@@ -139,7 +138,7 @@ Id: severity-or-grade
 Title: "Severity Or Grade"
 Description: "Describes the severity of the adverse event, in relation to the subject not the resulting condition. In the context of clinical research, it is the investigator’s assessment of severity. For cancer related trials, severity is represented as a grade."
 * value[x] only CodeableConcept
-* valueCodeableConcept from http://hl7.org/fhir/R4/valueset-adverse-event-severity (preferred)
+* valueCodeableConcept from http://hl7.org/fhir/R4B/valueset-adverse-event-severity (preferred)
 //http://hl7.org/fhir/ValueSet/adverse-event-severity (extensible)
 
 Extension: CausedSubjectToDiscontinueStudy
@@ -320,7 +319,7 @@ Description: "This value set includes codes that describe the ameliorating actio
 
 Invariant: aeClinRes-seriousness-1
 Description: "If seriousness is serious then must have at least one seriousness criterion."
-Expression: "(seriousness=http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious AND extension[seriousness-criteria].exists()) OR seriousness=http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious"
+Expression: "((seriousness=http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious AND extension[seriousness-criteria].exists()) OR seriousness=http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious)"
 Severity: #error
 //XPath: " "
 
@@ -420,6 +419,7 @@ Description: "An example profile of AdverseEvent for Research reporting."
 * seriousness ^short = "Investigator defined severity of the adverse event, in relation to the subject not the resulting condition"
 * outcome 1..1 MS
 * outcome from adverse-event-outcome-clinical-research-vs (required)
+* severity 0..0
 * subjectMedicalHistory 0..0
 * referenceDocument 0..0
 * study 1..1 MS

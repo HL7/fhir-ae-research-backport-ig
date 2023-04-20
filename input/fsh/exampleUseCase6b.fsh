@@ -1,48 +1,3 @@
-//https://confluence.hl7.org/pages/viewpage.action?pageId=49646529#AdverseEventUseCases-UseCase6-AdverseReactionreportingviaFDAMedWatchform
-//PRE_IC07 Vulcan Accelerator Adverse Event Use Case_BakerWillis_2022-05-03_FINAL
-
-//BROKEN NOT WRITTEN YET
-
-Instance: PatientInitiatedonClinicalTrialMedWatch3500BuseCase6b
-InstanceOf: AdverseEvent-clinical-research
-Usage: #example
-Title: "PatientInitiatedonClinicalTrialMedWatch3500BuseCase6b" 
-Description: "BROKEN NOT WRITTEN YET   A patient on a clinical trial reported via MedWatch 3500B"
-//* actuality = http://hl7.org/fhir/adverse-event-actuality#actual 
-* status = #completed
-* subject = Reference(ClinicalTrialSubject5)
-* outcome = http://snomed.info/sct#405532008 "Adverse incident resulting in potentially permanent disabling damage"
-//* seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
-* resultingCondition[0] = Reference(AEHepaticFailureUseCase7)
-* resultingCondition[1] = Reference(AEHepaticFailureUseCase7complication)
-* category = http://terminology.hl7.org/CodeSystem/adverse-event-category#medication-mishap "medication-mishap"
-* study.display = "NCT1010101"
-* suspectEntity[0].instanceCodeableConcept.text = "Aspirin"
-* suspectEntity[=].causality.entityRelatedness = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
-* suspectEntity[+].instanceCodeableConcept.text = "Study Medication Use Case 7"
-* suspectEntity[=].causality.entityRelatedness = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
-//* suspectEntity[=].study-information
-//* suspectEntity[=].extension.url
-//.extension[studyAssociatedWithAE].display = "NCT1010101"
-//.extension[StudyAssociatedWithAE].display = "NCT1010101"
-//* suspectEntity[=].extension[StudyInfoassociatedWithAE].ResearchSubjectAssociatedWithAE.display = "NCT1010101 subject 5"
-//* suspectEntity[=].extension.ExpectedInResearchStudy = true
-//* suspectEntity[=].extension.AEcausedStudyDiscontinuation = true
-* recorder.display = "Clinical Research Associate"
-* detected = "1905-08-23"
-* recordedDate = "1905-08-24"
-* code = http://snomed.info/sct#370901008 "Serious reportable event associated with product or device"
-
-* extension[seriousness-criteria][0].extension[criterionPresent].valueBoolean = true
-* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = #requiresPreventImpairment "required intervention to prevent permanent damage"
-* extension[seriousness-criteria][+].extension[criterionPresent].valueBoolean = true
-* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = #resultsinHospitalization
-* extension[seriousness-criteria][+].extension[criterionPresent].valueBoolean = false
-* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = #resultsInDeath
-
-* seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
-
----
 
 //A 64-year old woman (Janet)
 Instance: JanetPatient
@@ -145,7 +100,7 @@ Usage: #example
 * category.text = "Vital Signs"
 * code = http://loinc.org#29463-7 "Body Weight"
 * code.text = "weight"
-* subject = Reference(Patient/JanetPatient) "Janet"
+* subject = Reference(JanetPatient) "Janet"
 * encounter.display = "GP Visit"
 * effectiveDateTime = "2023-04-10"
 * valueQuantity = 20.09414 'kg' "kg"
@@ -159,13 +114,13 @@ Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance"
 //* target.extension.url = "http://hl7.org/fhir/StructureDefinition/targetElement"
 //* target.extension.valueUri = "race"
-* target = Reference(Observation/weight-janet)
+* target = Reference(weight-janet)
 * recorded = "2023-04-12T15:26:23.217+00:00"
 //* agent[0].role =  http://terminology.hl7.org/CodeSystem/v3-RoleClass#PROV "healthcare provider"
 * agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
 * agent[=].who.display = "Provenance Author. Will be reference to the PractitionerRole that authored the measurement. Needs to include a reference to the organization that is responsible for the measurement, at a minimum"
 * agent[+].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#informant "Informant"
-* agent[=].who = Reference(Patient/Patient/JanetPatient)
+* agent[=].who = Reference(JanetPatient)
 * agent[=].who.display = "Janet, the patient who informed the system of the weight authored by the ProvanceAuthor"
 
 
@@ -179,7 +134,7 @@ Usage: #example
 * category.text = "Vital Signs"
 * code = http://loinc.org#85354-9 "Blood pressure panel with all children optional"
 * code.text = "Blood pressure systolic and diastolic"
-* subject = Reference(Patient/JanetPatient) "Janet"
+* subject = Reference(JanetPatient) "Janet"
 * encounter.display = "GP Visit"
 * effectiveDateTime = "2023-04-10"
 * component[0].code = http://loinc.org#8480-6 "Systolic blood pressure"
@@ -197,13 +152,13 @@ Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance"
 //* target.extension.url = "http://hl7.org/fhir/StructureDefinition/targetElement"
 //* target.extension.valueUri = "race"
-* target = Reference(Observation/blood-pressure-janet)
+* target = Reference(blood-pressure-janet)
 * recorded = "2023-04-12T15:26:23.217+00:00"
 //* agent[0].role =  http://terminology.hl7.org/CodeSystem/v3-RoleClass#PROV "healthcare provider"
 * agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
 * agent[=].who.display = "Provenance Author. Will be reference to the PractitionerRole that authored the measurement. Needs to include a reference to the organization that is responsible for the measurement, at a minimum"
 * agent[+].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#informant "Informant"
-* agent[=].who = Reference(Patient/Patient/JanetPatient)
+* agent[=].who = Reference(JanetPatient)
 * agent[=].who.display = "Janet, the patient who informed the system of the weight authored by the ProvanceAuthor"
 
 
@@ -219,11 +174,11 @@ Usage: #example
 * identifier.value = "12345689"
 * status = #active
 * medicationReference = Reference(med0309)
-* subject = Reference(Patient/JanetPatient) "Janet"
+* subject = Reference(JanetPatient) "Janet"
 * effectiveDateTime = "2015-01-23"
 * dateAsserted = "2023-04-12"
-* informationSource = Reference(Patient/JanetPatient) "Janet"
-* derivedFrom = Reference(MedicationRequest/medrx002)
+* informationSource = Reference(JanetPatient) "Janet"
+* derivedFrom = Reference(medrx002)
 * reasonCode = http://snomed.info/sct#32914008 "Restless Legs"
 * note.text = "Patient indicates they miss the occasional dose"
 * dosage.sequence = 1
@@ -258,9 +213,9 @@ Usage: #example
 * contained = med0315
 * status = #active
 * medicationReference = Reference(med0315)
-* subject = Reference(Patient/JanetPatient) "Janet"
+* subject = Reference(JanetPatient) "Janet"
 * dateAsserted = "2023-04-12"
-* informationSource = Reference(Patient/JanetPatient) "Janet"
+* informationSource = Reference(JanetPatient) "Janet"
 * note.text = "patient plans to start using for seasonal allergies in the Spring when pollen is in the air"
 
 Instance: med0315
@@ -274,11 +229,11 @@ InstanceOf: MedicationStatement
 Usage: #example
 * status = #active
 * medicationCodeableConcept.text = "Little Pink Pill for water retention"
-* subject = Reference(Patient/JanetPatient) "Janet"
+* subject = Reference(JanetPatient) "Janet"
 * effectiveDateTime = "2023-02-01"
 * dateAsserted = "2023-04-12"
-* informationSource = Reference(Patient/JanetPatient) "Janet"
-* reasonReference = Reference(Observation/blood-pressure-janet)
+* informationSource = Reference(JanetPatient) "Janet"
+* reasonReference = Reference(blood-pressure-janet)
 * note.text = "Patient cannot remember the name of the tablet, but takes it every day in the morning for water retention"
 * dosage.sequence = 1
 * dosage.text = "1 tablet per day"
@@ -289,40 +244,79 @@ Usage: #example
 * dosage.maxDosePerPeriod.numerator.value = 1
 * dosage.maxDosePerPeriod.denominator = 1 'd'
 
+//bresentrik study medication treatment MedicationAdministration
+//has timing details
+Instance: medicationAdministration-for-bresentrik
+InstanceOf: MedicationAdministration
+Usage: #example
+* contained[0] = signature-medicationAdministration-bresentrik
+* status = #completed
+* medicationReference = Reference(bresentrik)
+* subject = Reference(JanetPatient) "Janet"
+* context.display = "Reference(Encounter/f001) encounter who leads to this prescription"
+* effectivePeriod.start = "2023-04-05T14:30:00+01:00"
+* effectivePeriod.end = "2023-04-07T14:30:00+01:00"
+* performer.actor = Reference(http://a.fhir.server/svc/StructureDefinition/c8973a22-2b5b-4e76-9c66-00639c99e61b) "Patrick Pump"
+* reasonCode = http://terminology.hl7.org/CodeSystem/reason-medication-given#b "Given as Ordered"
+* request = Reference(medicationrequest-for-bresentrik)
+* dosage.text = "6 mg PO daily for remission induction; adjust dosage to white blood cell (WBC) count.  With hold treatment if WBC is less than 15,000/µL; resume when WBC is greater than 50,000/µL"
+* dosage.route = http://snomed.info/sct#26643006 "Oral route (qualifier value)"
+* dosage.dose = 6 'mg' "mg"
+* eventHistory = Reference(signature-medicationAdministration-bresentrik) "Author's Signature"
+//* performer.actor = Reference(Practitioner/f007) "Patrick Pump"
 
-//bresentrik study medication treatment
-Instance: medicationrequest-contained-bresentrik
+Instance: signature-medicationAdministration-bresentrik
+InstanceOf: Provenance
+Usage: #inline
+* target.display = "Reference(ServiceRequest/physiotherapy)"
+* recorded = "2023-04-05T17:23:07Z"
+* agent.role = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUT
+* agent.who.display = "Reference(Practitioner/example) Dr Adam Careful"
+* signature.type = urn:iso-astm:E1762-95:2013#1.2.840.10065.1.12.1.1 "Author's Signature"
+* signature.when = "2023-04-05T17:23:07Z"
+* signature.who.display = "Reference(Practitioner/example) Dr Adam Careful"
+* signature.targetFormat = #application/fhir+xml
+* signature.sigFormat = #application/signature+xml
+* signature.data = "dGhpcyBibG9iIGlzIHNuaXBwZWQ="
+
+//bresentrik study medication treatment MedicationRequest
+//request
+Instance: medicationrequest-for-bresentrik
 InstanceOf: MedicationRequest
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
-* contained = bresentrik
+//* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+//* contained = bresentrik
 * status = #active
 * intent = #order
 * identifier.use = #official
 * identifier.system = "http://www.bmc.nl/portal/medstatements"
 * identifier.value = "1234568900-studyDrug" 
-* medicationReference = Reference(bresentrik) "bresentrik 15 MG/ML Oral Solution"
-* subject = Reference(Patient/JanetPatient) "Janet"
-* authoredOn = "2008-04-05"
-* requester = Reference(Practitioner/practitioner-1) "Ronald Bone, MD"
+* medicationReference = Reference(bresentrik) "bresentrik 2mg tablet"
+* subject = Reference(JanetPatient) "Janet"
+* authoredOn = "2023-04-05"
+* requester.display = "Could be reference to inline contained profile such as Reference(practitioner-1) Ronald Bone, MD"
 * reasonCode = http://snomed.info/sct#254837009 "Breast Cancer"
-* dosageInstruction.text = "10 mL bid"
-* dosageInstruction.timing.repeat.boundsPeriod.start = "2008-04-05"
-* dosageInstruction.timing.repeat.frequency = 2
+* dosageInstruction.sequence = 1
+* dosageInstruction.text = "6 mg PO daily for remission induction; adjust dosage to white blood cell (WBC) count.  With hold treatment if WBC is less than 15,000/µL; resume when WBC is greater than 50,000/µL"
+* dosageInstruction.timing.repeat.frequency = 1
 * dosageInstruction.timing.repeat.period = 1
 * dosageInstruction.timing.repeat.periodUnit = #d
-* dosageInstruction.doseAndRate.doseQuantity = 10 'mL' "ml"
+* dosageInstruction.route = http://snomed.info/sct#26643006 "Oral route (qualifier value)"
+* dosageInstruction.doseAndRate.type = http://terminology.hl7.org/CodeSystem/dose-rate-type#ordered "Ordered"
+* dosageInstruction.doseAndRate.doseQuantity = 6 'mg' "mg"
 * dispenseRequest.numberOfRepeatsAllowed = 1
-* dispenseRequest.quantity = 480 'mL' "mL"
+* dispenseRequest.quantity = 600 'mg' "mg"
 * dispenseRequest.expectedSupplyDuration = 30 'd' "days"
-* supportingInformation = Reference(ResearchStudy/BreastCancerTrial)
+* supportingInformation = Reference(BreastCancerTrial)
 * instantiatesCanonical = "http://baseUrlOfHospitalHolding/PlanDefinition/protocol-for-the-ResearchStudy"
+
 
 Instance: bresentrik
 InstanceOf: Medication
-Usage: #inline
+Usage: #example
 * code = http://www.nlm.nih.gov/research/umls/rxnorm#000000 "bresentrik 15 MG/ML Oral Solution"
 * code.text = "bresentrik 15 MG/ML Oral Solution"
+
 
 
 //Janet went home and began vomiting uncontrollably. 
@@ -335,13 +329,13 @@ InstanceOf: Condition
 Usage: #example
 * identifier.value = "12345"
 * code = http://snomed.info/sct#332982000 "Uncontrollable vomiting"
-* subject = Reference(Patient/JanetPatient) "Janet"
+* subject = Reference(JanetPatient) "Janet"
 * encounter.display = "Reference to ER visit Janet went to. Be sure to include provenance"
 * onsetDateTime = "2023-04-10"
 * abatementString = "around April 10, 2023"
 * recordedDate = "2023-04-12"
-* recorder = Reference(Patient/JanetPatient) "Janet"
-* asserter = Reference(Patient/JanetPatient) "Janet"
+* recorder = Reference(JanetPatient) "Janet"
+* asserter = Reference(JanetPatient) "Janet"
 * evidence.code = http://snomed.info/sct#258710007 "degrees C"
 * evidence.detail = Reference(Observation/f202) "Temperature"
 
@@ -373,7 +367,7 @@ Description: "example"
 * date = 2023-04-10
 
 //A4 note
-* extension[note][+].valueAnnotation.authorReference = Reference(Patient/JanetPatient)
+* extension[note][+].valueAnnotation.authorReference = Reference(JanetPatient)
 * extension[note][=].valueAnnotation.time = 2023-04-12
 * extension[note][=].valueAnnotation.text = "Use case for MedWatch Form FDA 3500B being used during a clinical trial%:  
 A 64-year old woman %(Janet%) is participating in a breast cancer clinical trial. As part of her participation in the study, she was instructed to use a specific consumer facing FHIR application to report an adverse event that resulted in any of the following: hospitalization, required help to prevent permanent harm, disability or health problem, birth defect, life-threatening, death, other serious/important medical incident. %(This list identifies serious events.%)  
@@ -401,101 +395,64 @@ When Janet clicked “Submit” on the electronic form, the data automatically f
 * outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#recoveredorresolved "Recovered/Resolved"
 
 
+//Section B PRODUCT AVAILABILITY
+//Questionnaire? and DocuementReference for picture of product?
+// add as an extension with 0..1 cardinality in use case specific IG, us realm? 
+
 //Section C
 //although some of this might also appear in section A4
 //After receiving the study drug (bresentrik) during a study visit, 
 //Medication - study drug given 4/10/2023
 //Section C1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 all derived from the medication reference 
 // in suspect entity
-* extension[suspect-entity][+].extension[instance].valueReference = Reference(Medication/medicationrequest-contained-bresentrik)
+// note also need supporting-Info medicationRequest
+* extension[suspect-entity][+].extension[instance].valueReference = Reference(bresentrik) 
 * extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#possibly "Possibly"
-* extension[suspect-entity][=].extension[causality].extension[author].valueReference = Reference(Patient/JanetPatient) "Janet"
-* extension[suspect-entity][+].extension[instance].valueReference = Reference(Medication/medicationrequest-contained-bresentrik)
+* extension[suspect-entity][=].extension[causality].extension[author].valueReference = Reference(JanetPatient) "Janet"
+
+* extension[supporting-info][+].extension[item].valueReference = Reference(MedicationAdministration/medicationAdministration-for-bresentrik)
+
+* extension[suspect-entity][+].extension[instance].valueReference = Reference(BreastCancerTrial)
 * extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#possibly "Possibly"
-* extension[suspect-entity][=].extension[causality].extension[author].valueReference = Reference(ResearchStudy/BreastCancerTrial)
-* study = Reference(ResearchStudy/BreastCancerTrial)
+* extension[suspect-entity][=].extension[causality].extension[author].valueReference = Reference(JanetPatient) "Janet"
+* study = Reference(BreastCancerTrial)
  
 
+//C16, C17 we do not know from the data in the use case
+//section C16 and C17, are either going to be inferred or possible use questionnaire
+//16. Did the problem stop after the person reduced the dose or stopped taking or using the product? Yes No
+//17. Did the problem return if the person started taking or using the product again? Yes No Didn’t restart
+ 
 
-//C17 we do not know from the data in the use case
- 
- 
-//PRODUCT AVAILABILITY
-// add as an extension with 0..1 cardinality
 
 //section E1, initials?
 
 //section E2, E4 from Patient resource. 
 //section E6 and E7 rely on US CORE use of Ethnicity and Race -- specific to US realm 
 //section E3 Age would be calculated from BirthDate
-* subject = Reference(Patient/JanetPatient) "Janet"
+* subject = Reference(JanetPatient) "Janet"
 
 //section E5 weight most recent observation picked from list - US realm specific
-* extension[supporting-info][+].extension[item].valueReference = Reference(Observation/weight-janet)
-
+* extension[supporting-info][+].extension[item].valueReference = Reference(weight-janet)
 
 //The data from her health systems were aggregated to allow her a single view of all her medical information. 
 //section E8, 9, 10, 11, 12 all are references selected from drop-down plus patient additions
-* extension[supporting-info][+].extension[item].valueReference = Reference(Observation/weight-janet)
-* extension[supporting-info][+].extension[item].valueReference = Reference(Observation/blood-pressure-janet)
+* extension[supporting-info][+].extension[item].valueReference = Reference(blood-pressure-janet)
 
 //section E8, 9, 10, 11, 12 patient additions Janet was able to add more information that was not included in her imported data (OTC drugs, vitamins, etc.). as fhir resource vitamin
-* extension[supporting-info][+].extension[item].valueReference = Reference(Medication/example001)
-* extension[supporting-info][+].extension[item].valueReference = Reference(Medication/example007)
-* extension[supporting-info][+].extension[item].valueReference = Reference(Medication/example003)
+* extension[supporting-info][+].extension[item].valueReference = Reference(example001)
+* extension[supporting-info][+].extension[item].valueReference = Reference(example007)
+* extension[supporting-info][+].extension[item].valueReference = Reference(example003)
 
 
 //The following morning, Janet opened the study designated consumer facing FHIR application and completed the MedWatch Form FDA 3500B autofill (demographics, meds, allergies, conditions, labs). She is given the option to display and choose the relevant items from each category (example: only current meds she is taking, current labs, etc. which might be a subset of her full PHR).
 //section F
 //if Janet Husband then would use RelatedPerson
-* recorder = Reference(Patient/JanetPatient)
+* recorder = Reference(JanetPatient)
+
+//section F10 and F11
+//10. Did you report this problem to the company that makes the product (the manufacturer/compounder)? Yes No
+//11. If you do NOT want your identity disclosed to the manufacturer, place an "X" in this box:
+//Questionnaire? DocReference? 
 
 //The data is then absorbed within the receiver’s system to auto populate a MedWatch Form FDA 3500B for submission to the FDA within 24 hours.
-
---
-Janet's study's clinical research coordinator version?
-
-
-C16, C17 we do not know from the data in the use case
-//section C16 and C17, are either going to be inferred or possible use questionnaire
-//16. Did the problem stop after the person reduced the dose or stopped taking or using the product? Yes No
-//17. Did the problem return if the person started taking or using the product again? Yes No Didn’t restart
-Help with C17. maybe labeled composition sections would help 
-
-
-Section B and Section F10 and F11 seem to be very use case specific. Perhaps using a questionnaire would be the best way to handle them? 
-//Section B PRODUCT AVAILABILITY
-//Questionnaire? and Attachment for picture of product?
-// add as an extension with 0..1 cardinality in use case specific IG, us realm? Probably better as questionnaire and DocuementReference? 
-//section F10 and F11
-10. Did you report this problem to the company that makes the product (the manufacturer/compounder)? Yes No
-11. If you do NOT want your identity disclosed to the manufacturer, place an "X" in this box:
-Questionnaire? DocReference? 
--- us use case specific PDF, from Debi, mitra looking to use PDF from FDA
--- how will it be used
--- single document - from Debi -- with all the non FHIR pieces
-
-
-
-//section E1, initials?
-
-
-US CORE realm specific expectations! of US CORE stuff and request of US CORE stuff
-	should be a US CORE specific profile and guidance as well?
-	e.g. in the US will MedicationRequest or MedicationAdministration be more likely to be found naively?
-	but MedicationAdimnistration, right now, makes more sense as a place where 'how' the medication got into the patient would be found. MedicationRequest is currently supported by EPIC but only in the Netherlands is MedicationAdministration. This choice by EPIC is linked to US CORE adoption. Pharmacy is complex. We might want to be more loose with the bindings for supporting-info (somewhat a connectathon result)
-
-FDA care about where the info comes from? Recall we're going from paper to computable. Could take an incremental approach but some things, such as provance (or where the data came from) are good to get out ahead of. maybe there are approaches out there that people have taken which could be codified as guidance? Provenance of weight and other observations? How is it handled?  I used Provenance with ProviderRole as author and Janet as informant. There are alternatives. I'm not as familiar with this problem.
-should the Provenance be kept inline as a contained resource - seems good as a legal record (not so great for retrieval as contained resources do not show-up on searches for Resources. they are typically only available with a specialized contains search)
-?! keep the reference with a URL that represents the original sources FHIR repo?? rather than use extra provenance instances 
-
-Reference physicians, and other staff, at the multiple institutions. Would this be through contained in-line profiles? Or, more concise, with references that include the BaseURL of the FHIR server that created the profile in the first place? Or would a bundle that contains a distinct profile be used? All three have pluses and minuses. This is a general consideration in FHIR where multiple sources are being aggregated and sent on. One could send Logical References (where " know an identifier for the target of the reference, but there is no way for the application to convert this to a literal reference that directly references an actual resource") or (literal) Absolute URL (direct web-accessible path to data instance) ("Using absolute URLs provides a stable, scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed ecosystem boundaries") Example of absolute url ""reference" : "http://fhir.hl7.org/svc/StructureDefinition/c8973a22-2b5b-4e76-9c66-00639c99e61b". see http://hl7.org/fhir/R4B/references.html
-
-Patient's initials this is an odd field to have when the entire Patient Resource with name is known. Suggest that the computable, structured version, of the FDA form not replicate this field. Unless there is a down-stream process that needs it. Might take a look at the process to see about revising it. Which group is the informatics group for FDA? 
-
-Where is the Study identified in the Forms? - assumed by application 
-
-Some questions are irrelevant on section C if the MedicationRequest (order) for the study drug is present. Having the FHIR Resources to bear changes the questions needed to ask for downstream data analysis
-	
-!!!!note these considerations are not necessarily AdverseEvent considerations specifically. They are generally a problem with capture and exchange of data coming from multiple systems. FHIR can 
---
