@@ -57,7 +57,7 @@ Description: "Patient Janet, 64-year old woman on clinical trial"
 Instance: BreastCancerTrial
 InstanceOf: ResearchStudy
 Usage: #example
-Title: "Janet Patient"
+Title: "Breast Cancer Trial"
 Description: "Breast Cancer clinical trial example"
 * identifier.type.text = "Breast Cancer Clinical Trial bresentrik"
 * identifier.system = "http://clinicaltrials.gov/"
@@ -94,6 +94,8 @@ Description: "Breast Cancer clinical trial example"
 Instance: weight-janet
 InstanceOf: Observation
 Usage: #example
+Title: "Janet weight Observation"
+Description: "Janet weight observation"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
@@ -111,6 +113,8 @@ Usage: #example
 Instance: provenance-for-weight
 InstanceOf: Provenance
 Usage: #example
+Title: "Provenance for Janet weight Observation"
+Description: "Provenance for Janet weight Observation"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance"
 //* target.extension.url = "http://hl7.org/fhir/StructureDefinition/targetElement"
 //* target.extension.valueUri = "race"
@@ -128,6 +132,8 @@ Usage: #example
 Instance: blood-pressure-janet
 InstanceOf: Observation
 Usage: #example
+Title: "Janet Blood Pressure Observation"
+Description: "Janet Blood Pressure Observation"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
@@ -149,6 +155,8 @@ Usage: #example
 Instance: provenance-for-blood-pressure-janet
 InstanceOf: Provenance
 Usage: #example
+Title: "Provenance for Janet Blood Pressure  Observation"
+Description: "Provenance for Janet Blood Pressure  Observation"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance"
 //* target.extension.url = "http://hl7.org/fhir/StructureDefinition/targetElement"
 //* target.extension.valueUri = "race"
@@ -168,6 +176,8 @@ Usage: #example
 Instance: example001
 InstanceOf: MedicationStatement
 Usage: #example
+Title: "Janet Tylenol PM med"
+Description: "Self reported Janet Tylenol PM med"
 * contained = med0309
 * identifier.use = #official
 * identifier.system = "http://www.bmc.nl/portal/medstatements"
@@ -210,6 +220,8 @@ Usage: #inline
 Instance: example007
 InstanceOf: MedicationStatement
 Usage: #example
+Title: "Janet allergy med"
+Description: "Self reported Janet allergy med"
 * contained = med0315
 * status = #active
 * medicationReference = Reference(med0315)
@@ -227,6 +239,8 @@ Usage: #inline
 Instance: example003
 InstanceOf: MedicationStatement
 Usage: #example
+Title: "Janet pill for water retention med not known"
+Description: "Self reported Janet pill for water retention med not known"
 * status = #active
 * medicationCodeableConcept.text = "Little Pink Pill for water retention"
 * subject = Reference(JanetPatient) "Janet"
@@ -249,6 +263,8 @@ Usage: #example
 Instance: medicationAdministration-for-bresentrik
 InstanceOf: MedicationAdministration
 Usage: #example
+Title: "Medication Administration for bresentrik"
+Description: "Study medication info Medication Administration for bresentrik"
 * contained[0] = signature-medicationAdministration-bresentrik
 * status = #completed
 * medicationReference = Reference(bresentrik)
@@ -283,6 +299,8 @@ Usage: #inline
 //request
 Instance: medicationrequest-for-bresentrik
 InstanceOf: MedicationRequest
+Title: "Medication Request for bresentrik"
+Description: "Study medication info Medication Request for bresentrik"
 Usage: #example
 //* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
 //* contained = bresentrik
@@ -314,6 +332,8 @@ Usage: #example
 Instance: bresentrik
 InstanceOf: Medication
 Usage: #example
+Title: "Medication is bresentrik"
+Description: "Study medication, bresentrik"
 * code = http://www.nlm.nih.gov/research/umls/rxnorm#000000 "bresentrik 15 MG/ML Oral Solution"
 * code.text = "bresentrik 15 MG/ML Oral Solution"
 
@@ -327,6 +347,8 @@ Usage: #example
 Instance: janetReported-condition
 InstanceOf: Condition
 Usage: #example
+Title: "Use case 6B - problem"
+Description: "Use case 6B - patient reported AE problem"
 * identifier.value = "12345"
 * code = http://snomed.info/sct#332982000 "Uncontrollable vomiting"
 * subject = Reference(JanetPatient) "Janet"
@@ -348,8 +370,8 @@ Usage: #example
 Instance: clinical-research-ae-example-medwatch-patient-report
 InstanceOf: AdverseEvent-clinical-research
 Usage: #example
-Title: "Patient report of Adverse Event, example of data that would be on MedWatch form as reported by Patient"
-Description: "example" 
+Title: "Use case 6B - patient reported AE during research study"
+Description: "Use case 6B - Patient report of Adverse Event, example of data that would be on MedWatch form as reported by Patient" 
 * extension[status].valueCode = http://hl7.org/fhir/event-status#completed
 
 //A1 What kind of problem was it? (Check all that apply)
