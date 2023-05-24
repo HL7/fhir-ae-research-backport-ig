@@ -81,7 +81,7 @@ A single Adverse Event may need to be reported in multiple ways. Choosing the ap
   <a name="flexibility"> </a>
   <h3>Extending beyond this Guide</h3>
   <p>
-    Implementers should use this guide to AdverseEvent Clinical Research communications in an interoperable way. It is understood that this guide is not complete, and implementers might identify additional concepts and data elements. Please review this <a href="general.html#flexibility">guidance</a> for ways to handle those use cases. Additionally, it is recommended that additional Implementation Guides should be adapted from this one as a base for tighter specifications such as in oncology clinical trials.
+    Implementers should use this guide to AdverseEvent Clinical Research communications in an interoperable way. It is understood that this guide is not complete, and implementers might identify additional concepts and data elements. It is recommended that additional Implementation Guides should be adapted from this one as a base for tighter specifications such as in oncology clinical trials.
   </p>
 
   <a name="acknowledgments"> </a>

@@ -51,7 +51,9 @@ Description: "Patient Janet, 64-year old woman on clinical trial"
 * communication.language = urn:ietf:bcp:47#nl "Dutch"
 * communication.language.text = "Nederlands"
 * communication.preferred = true
-* managingOrganization = Reference(Organization/f001) "Burgers University Medical Centre"
+* managingOrganization.identifier.system = "http://hospital.orgsrus/"
+* managingOrganization.identifier.value = "f001"
+* managingOrganization.display = "Reference(Organization/f001) Burgers University Medical Centre"
 
 // is participating in a breast cancer clinical trial.
 Instance: BreastCancerTrial
@@ -59,7 +61,6 @@ InstanceOf: ResearchStudy
 Usage: #example
 Title: "Breast Cancer Trial"
 Description: "Breast Cancer clinical trial example"
-* identifier.type.text = "Breast Cancer Clinical Trial bresentrik"
 * identifier.system = "http://clinicaltrials.gov/"
 * identifier.value = "NCT01234567"
 * identifier.assigner.display = "Allesgut Pharmaceuticals"
@@ -79,13 +80,13 @@ Description: "Breast Cancer clinical trial example"
 * principalInvestigator.display = "This would be a reference to a Practitioner or PractionerRole"
 * site.display = "This would be a reference to a Location containing the facility where the trial is taking place"
 * arm[0].name = "Arm A"
-* arm[0].type = #experimental
+* arm[0].type = http://hl7.org/fhir/research-study-arm-type#experimental
 * arm[0].description = "Bresentrik (B) plus pertuzumab-matching placebo"
 * arm[+].name = "Arm B"
-* arm[=].type = #experimental
+* arm[=].type = http://hl7.org/fhir/research-study-arm-type#experimental
 * arm[=].description = "Bresentrik (B) plus pertuzumab"
 * arm[+].name = "Arm C"
-* arm[=].type = #active-comparator
+* arm[=].type = http://hl7.org/fhir/research-study-arm-type#active-comparator
 * arm[=].description = "Standard of care (Taxane (paclitaxel or docetaxel), trastuzumab, and pertuzumab)"
 * protocol.display = "This would reference the PlanDefinition which would contain references to Bresentrik"
 
@@ -96,7 +97,6 @@ InstanceOf: Observation
 Usage: #example
 Title: "Janet weight Observation"
 Description: "Janet weight observation"
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
 * category.text = "Vital Signs"
@@ -115,7 +115,6 @@ InstanceOf: Provenance
 Usage: #example
 Title: "Provenance for Janet weight Observation"
 Description: "Provenance for Janet weight Observation"
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance"
 //* target.extension.url = "http://hl7.org/fhir/StructureDefinition/targetElement"
 //* target.extension.valueUri = "race"
 * target = Reference(weight-janet)
@@ -134,7 +133,6 @@ InstanceOf: Observation
 Usage: #example
 Title: "Janet Blood Pressure Observation"
 Description: "Janet Blood Pressure Observation"
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
 * category.text = "Vital Signs"
@@ -157,7 +155,6 @@ InstanceOf: Provenance
 Usage: #example
 Title: "Provenance for Janet Blood Pressure  Observation"
 Description: "Provenance for Janet Blood Pressure  Observation"
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance"
 //* target.extension.url = "http://hl7.org/fhir/StructureDefinition/targetElement"
 //* target.extension.valueUri = "race"
 * target = Reference(blood-pressure-janet)
@@ -188,7 +185,9 @@ Description: "Self reported Janet Tylenol PM med"
 * effectiveDateTime = "2015-01-23"
 * dateAsserted = "2023-04-12"
 * informationSource = Reference(JanetPatient) "Janet"
-* derivedFrom = Reference(medrx002)
+* derivedFrom.identifier.system = "http://www.bmc.nl/portal/medstatements"
+* derivedFrom.identifier.value = "medrx002"
+* derivedFrom.display = "Reference(medrx002)"
 * reasonCode = http://snomed.info/sct#32914008 "Restless Legs"
 * note.text = "Patient indicates they miss the occasional dose"
 * dosage.sequence = 1
@@ -206,8 +205,10 @@ Description: "Self reported Janet Tylenol PM med"
 Instance: med0309
 InstanceOf: Medication
 Usage: #inline
-* code = http://hl7.org/fhir/sid/ndc#50580-506-02 "Tylenol PM"
-* form = http://snomed.info/sct#385057009 "Film-coated tablet (qualifier value)"
+* code = http://hl7.org/fhir/sid/ndc#50580-506-02 
+//"Tylenol PM Extra Strength, 2 TABLET, FILM COATED in 1 POUCH (50580-506-02) (package)"
+* code.text = "Tylenol PM"
+* form = http://snomed.info/sct#385057009 "Film-coated tablet"
 * ingredient[0].itemCodeableConcept = http://www.nlm.nih.gov/research/umls/rxnorm#315266 "Acetaminophen 500 MG"
 * ingredient[=].strength.numerator = 500 'mg'
 * ingredient[=].strength.denominator = 1 http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm#TAB
@@ -233,7 +234,9 @@ Description: "Self reported Janet allergy med"
 Instance: med0315
 InstanceOf: Medication
 Usage: #inline
-* code = http://www.nlm.nih.gov/research/umls/rxnorm#358793 "Mometasone Furoate 0.05mg/Actuat"
+* code = http://www.nlm.nih.gov/research/umls/rxnorm#358793 
+//"mometasone furoate 0.05mg/Actuat"
+* code.text = "Nasonex"
 * form = http://snomed.info/sct#385157007 "Nasal Spray"
 
 Instance: example003
@@ -269,10 +272,14 @@ Description: "Study medication info Medication Administration for bresentrik"
 * status = #completed
 * medicationReference = Reference(bresentrik)
 * subject = Reference(JanetPatient) "Janet"
-* context.display = "Reference(Encounter/f001) encounter who leads to this prescription"
+* context.identifier.system = "http://hospitalNumber2"
+* context.identifier.value = "f001"
+* context.display = "Reference(Encounter/f001) encounter which leads to this prescription"
 * effectivePeriod.start = "2023-04-05T14:30:00+01:00"
 * effectivePeriod.end = "2023-04-07T14:30:00+01:00"
-* performer.actor = Reference(http://a.fhir.server/svc/StructureDefinition/c8973a22-2b5b-4e76-9c66-00639c99e61b) "Patrick Pump"
+* performer.actor.identifier.system = "http://a.fhir.server/svc/StructureDefinition/"
+* performer.actor.identifier.value = "c8973a22-2b5b-4e76-9c66-00639c99e61b"
+* performer.actor.display = "Reference(http://a.fhir.server/svc/StructureDefinition/c8973a22-2b5b-4e76-9c66-00639c99e61b) Patrick Pump"
 * reasonCode = http://terminology.hl7.org/CodeSystem/reason-medication-given#b "Given as Ordered"
 * request = Reference(medicationrequest-for-bresentrik)
 * dosage.text = "6 mg PO daily for remission induction; adjust dosage to white blood cell (WBC) count.  With hold treatment if WBC is less than 15,000/µL; resume when WBC is greater than 50,000/µL"
@@ -284,12 +291,16 @@ Description: "Study medication info Medication Administration for bresentrik"
 Instance: signature-medicationAdministration-bresentrik
 InstanceOf: Provenance
 Usage: #inline
-* target.display = "Reference(ServiceRequest/physiotherapy)"
+* target.identifier.system = "http://hospital2.org/"
+* target.identifier.value = "oncology321"
+* target.display = "Reference(ServiceRequest/oncology321)"
 * recorded = "2023-04-05T17:23:07Z"
 * agent.role = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUT
 * agent.who.display = "Reference(Practitioner/example) Dr Adam Careful"
 * signature.type = urn:iso-astm:E1762-95:2013#1.2.840.10065.1.12.1.1 "Author's Signature"
 * signature.when = "2023-04-05T17:23:07Z"
+* signature.who.identifier.system = "http://hospital.org/"
+* signature.who.identifier.value = "DrAdamCareful"
 * signature.who.display = "Reference(Practitioner/example) Dr Adam Careful"
 * signature.targetFormat = #application/fhir+xml
 * signature.sigFormat = #application/signature+xml
@@ -302,7 +313,6 @@ InstanceOf: MedicationRequest
 Title: "Medication Request for bresentrik"
 Description: "Study medication info Medication Request for bresentrik"
 Usage: #example
-//* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
 //* contained = bresentrik
 * status = #active
 * intent = #order
@@ -334,7 +344,7 @@ InstanceOf: Medication
 Usage: #example
 Title: "Medication is bresentrik"
 Description: "Study medication, bresentrik"
-* code = http://www.nlm.nih.gov/research/umls/rxnorm#000000 "bresentrik 15 MG/ML Oral Solution"
+//* code = http://www.nlm.nih.gov/research/umls/rxnorm#000000 "bresentrik 15 MG/ML Oral Solution"
 * code.text = "bresentrik 15 MG/ML Oral Solution"
 
 
@@ -354,12 +364,15 @@ Description: "Use case 6B - patient reported AE problem"
 * subject = Reference(JanetPatient) "Janet"
 * encounter.display = "Reference to ER visit Janet went to. Be sure to include provenance"
 * onsetDateTime = "2023-04-10"
+* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#resolved
 * abatementString = "around April 10, 2023"
 * recordedDate = "2023-04-12"
 * recorder = Reference(JanetPatient) "Janet"
 * asserter = Reference(JanetPatient) "Janet"
 * evidence.code = http://snomed.info/sct#258710007 "degrees C"
-* evidence.detail = Reference(Observation/f202) "Temperature"
+* evidence.detail.identifier.system = "http://hospital"
+* evidence.detail.identifier.value = "f202"
+* evidence.detail.display = "Reference(Observation/f202) Temperature"
 
 
 //research subject Janet?

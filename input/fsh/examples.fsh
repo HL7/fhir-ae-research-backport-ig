@@ -135,7 +135,7 @@ Description: "The fifth subject enrolled in the trial develops severe hepatic fa
 * subject = Reference(ClinicalTrialSubject5)
 * severity = http://snomed.info/sct#24484000 "Severe"
 * code =  http://snomed.info/sct#197270009 "Acute Hepatic Failure"
-* clinicalStatus = #active
+* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 
 Instance: AEHepaticFailureUseCase7complication
 InstanceOf: Condition
@@ -145,21 +145,31 @@ Description: "The fifth subject enrolled in the trial develops severe hepatic fa
 * subject = Reference(ClinicalTrialSubject5)
 * severity = http://snomed.info/sct#24484000 "Severe"
 * code =  http://snomed.info/sct#13920009 "Hepatic encephalopathy"
-* clinicalStatus = #active
+* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 
 Instance: medadmin0301
 InstanceOf: MedicationAdministration
 Usage: #example
+Title: "Medication Administration of Med0301"
+Description: "Medication administration example"
 * contained[0] = med0301
 * contained[+] = signature
 * status = #in-progress
 * medicationReference = Reference(med0301)
-* subject = Reference(Patient/pat1) "Donald Duck"
-* context = Reference(Encounter/f001) "encounter who leads to this prescription"
+* subject.display = "Reference(Patient/pat1) Donald Duck"
+* subject.identifier.system = "http://hospital.org/"
+* subject.identifier.value = "pat1"
+* context.identifier.system = "http://hospital.org/"
+* context.identifier.value = "f001"
+* context.display = "Reference(Encounter/f001) encounter who leads to this prescription"
 * effectivePeriod.start = "2015-01-15T14:30:00+01:00"
-* performer.actor = Reference(Practitioner/f007) "Patrick Pump"
+* performer.actor.identifier.system = "http://hospital.org/"
+* performer.actor.identifier.value = "f007"
+* performer.actor.display = "Reference(Practitioner/f007) Patrick Pump"
 * reasonCode = http://terminology.hl7.org/CodeSystem/reason-medication-given#b "Given as Ordered"
-* request = Reference(MedicationRequest/medrx0318)
+* request.identifier.system = "http://hospital.org/"
+* request.identifier.value = "medrx0318"
+* request.display = "Reference(MedicationRequest/medrx0318)"
 * dosage.text = "500mg IV q6h x 3 days"
 * dosage.route = http://snomed.info/sct#47625008 "Intravenous route (qualifier value)"
 * dosage.method.text = "IV Push"
@@ -169,18 +179,22 @@ Usage: #example
 Instance: med0301
 InstanceOf: Medication
 Usage: #inline
-* code = http://hl7.org/fhir/sid/ndc#0069-2587-10 "Vancomycin Hydrochloride (VANCOMYCIN HYDROCHLORIDE)"
+* code = http://hl7.org/fhir/sid/ndc#0069-2587-10 
+* code.text = "Vancomycin"
+//"Vancomycin Hydrochloride (VANCOMYCIN HYDROCHLORIDE)"
 
 Instance: signature
 InstanceOf: Provenance
 Usage: #inline
-* target = Reference(ServiceRequest/physiotherapy)
+* target.identifier.system = "http://hospital.org/"
+* target.identifier.value = "physiotherapy"
+* target.display = "Reference(ServiceRequest/physiotherapy)"
 * recorded = "2017-02-01T17:23:07Z"
 * agent.role = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUT
-* agent.who = Reference(Practitioner/example) "Dr Adam Careful"
+* agent.who.display = "Reference(Practitioner/example) Dr Adam Careful"
 * signature.type = urn:iso-astm:E1762-95:2013#1.2.840.10065.1.12.1.1 "Author's Signature"
 * signature.when = "2017-02-01T17:23:07Z"
-* signature.who = Reference(Practitioner/example) "Dr Adam Careful"
+* signature.who.display = "Practitioner/example Dr Adam Careful"
 * signature.targetFormat = #application/fhir+xml
 * signature.sigFormat = #application/signature+xml
 * signature.data = "dGhpcyBibG9iIGlzIHNuaXBwZWQ="
