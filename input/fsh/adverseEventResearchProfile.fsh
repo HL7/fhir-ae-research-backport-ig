@@ -112,7 +112,8 @@ Description: "Describes the entity that is suspected to have caused the adverse 
     instance 1..1 and
     Causality named causality 1..1
 * extension[instance] ^short = "Refers to the specific entity that is suspected of causing the adverse event"
-* extension[instance].valueCodeableConcept from http://snomed.info/sct (example)
+* extension[instance].valueCodeableConcept 
+//from http://snomed.info/sct (example)
 * extension[instance].valueReference only Reference(Immunization or Procedure or Substance or Medication or MedicationAdministration or MedicationStatement or Device or BiologicallyDerivedProduct or ResearchStudy)
 * extension[causality]
 
@@ -126,9 +127,11 @@ Description: "Relevant past history for the subject. In a clinical care context,
     item 1..1
 * extension[item] ^short = "Subject medical history or document relevant to this adverse event"
 * extension[item].valueReference only Reference(Condition or Observation or AllergyIntolerance or FamilyMemberHistory or Immunization or Procedure or DocumentReference or MedicationAdministration or MedicationStatement or QuestionnaireResponse)
-* extension[item].valueCodeableConcept from http://hl7.org/fhir/ValueSet/adverse-event-supporting-info (example)
+* extension[item].valueCodeableConcept from adverse-event-supporting-info (example)
+//above is placeholder for http://hl7.org/fhir/ValueSet/adverse-event-supporting-info 
+
 * extension[item].valueCodeableConcept ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* extension[item].valueCodeableConcept ^binding.extension.valueString = "Adverse Event Supporting Info "
+* extension[item].valueCodeableConcept ^binding.extension.valueString = "Adverse Event Supporting Info"
 * extension[item].valueCodeableConcept ^binding.description = "Codes describing the supporting information relevant to the event."
 
 
@@ -138,7 +141,8 @@ Id: severity-or-grade
 Title: "Severity Or Grade"
 Description: "Describes the severity of the adverse event, in relation to the subject not the resulting condition. In the context of clinical research, it is the investigator’s assessment of severity. For cancer related trials, severity is represented as a grade."
 * value[x] only CodeableConcept
-* valueCodeableConcept from http://hl7.org/fhir/R4B/valueset-adverse-event-severity (preferred)
+* valueCodeableConcept from adverse-event-severity-or-grade-vs (preferred)
+//http://hl7.org/fhir/R4B/valueset-adverse-event-severity (preferred)
 //http://hl7.org/fhir/ValueSet/adverse-event-severity (extensible)
 
 Extension: CausedSubjectToDiscontinueStudy
@@ -202,6 +206,8 @@ ValueSet: AdverseEventParticipantFunction
 Id: adverse-event-participant-function-vs
 Title: "Adverse Event Participant Functions"
 Description: "This value set includes codes that describe the type of involvement of the actor in the adverse event."
+* ^status = #draft
+* ^experimental = true
 * http://terminology.hl7.org/CodeSystem/v3-ParticipationType#INF	"informant"
 * http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PART	"Participation" 
 * http://terminology.hl7.org/CodeSystem/v3-ParticipationType#WIT	"witness"
@@ -211,6 +217,8 @@ ValueSet: AdverseEventSerCrit
 Id: adverse-event-seriousness-criteria-vs
 Title: "Adverse Event Seriousness Criteria"
 Description: "Action criteria usually associated with serious events that pose a threat to a patient's life or functioning. Adverse Events criteria to expand on the seriousness of the adverse event. Typically used in reporting for Clinical Research, post-market surveillance (e.g. Form FDA 3500A MedWatch). The adverse event seriousness criteria value set is based on the ICH E2D Post-Approval Safety Data Management: Definitions and Standards for Expedited Reporting guidance (https://database.ich.org/sites/default/files/E2D_Guideline.pdf)."
+* ^status = #draft
+* ^experimental = true
 //* codes from system seriousness-criteria-cs
 * urn:oid:2.16.840.1.113883.3.989.2.1.1.19#34	"resultsInDeath" //"Was the serious adverse event life-threatening?"
 * urn:oid:2.16.840.1.113883.3.989.2.1.1.19#21	"isLifeThreatening" 
@@ -223,6 +231,8 @@ ValueSet: OutcomeAEClinRes
 Id: adverse-event-outcome-clinical-research-vs
 Title: "Adverse Event Clinical Research Outcomes"
 Description: "This value set includes codes that describe the type of outcome from the adverse event as typically used in reporting for Clinical Research, post-market surveillance (e.g. Medwatch forms). This list comes from ICH E2B R3 (https://database.ich.org/sites/default/files/E2D_Guideline.pdf), specifically CDISC CL.C66768.OUT."
+* ^status = #draft
+* ^experimental = true
 * urn:oid:2.16.840.1.113883.3.989.2.1.1.19#fatal	"Fatal" //"Was the serious adverse event life-threatening?"
 * urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved	"Not recovering/not resolved" 
 * urn:oid:2.16.840.1.113883.3.989.2.1.1.19#resolvedwithsequelae	"Recovered/Resolved with sequelae"
@@ -240,10 +250,29 @@ Description: "This value set includes codes that describe the type of outcome fr
 //* #isBirthDefect "Resulted in Birth defect" "Resulted in Birth Defect"
 //* #requiresPreventImpairment "Required Intervention" "Required Intervention to Prevent Permanent Impairment or Damage"
 
+ValueSet: AdverseEventSupportingInformation
+Id: adverse-event-supporting-info
+Title: "AdverseEvent Supporting Information"
+Description: "This value set includes codes that describe the supporting information relevant to the event."
+* ^status = #draft
+* ^experimental = true
+* ^copyright = "This resource includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyright of the International Health Terminology Standards Development Organisation (IHTSDO). Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomed-ct or info@snomed.org"
+* include codes from system SNOMED_CT where concept is-a #609328004
+* include codes from system SNOMED_CT where concept is-a #416471007
+* include codes from system SNOMED_CT where concept is-a #425457005
+* include codes from system SNOMED_CT where concept is-a #365861007
+* include codes from system SNOMED_CT where concept is-a #71388002
+* include codes from system SNOMED_CT where concept is-a #404684003
+* include codes from system SNOMED_CT where concept is-a #410942007
+* include codes from system SNOMED_CT where concept is-a #373873005
+* include codes from system SNOMED_CT where concept is-a #106181007
+
 ValueSet: CausalityRelatedness
 Id: adverse-event-causality-related-vs
 Title: "Causality Relatedness values"
 Description: "Valueset for stating if a suspected entity is Not Related, Unlikely Related, Possibly Related, or Related to the cause of the adverse event. This values are derived from the ICH."
+* ^status = #draft
+* ^experimental = true
 * urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrelated "Not Related"
 * urn:oid:2.16.840.1.113883.3.989.2.1.1.19#unlikely "Unlikely Related"
 * urn:oid:2.16.840.1.113883.3.989.2.1.1.19#possibly "Possibly Related"
@@ -253,6 +282,8 @@ ValueSet: AdverseEventStatus
 Id: adverse-event-status-vs
 Title: "Adverse Event Status"
 Description: "Codes identifying the lifecycle stage of an adverse event."
+* ^status = #draft
+* ^experimental = true
 * http://hl7.org/fhir/event-status#in-progress
 * http://hl7.org/fhir/event-status#completed
 * http://hl7.org/fhir/event-status#entered-in-error
@@ -314,8 +345,104 @@ Title: "AdverseEvent Seriousness Non-serious Codes Only"
 Description: "This value set includes codes that describe the ameliorating actions taken after the adverse event occurred in order to reduce the extent of harm."
 * ^status = #draft
 * ^experimental = true
-* http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#Serious "Serious"
-* http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#Non-serious "Non-serious"
+* http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious "Serious"
+* http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
+
+
+CodeSystem: AdverseEventSeverityOrGradeCS
+Id: adverse-event-severity-or-grade-cs
+Title: "AdverseEvent Severity or Grade Codes"
+Description: "Hierarchical Code System for codes that indicate severity of the adverse event or grade."
+* ^experimental = true
+* ^caseSensitive = true
+* ^hierarchyMeaning = #is-a
+* ^property[0].code = #abstract
+* ^property[=].type = #boolean
+* ^property[=].description = "True when the code is not intended to be used"
+* ^property[+].code = #parent
+* ^property[=].uri = "http://hl7.org/fhir/concept-properties#parent"
+* ^property[=].type = #code
+* ^property[=].description = "The parent term of the current term"
+* #severity "Severity Codes" "Grouping concept for severities"
+* #severity ^property.code = #abstract
+* #severity ^property.valueBoolean = true
+* #grade "Grade Codes" "Grouping concept for grades"
+* #grade ^property.code = #abstract
+* #grade ^property.valueBoolean = true
+* #1 "Mild" "An experience that is usually transient, and requires no special treatment or intervention. The event does not generally interfere with usual daily activities. Includes transient laboratory test alterations."
+* #1 ^property[+].code = #parent
+* #1 ^property[=].valueCode = #grade
+* #1 ^property[+].code = #parent
+* #1 ^property[=].valueCode = #severity
+* #2 "Moderate" "An experience that is alleviated with simple therapeutic treatments. The event impacts usual daily activities. Includes laboratory test alterations indicating injury, but without long-term risk."
+* #2 ^property[+].code = #parent
+* #2 ^property[=].valueCode = #grade
+* #2 ^property[+].code = #parent
+* #2 ^property[=].valueCode = #severity
+* #3 "Severe" "An adverse event experience that requires intensive therapeutic intervention and interrupts usual daily activities."
+* #3 ^property[+].code = #parent
+* #3 ^property[=].valueCode = #grade
+* #3 ^property[+].code = #parent
+* #3 ^property[=].valueCode = #severity
+* #4 "Life Threatening or Disabling" "Any adverse event that places the patient, in the view of the initial reporter, at immediate risk of death from the adverse event as it occurred, i.e., it does not include an adverse experience that, had it occurred in a more severe form, might have caused death."
+* #4 ^property[+].code = #parent
+* #4 ^property[=].valueCode = #grade
+* #5 "Death Related to Adverse Event" "The termination of life associated with an adverse event."
+* #5 ^property[+].code = #parent
+* #5 ^property[=].valueCode = #grade
+
+//https://hl7.org/fhir/R4/valueset-example-hierarchical.json.html
+//http://hl7.org/fhir/R4B/valueset-example-expansion.json.html
+ValueSet: AdverseEventSeverityOrGrade
+Id: adverse-event-severity-or-grade-vs
+Title: "AdverseEvent Severity or Grade Value Set"
+Description: "This value set includes codes that indicate severity of the adverse event or grade."
+* ^status = #draft
+* ^experimental = true
+* include codes from system http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs
+    where parent in "severity, grade"
+* ^expansion.timestamp = "2022-05-22T13:56:07Z"
+* ^expansion.total = 8
+* ^expansion.offset = 0
+* ^expansion.parameter.name = "version"
+* ^expansion.parameter.valueString = "1.00"	
+* ^expansion.contains[+].display = "Severity codes"
+* ^expansion.contains[=].abstract = true
+* ^expansion.contains[=].contains[0].system = "http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs"
+* ^expansion.contains[=].contains[=].code = #1
+* ^expansion.contains[=].contains[=].display = "Mild"
+* ^expansion.contains[=].contains[+].system = "http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs"
+* ^expansion.contains[=].contains[=].code = #2
+* ^expansion.contains[=].contains[=].display = "Moderate"
+* ^expansion.contains[=].contains[+].system = "http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs"
+* ^expansion.contains[=].contains[=].code = #3
+* ^expansion.contains[=].contains[=].display = "Severe"
+* ^expansion.contains[+].display = "Grade codes"
+* ^expansion.contains[=].abstract = true
+* ^expansion.contains[=].contains[0].system = "http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs"
+* ^expansion.contains[=].contains[=].code = #1
+* ^expansion.contains[=].contains[=].display = "Mild"
+* ^expansion.contains[=].contains[+].system = "http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs"
+* ^expansion.contains[=].contains[=].code = #2
+* ^expansion.contains[=].contains[=].display = "Moderate"
+* ^expansion.contains[=].contains[+].system = "http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs"
+* ^expansion.contains[=].contains[=].code = #3
+* ^expansion.contains[=].contains[=].display = "Severe"
+* ^expansion.contains[=].contains[+].system = "http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs"
+* ^expansion.contains[=].contains[=].code = #4
+* ^expansion.contains[=].contains[=].display = "Life Threatening or Disabling"
+* ^expansion.contains[=].contains[+].system = "http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs"
+* ^expansion.contains[=].contains[=].code = #5
+* ^expansion.contains[=].contains[=].display = "Death Related to Adverse Event"
+
+
+//* ^compose.property = "parent"
+//* include codes from system http://hl7.org/fhir/R4/valueset-adverse-event-severity.html
+//* include codes from system http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs
+//adverse-event-severity-or-grade-cs
+//* compose.property[0] = #parent
+//* compose.include.system = "http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs"
+
 
 Invariant: aeClinRes-seriousness-1
 Description: "If seriousness is serious then must have at least one seriousness criterion."
@@ -366,6 +493,7 @@ Description: "An example profile of AdverseEvent for Research reporting."
 * extension[Status] ^comment = "This is not the reporting of the event to any regulatory or quality organization.  This is not the outcome of the patient's condition."
 //* extension[Status] ^isModifier = true
 * extension[Status] ^isModifierReason = "This element is labeled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid"
+* extension[Status] ^binding.strength = #required
 * extension[Status] ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * extension[Status] ^binding.extension.valueString = "AdverseEventStatus"
 * extension[Status] ^binding.description = "Codes identifying the lifecycle stage of an event."
