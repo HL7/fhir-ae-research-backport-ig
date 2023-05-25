@@ -20,6 +20,8 @@ Extension: Status
 Id: status
 Title: "Workflow Status"
 Description: "The current workflow state of the adverse event or potential adverse event. This is not the reporting of the event to any regulatory or quality organization.  This is not the outcome of the patient's condition."
+* . ^isModifier = true
+* . ^isModifierReason = "This element is labeled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid"
 * value[x] only code
 * valueCode from adverse-event-status-vs (required)
 
@@ -216,7 +218,7 @@ Description: "This value set includes codes that describe the type of involvemen
 ValueSet: AdverseEventSerCrit
 Id: adverse-event-seriousness-criteria-vs
 Title: "Adverse Event Seriousness Criteria"
-Description: "Action criteria usually associated with serious events that pose a threat to a patient's life or functioning. Adverse Events criteria to expand on the seriousness of the adverse event. Typically used in reporting for Clinical Research, post-market surveillance (e.g. Form FDA 3500A MedWatch). The adverse event seriousness criteria value set is based on the ICH E2D Post-Approval Safety Data Management: Definitions and Standards for Expedited Reporting guidance (https://database.ich.org/sites/default/files/E2D_Guideline.pdf)."
+Description: "Action criteria usually associated with serious events that pose a threat to a patient's life or functioning. Adverse Events criteria to expand on the seriousness of the adverse event. Typically used in reporting for Clinical Research, post-market surveillance (e.g. Form FDA 3500A MedWatch). The adverse event seriousness criteria value set is based on the ICH E2D Post-Approval Safety Data Management: Definitions and Standards for Expedited Reporting guidance (https://database.ich.org/sites/default/files/E2D_Guideline.pdf). For information on OID see https://admin.ich.org/sites/default/files/inline-files/OID_Information_Paper_1.pdf from the INTERNATIONAL CONFERENCE ON HARMONISATION OF TECHNICAL REQUIREMENTS FOR REGISTRATION OF PHARMACEUTICALS FOR HUMAN USE (ICH) document ICH E2B(R3), the Electronic Transmission of Individual Case Safety Reports (ICSRs) Implementation Guide Data Elements and Message Specification, and ICH M8, the Electronic Common Technical Document"
 * ^status = #draft
 * ^experimental = true
 //* codes from system seriousness-criteria-cs
@@ -230,14 +232,14 @@ Description: "Action criteria usually associated with serious events that pose a
 ValueSet: OutcomeAEClinRes
 Id: adverse-event-outcome-clinical-research-vs
 Title: "Adverse Event Clinical Research Outcomes"
-Description: "This value set includes codes that describe the type of outcome from the adverse event as typically used in reporting for Clinical Research, post-market surveillance (e.g. Medwatch forms). This list comes from ICH E2B R3 (https://database.ich.org/sites/default/files/E2D_Guideline.pdf), specifically CDISC CL.C66768.OUT."
+Description: "This value set includes codes that describe the type of outcome from the adverse event as typically used in reporting for Clinical Research, post-market surveillance (e.g. Medwatch forms). This list comes from ICH E2B R3 (https://database.ich.org/sites/default/files/E2D_Guideline.pdf), specifically CDISC CL.C66768.OUT. For information on OID see https://admin.ich.org/sites/default/files/inline-files/OID_Information_Paper_1.pdf from the INTERNATIONAL CONFERENCE ON HARMONISATION OF TECHNICAL REQUIREMENTS FOR REGISTRATION OF PHARMACEUTICALS FOR HUMAN USE (ICH) document ICH E2B(R3), the Electronic Transmission of Individual Case Safety Reports (ICSRs) Implementation Guide Data Elements and Message Specification, and ICH M8, the Electronic Common Technical Document."
 * ^status = #draft
 * ^experimental = true
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#fatal	"Fatal" //"Was the serious adverse event life-threatening?"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved	"Not recovering/not resolved" 
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#resolvedwithsequelae	"Recovered/Resolved with sequelae"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#recoveredorresolved	"Recovered/Resolved"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#roveringorresolving	"Recovering/Resolving"
+* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#fatal "Fatal" //"Was the serious adverse event life-threatening?"
+* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved "Not recovering/not resolved" 
+* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#resolvedwithsequelae "Recovered/Resolved with sequelae"
+* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#recoveredorresolved "Recovered/Resolved"
+* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#roveringorresolving "Recovering/Resolving"
 
 //CodeSystem: SeriousnessCriteriaCS
 //Id: seriousness-criteria-cs
@@ -270,7 +272,7 @@ Description: "This value set includes codes that describe the supporting informa
 ValueSet: CausalityRelatedness
 Id: adverse-event-causality-related-vs
 Title: "Causality Relatedness values"
-Description: "Valueset for stating if a suspected entity is Not Related, Unlikely Related, Possibly Related, or Related to the cause of the adverse event. This values are derived from the ICH."
+Description: "Valueset for stating if a suspected entity is Not Related, Unlikely Related, Possibly Related, or Related to the cause of the adverse event. This values are derived from the ICH. For information on OID see https://admin.ich.org/sites/default/files/inline-files/OID_Information_Paper_1.pdf from the INTERNATIONAL CONFERENCE ON HARMONISATION OF TECHNICAL REQUIREMENTS FOR REGISTRATION OF PHARMACEUTICALS FOR HUMAN USE (ICH) document ICH E2B(R3), the Electronic Transmission of Individual Case Safety Reports (ICSRs) Implementation Guide Data Elements and Message Specification, and ICH M8, the Electronic Common Technical Document"
 * ^status = #draft
 * ^experimental = true
 * urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrelated "Not Related"
@@ -446,7 +448,7 @@ Description: "This value set includes codes that indicate severity of the advers
 
 Invariant: aeClinRes-seriousness-1
 Description: "If seriousness is serious then must have at least one seriousness criterion."
-Expression: "((seriousness=http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious AND extension[seriousness-criteria].exists()) OR seriousness=http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious)"
+Expression: "(seriousness.coding.system='http://terminology.hl7.org/CodeSystem/adverse-event-seriousness' and seriousness.coding.code='serious' and extension.where(url='http://hl7.org/fhir/uv/adverseeventclinicalresearch/StructureDefinition/seriousness-criteria').exists()) or (seriousness.coding.system='http://terminology.hl7.org/CodeSystem/adverse-event-seriousness' and seriousness.coding.code='non-serious')"
 Severity: #error
 //XPath: " "
 
@@ -462,6 +464,9 @@ Parent: AdverseEvent
 Id: AdverseEvent-clinical-research
 Title: "Adverse Event Clinical Research"
 Description: "An example profile of AdverseEvent for Research reporting."
+* modifierExtension contains
+    Status named status 1..1 ?! SU 
+
 * extension contains 
     //study-info-associated-with-AE named study-info-associated-with-AE 0..* and
 	ResearchSubjectRef named research-subject-ref 0..1 and
@@ -470,7 +475,7 @@ Description: "An example profile of AdverseEvent for Research reporting."
     SeverityOrGrade named severity-or-grade 0..1 and
     expected-in-research-study named expected-in-research-study 0..1 and
     Note named note 0..* and
-	Status named status 1..1 ?! SU and
+//	Status named status 1..1 ?! SU and //?!
 	ResolvedDate named resolve-date 0..1 and
 //	SupportingMedicationInfo named supporting-medication-info 0..* and
 	SuspectEntity named suspect-entity 0..* SU and
@@ -481,22 +486,22 @@ Description: "An example profile of AdverseEvent for Research reporting."
 	Participant named participant 0..* and
 	ResultingEffect named resultingEffect 0..*
 
+* modifierExtension[Status] ^short = "in-progress | completed | entered-in-error | unknown"
+* modifierExtension[Status] ^definition = "The current state of the adverse event or potential adverse event."
+* modifierExtension[Status] ^comment = "This is not the reporting of the event to any regulatory or quality organization.  This is not the outcome of the patient's condition."
+//* modifierExtension[Status] ^isModifier = true
+* modifierExtension[Status] ^isModifierReason = "This element is labeled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid"
+* modifierExtension[Status] ^binding.strength = #required
+* modifierExtension[Status] ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
+* modifierExtension[Status] ^binding.extension.valueString = "AdverseEventStatus"
+* modifierExtension[Status] ^binding.description = "Codes identifying the lifecycle stage of an event."
+
 * extension[ResultingEffect] ^short = "Effect on the subject due to this event"
 
 * extension[ResearchSubjectRef] ^short = "Research Subject record of subject"
 * extension[SeverityOrGrade] ^short = "The degree of something undesirable"
 * extension[expected-in-research-study] ^short = "Considered likely or probable or anticipated in the research study"
 * extension[Note] ^short = "Comment on adverse event"
-
-* extension[Status] ^short = "in-progress | completed | entered-in-error | unknown"
-* extension[Status] ^definition = "The current state of the adverse event or potential adverse event."
-* extension[Status] ^comment = "This is not the reporting of the event to any regulatory or quality organization.  This is not the outcome of the patient's condition."
-//* extension[Status] ^isModifier = true
-* extension[Status] ^isModifierReason = "This element is labeled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid"
-* extension[Status] ^binding.strength = #required
-* extension[Status] ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* extension[Status] ^binding.extension.valueString = "AdverseEventStatus"
-* extension[Status] ^binding.description = "Codes identifying the lifecycle stage of an event."
 
 * extension[ResolvedDate] ^short = "Adverse Event resolution date"
 
