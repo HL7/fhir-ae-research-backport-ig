@@ -5,18 +5,18 @@ InstanceOf: Patient
 Usage: #example
 Title: "Janet Patient"
 Description: "Patient Janet, 64-year old woman on clinical trial"
-* extension[0].id = "race"
-* extension[=].extension[0].url = "ombCategory"
-* extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#2106-3 "White"
-* extension[=].extension[+].url = "text"
-* extension[=].extension[=].valueString = "White"
-* extension[=].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
-* extension[+].id = "ethnicity"
-* extension[=].extension[0].url = "ombCategory"
-* extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#2186-5 "Not Hispanic or Latino"
-* extension[=].extension[+].url = "text"
-* extension[=].extension[=].valueString = "Not Hispanic or Latino"
-* extension[=].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+//* extension[0].id = "race"
+//* extension[=].extension[0].url = "ombCategory"
+//* extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#2106-3 "White"
+//* extension[=].extension[+].url = "text"
+//* extension[=].extension[=].valueString = "White"
+//* extension[=].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+//* extension[+].id = "ethnicity"
+//* extension[=].extension[0].url = "ombCategory"
+//* extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#2186-5 "Not Hispanic or Latino"
+//* extension[=].extension[+].url = "text"
+//* extension[=].extension[=].valueString = "Not Hispanic or Latino"
+//* extension[=].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
 * identifier[0].use = #usual
 * identifier[=].type.text = "EPI"
 * identifier[=].system = "urn:oid:2.16.840.1.113883.2.4.6.3"
@@ -385,7 +385,7 @@ InstanceOf: AdverseEvent-clinical-research
 Usage: #example
 Title: "Use case 6B - patient reported AE during research study"
 Description: "Use case 6B - Patient report of Adverse Event, example of data that would be on MedWatch form as reported by Patient" 
-* extension[status].valueCode = http://hl7.org/fhir/event-status#completed
+* modifierExtension[status].valueCode = http://hl7.org/fhir/event-status#completed
 
 //A1 What kind of problem was it? (Check all that apply)
 //Were hurt or had a bad side effect (including new or worsening symptoms)
@@ -425,7 +425,7 @@ When Janet clicked “Submit” on the electronic form, the data automatically f
 
 //seriousness will be defined by investigator, but required so in this patient reported version we get the patient choosing !?
 //probably should be 0..1 !? 
-* seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#Serious
+* seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
 //outcome is also strange for a patient to enter but can be revised by clinician
 * outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#recoveredorresolved "Recovered/Resolved"
 

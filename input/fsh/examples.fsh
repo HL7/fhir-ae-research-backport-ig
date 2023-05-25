@@ -36,17 +36,19 @@ Usage: #example
 Title: "ClinicalResearchAdverseEventexample1"
 Description: "example"
 //* actuality = http://hl7.org/fhir/adverse-event-actuality#actual 
-* extension[status].valueCode = http://hl7.org/fhir/event-status#completed
+* modifierExtension[status].valueCode = #completed //http://hl7.org/fhir/event-status#completed
 * subject = Reference(ClinicalTrialSubject5)
-* outcome = http://snomed.info/sct#405532008 "Adverse incident resulting in potentially permanent disabling damage"
+* outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved "Not recovering/not resolved"
+//http://snomed.info/sct#405532008 "Adverse incident resulting in potentially permanent disabling damage"
 //* seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
 //* resultingCondition[0] = Reference(AEHepaticFailureUseCase7) "condition caused"
-* extension[ResultingEffect][0].valueReference = Reference(AEHepaticFailureUseCase7) "condition caused"
+* extension[ResultingEffect][0].valueReference = Reference(AEHepaticFailureUseCase7) 
+//* e"condition caused"
 //* resultingCondition[1] = Reference(AEHepaticFailureUseCase7complication)
 * extension[ResultingEffect][1].valueReference = Reference(AEHepaticFailureUseCase7complication)
-* category = http://terminology.hl7.org/CodeSystem/adverse-event-category#medication-mishap "medication-mishap"
+* category = http://terminology.hl7.org/CodeSystem/adverse-event-category#medication-mishap "Medication Mishap"
 * study.display = "NCT1010101"
-* extension[suspect-entity][0].extension[instance].valueCodeableConcept.text = "Aspirin"
+* extension[suspect-entity][0].extension[instance].valueReference.display = "Aspirin"
 //* extension[suspect-entity][=].instance.display = "see instance-codeable-concept"
 //* suspectEntity[=].causality.entityRelatedness = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
 * extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
@@ -72,7 +74,7 @@ Description: "example"
 * extension[seriousness-criteria].extension[criterionPresent].valueBoolean = true
 //* extension[seriousness].extension[seriousnessCriteria].valueCodeableConcept = seriousness-criteria-cs#requiresPreventImpairment "required intervention to prevent permanent damage"
 * extension[seriousness-criteria].extension[criterionCode].valueCodeableConcept = #requiresPreventImpairment "required intervention to prevent permanent damage"
-* extension[severity-or-grade].valueCodeableConcept = http://hl7.org/fhir/R4/valueset-adverse-event-severity#severe "Severe"
+* extension[severity-or-grade].valueCodeableConcept = http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs#3 "Severe"
 
 
 
@@ -83,7 +85,7 @@ Usage: #example
 Title: "ClinicalResearchAdverseEventUseCase7"
 Description: "example"
 //* actuality = http://hl7.org/fhir/adverse-event-actuality#actual 
-* extension[status].valueCode = http://hl7.org/fhir/event-status#completed
+* modifierExtension[status].valueCode = http://hl7.org/fhir/event-status#completed
 * subject = Reference(ClinicalTrialSubject5)
 * outcome = http://snomed.info/sct#405532008 "Adverse incident resulting in potentially permanent disabling damage"
 //* seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
@@ -91,9 +93,9 @@ Description: "example"
 * extension[ResultingEffect][0].valueReference = Reference(AEHepaticFailureUseCase7)
 //* resultingCondition[1] = Reference(AEHepaticFailureUseCase7complication)
 * extension[ResultingEffect][1].valueReference = Reference(AEHepaticFailureUseCase7complication)
-* category = http://terminology.hl7.org/CodeSystem/adverse-event-category#medication-mishap "medication-mishap"
+* category = http://terminology.hl7.org/CodeSystem/adverse-event-category#medication-mishap "Medication Mishap"
 * study.display = "NCT1010101"
-* extension[suspect-entity][0].extension[instance].valueCodeableConcept.text = "Aspirin"
+* extension[suspect-entity][0].extension[instance].valueReference.display = "Aspirin"
 //* extension[suspect-entity][0].instance.display = "see instance-codeable-concept"
 //* suspectEntity[=].causality.entityRelatedness = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
 * extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
@@ -121,9 +123,9 @@ Description: "example"
 * extension[seriousness-criteria][0].extension[criterionPresent].valueBoolean = true
 * extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = #requiresPreventImpairment "required intervention to prevent permanent damage"
 * extension[seriousness-criteria][+].extension[criterionPresent].valueBoolean = true
-* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = #resultsinHospitalization
+* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#33 "resultsinHospitalization"
 * extension[seriousness-criteria][+].extension[criterionPresent].valueBoolean = false
-* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = #resultsInDeath
+* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#34 "resultsInDeath"
 
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
 

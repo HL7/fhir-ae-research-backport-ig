@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Start by finding all references to "myig" and updating to appropriate text for your IG, including changing realm -->
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R4/fhir-single.xsd">
-	<id value="hl7.fhir.uv.adverseeventclinicalresearch"/>
+	<id value="hl7.fhir.uv.ae-research-backport-ig"/>
 	<extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
 		<valueCode value="informative"/>
-	</extension>
+	</extension>  
 	<extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
 		<valueInteger value="1"/>
 	</extension>
 	<!--  <extension url="http://hl7.org/fhir/tools/StructureDefinition/igpublisher-spreadsheet">
     <valueString value="resources-spreadsheet.xml"/>
   </extension>-->
-	<url value="http://hl7.org/fhir/uv/adverseeventclinicalresearch/ImplementationGuide/hl7.fhir.uv.adverseeventclinicalresearch"/>
+	<url value="http://hl7.org/fhir/uv/ae-research-backport-ig/ImplementationGuide/hl7.fhir.uv.ae-research-backport-ig"/>
 	<!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
 	<version value="0.2.0"/>
-	<name value="adverse-event-clinical-research"/>
+	<name value="AdverseEventClinicalResearchR4backport"/>
 	<title value="Adverse Event Clinical research R4 Backport"/>
 	<status value="draft"/>
 	<experimental value="false"/>
@@ -36,7 +36,7 @@
 			<code value="001"/>
 		</coding>
 	</jurisdiction>
-	<packageId value="hl7.fhir.uv.adverseeventclinicalresearchR4backport"/>
+	<packageId value="hl7.fhir.uv.ae-research-backport-ig"/>
 	<!-- fhir-ae-research-backport-ig -->
 	<!-- This should be changed to 'not-open-source' or another license if appropriate for non-HL7-published content -->
 	<license value="CC0-1.0"/>
@@ -51,30 +51,7 @@
 	<definition>
 		<!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
       inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->
-		<!--resource>
-      <reference>
-        <reference value="StructureDefinition/mypatient"/>
-      </reference>
-      <description value="Overriding description because we can"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/MyLogical"/>
-      </reference>
-      <description value="Logical Model"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Library/example-sql"/>
-      </reference>
-      <description value="A test example"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Library/example-image"/>
-      </reference>
-      <description value="A test image example"/>
-    </resource-->
+
 		<resource>
 			<reference>
 				<reference value="StructureDefinition/AdverseEvent-clinical-research"/>
@@ -248,63 +225,7 @@
 			<name value="Use case 6B - patient reported AE during research study"/>
 			<description value="Use case 6B - Patient report of Adverse Event, example of data that would be on MedWatch form as reported by Patient"/>
 		</resource>
-		<!--resource>
-      <reference>
-        <reference value="Patient/example"/>
-      </reference>
-      <name value="Simple patient example"/>
-      <description value="A simple example showing how examples are defined and referenced"/>
-      <exampleCanonical value="http://somewhere.org/fhir/uv/adverseeventclinicalresearch/StructureDefinition/mypatient"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Observation/example"/>
-      </reference>
-      <name value="Observation patient example"/>
-      <description value="Example showing slicing"/>
-      <exampleCanonical value="http://somewhere.org/fhir/uv/adverseeventclinicalresearch/StructureDefinition/myObservation"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Binary/example"/>
-      </reference>
-      <name value="Example binary"/>
-      <description value="Example showing binary content"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-resource-format">
-        <valueCode value="application/xml"/>
-      </extension>
-      <reference>
-        <reference value="Binary/logical-example"/>
-      </reference>
-      <name value="Example of Logical Model"/>
-      <description value="Example showing example content for a logical model"/>
-      <exampleCanonical value="http://somewhere.org/fhir/uv/adverseeventclinicalresearch/StructureDefinition/MyLogical"/>
-    </resource>    
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-resource-format">
-        <valueCode value="image/jpeg"/>
-      </extension>
-      <reference>
-        <reference value="Binary/image-example"/>
-      </reference>
-      <name value="Example of Binary Image"/>
-      <description value="Example showing example content for an image"/>
-    </resource>    
-    <resource>
-      <reference>
-        <reference value="ValueSet/valueset-no-codesystem"/>
-      </reference>
-      <name value="Value set for no code system"/>
-    </resource
-   <resource>
-      <reference>
-        <reference value="Library/example"/>
-      </reference>
-      <name value="Simple library example"/>
-      <description value="A simple example showing how library is pre-loaded"/>
-    </resource> -->
+
 		<page>
 			<!-- The root will always be toc.html - the template will force it if you don't do it -->
 			<!--name value="toc.html"/>
