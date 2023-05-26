@@ -222,12 +222,22 @@ Description: "Action criteria usually associated with serious events that pose a
 * ^status = #draft
 * ^experimental = true
 //* codes from system seriousness-criteria-cs
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#34	"resultsInDeath" //"Was the serious adverse event life-threatening?"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#21	"isLifeThreatening" 
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#33	"requiresInpatientHospitalization"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#35	"resultsInPersistentOrSignificantDisability"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#12	"congenitalAnomalyBirthDefect"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#26	"otherMedicallyImportantCondition" 
+* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#34	"Results In Death" //"Was the serious adverse event life-threatening?"
+* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#21	"Is Life Threatening" 
+* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#33	"Requires Inpatient Hospitalization"
+* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#35	"Results In Persistent Or Significant Disability"
+* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#12	"Congenital Anomaly or Birth Defect"
+* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#26	"Other Medically Important Condition" 
+* fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
+
+CodeSystem: FDAaddSeriousnessCriteriaCS
+Id: fda-add-seriousness-criteria-cs
+Title: "FDA Additional Seriousness Criteria CodeSystem"
+Description: "Additional codes found on https://www.fda.gov/safety/reporting-serious-problems-fda/what-serious-adverse-event#:~:text=Required%20Intervention%20to%20Prevent%20Permanent%20Impairment%20or%20Damage%20(Devices),use%20of%20a%20medical%20product. Typically used in reporting for Clinical Research, post-market surveillance (e.g. Form FDA 3500A MedWatch)."
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = true
+* #requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)" "Report if you believe that medical or surgical intervention was necessary to preclude permanent impairment of a body function, or prevent permanent damage to a body structure, either situation suspected to be due to the use of a medical product"
 
 ValueSet: OutcomeAEClinRes
 Id: adverse-event-outcome-clinical-research-vs

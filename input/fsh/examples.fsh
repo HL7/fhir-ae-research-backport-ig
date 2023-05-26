@@ -73,8 +73,9 @@ Description: "example"
 * event = http://snomed.info/sct#370901008 "Serious reportable event associated with product or device"
 * extension[seriousness-criteria].extension[criterionPresent].valueBoolean = true
 //* extension[seriousness].extension[seriousnessCriteria].valueCodeableConcept = seriousness-criteria-cs#requiresPreventImpairment "required intervention to prevent permanent damage"
-* extension[seriousness-criteria].extension[criterionCode].valueCodeableConcept = #requiresPreventImpairment "required intervention to prevent permanent damage"
-* extension[severity-or-grade].valueCodeableConcept = http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs#3 "Severe"
+* extension[seriousness-criteria].extension[criterionCode].valueCodeableConcept = fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
+//#requiresPreventImpairment "required intervention to prevent permanent damage"
+* extension[severity-or-grade].valueCodeableConcept = adverse-event-severity-or-grade-cs#3 "Severe"
 
 
 
@@ -87,7 +88,7 @@ Description: "example"
 //* actuality = http://hl7.org/fhir/adverse-event-actuality#actual 
 * modifierExtension[status].valueCode = http://hl7.org/fhir/event-status#completed
 * subject = Reference(ClinicalTrialSubject5)
-* outcome = http://snomed.info/sct#405532008 "Adverse incident resulting in potentially permanent disabling damage"
+* outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#roveringorresolving "Recovering/Resolving"
 //* seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
 //* resultingCondition[0] = Reference(AEHepaticFailureUseCase7)
 * extension[ResultingEffect][0].valueReference = Reference(AEHepaticFailureUseCase7)
@@ -121,7 +122,8 @@ Description: "example"
 * event = http://snomed.info/sct#370901008 "Serious reportable event associated with product or device"
 
 * extension[seriousness-criteria][0].extension[criterionPresent].valueBoolean = true
-* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = #requiresPreventImpairment "required intervention to prevent permanent damage"
+* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
+//#requiresPreventImpairment "required intervention to prevent permanent damage"
 * extension[seriousness-criteria][+].extension[criterionPresent].valueBoolean = true
 * extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#33 "resultsinHospitalization"
 * extension[seriousness-criteria][+].extension[criterionPresent].valueBoolean = false

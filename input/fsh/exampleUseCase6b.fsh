@@ -394,7 +394,8 @@ Description: "Use case 6B - Patient report of Adverse Event, example of data tha
 //"Required help to prevent permanent harm"
 //A2 Did any of the following happen?
 * extension[seriousness-criteria][0].extension[criterionPresent].valueBoolean = true
-* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = #requiresPreventImpairment "required intervention to prevent permanent damage"
+* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
+//#requiresPreventImpairment "required intervention to prevent permanent damage"
 
 //A3
 //After receiving the study drug (bresentrik) during a study visit, 
