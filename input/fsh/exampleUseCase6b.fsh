@@ -18,6 +18,8 @@ Description: "Patient Janet, 64-year old woman on clinical trial"
 //* extension[=].extension[=].valueString = "Not Hispanic or Latino"
 //* extension[=].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
 * identifier[0].use = #usual
+* identifier[=].type.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+* identifier[=].type.coding.code = #MR
 * identifier[=].type.text = "EPI"
 * identifier[=].system = "urn:oid:2.16.840.1.113883.2.4.6.3"
 * identifier[=].value = "738472983"
@@ -68,7 +70,7 @@ Description: "Breast Cancer clinical trial example"
 * status = http://hl7.org/fhir/research-study-status#active
 * primaryPurposeType = http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type#treatment
 * phase = http://terminology.hl7.org/CodeSystem/research-study-phase#phase-2-phase-3
-* category = #interventional
+* category = http://examplesystem#interventional "interventional"
 * condition = http://snomed.info/sct#254837009 "Breast Cancer"
 * contact.telecom.system = http://hl7.org/fhir/contact-point-system#phone
 * contact.telecom.value = "123-123-1234"
@@ -80,13 +82,16 @@ Description: "Breast Cancer clinical trial example"
 * principalInvestigator.display = "This would be a reference to a Practitioner or PractionerRole"
 * site.display = "This would be a reference to a Location containing the facility where the trial is taking place"
 * arm[0].name = "Arm A"
-* arm[0].type = http://hl7.org/fhir/research-study-arm-type#experimental
+//* arm[0].type = http://hl7.org/fhir/research-study-arm-type#experimental
+* arm[0].type = http://examplesystem#experimental
 * arm[0].description = "Bresentrik (B) plus pertuzumab-matching placebo"
 * arm[+].name = "Arm B"
-* arm[=].type = http://hl7.org/fhir/research-study-arm-type#experimental
+//* arm[=].type = http://examplesystem#experimental
+* arm[=].type = http://examplesystem#experimental "experimental"
 * arm[=].description = "Bresentrik (B) plus pertuzumab"
 * arm[+].name = "Arm C"
-* arm[=].type = http://hl7.org/fhir/research-study-arm-type#active-comparator
+//* arm[=].type = http://examplesystem#active-comparator
+* arm[=].type = http://examplesystem#active-comparator "active-comparator"
 * arm[=].description = "Standard of care (Taxane (paclitaxel or docetaxel), trastuzumab, and pertuzumab)"
 * protocol.display = "This would reference the PlanDefinition which would contain references to Bresentrik"
 

@@ -2,24 +2,32 @@ Extension: Note
 Id: note
 Title: "Note"
 Description: "Comments made about the adverse event by the performer, subject or other participants."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * value[x] only Annotation
 
 Extension: ExpectedInResearchStudy
 Id: expected-in-research-study
 Title: "Expected In Research Study"
 Description: "Considered likely or probable or anticipated in the research study.  Whether the reported event matches any of the outcomes for the patient that are considered by the study as known or likely."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * value[x] only boolean
 
 Extension: InstanceCodeableConcept
 Id: instance-codeable-concept
 Title: "Instance Codeable Concept"
 Description: "Codeable concept for the specific entity that caused the adverse event."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * value[x] only CodeableConcept
 
 Extension: Status
 Id: status
 Title: "Workflow Status"
 Description: "The current workflow state of the adverse event or potential adverse event. This is not the reporting of the event to any regulatory or quality organization.  This is not the outcome of the patient's condition."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * . ^isModifier = true
 * . ^isModifierReason = "This element is labeled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid"
 * value[x] only code
@@ -40,6 +48,8 @@ Extension: ContributingFactor
 Id: contributing-factor
 Title: "Contributing Factor"
 Description: "The contributing factors suspected to have increased the probability or severity of the adverse event."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * extension contains
     item 1..1
 * extension[item] ^short = "Item suspected to have increased the probability or severity of the adverse event"
@@ -55,6 +65,8 @@ Extension: PreventiveAction
 Id: preventive-action
 Title: "Preventive Action"
 Description: "Preventive actions that contributed to avoiding the adverse event."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * extension contains
     item 1..1
 * extension[item] ^short = "Action that contributed to avoiding the adverse event"
@@ -71,6 +83,8 @@ Extension: MitigatingAction
 Id: mitigating-action
 Title: "Mitigating Action"
 Description: "Ameliorating actions taken after the adverse event occurred in order to reduce the extent of harm."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * extension contains
     item 1..1
 * extension[item] ^short = "Ameliorating action taken after the adverse event occurred in order to reduce the extent of harm"
@@ -85,8 +99,15 @@ Description: "Ameliorating actions taken after the adverse event occurred in ord
 //AdverseEvent.suspectEntity.causality
 Extension: Causality
 Id: causality
+//Context: suspect-entity
 Title: "Causality - information on the possible cause of the event"
 Description: "Causality - information on the possible cause of the event."
+* ^context.type = #extension
+//* ^context.expression = "http://hl7.org/fhir/uv/ae-research-backport-ig/StructureDefinition/suspect-entity"
+//* ^context.expression = "AdverseEvent.extension[suspect-entity]"
+//* ^context.expression = "AdverseEvent.extension[suspect-entity].extension"
+//* ^context.expression = "[AdverseEvent.extension, Extension]"
+
 * extension contains
     assessmentMethod 0..1 and
     entityRelatedness 0..1 and
@@ -110,6 +131,8 @@ Extension: SuspectEntity
 Id: suspect-entity
 Title: "Suspect Entity"
 Description: "Describes the entity that is suspected to have caused the adverse event."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * extension contains
     instance 1..1 and
     Causality named causality 1..1
@@ -125,13 +148,13 @@ Extension: SupportingInfo
 Id: supporting-info
 Title: "Supporting information relevant to the event"
 Description: "Relevant past history for the subject. In a clinical care context, an example being a patient had an adverse event following a penicillin administration and the patient had a previously documented penicillin allergy. In a clinical trials context, an example is a bunion or rash that was present prior to the study. Additionally, the supporting item can be a document that is relevant to this instance of the adverse event that is not part of the subject's medical history. For example, a clinical note, staff list, or material safety data sheet (MSDS). Supporting information is not a contributing factor, preventive action, or mitigating action."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * extension contains
     item 1..1
 * extension[item] ^short = "Subject medical history or document relevant to this adverse event"
 * extension[item].valueReference only Reference(Condition or Observation or AllergyIntolerance or FamilyMemberHistory or Immunization or Procedure or DocumentReference or MedicationAdministration or MedicationStatement or QuestionnaireResponse)
 * extension[item].valueCodeableConcept from adverse-event-supporting-info (example)
-//above is placeholder for http://hl7.org/fhir/ValueSet/adverse-event-supporting-info 
-
 * extension[item].valueCodeableConcept ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * extension[item].valueCodeableConcept ^binding.extension.valueString = "Adverse Event Supporting Info"
 * extension[item].valueCodeableConcept ^binding.description = "Codes describing the supporting information relevant to the event."
@@ -142,6 +165,8 @@ Extension: SeverityOrGrade
 Id: severity-or-grade
 Title: "Severity Or Grade"
 Description: "Describes the severity of the adverse event, in relation to the subject not the resulting condition. In the context of clinical research, it is the investigator’s assessment of severity. For cancer related trials, severity is represented as a grade."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * value[x] only CodeableConcept
 * valueCodeableConcept from adverse-event-severity-or-grade-vs (preferred)
 //http://hl7.org/fhir/R4B/valueset-adverse-event-severity (preferred)
@@ -151,12 +176,16 @@ Extension: CausedSubjectToDiscontinueStudy
 Id: caused-subject-to-discontinue-study
 Title: "Adverse event caused subject to discontinue the study"
 Description: "Indicates if the subject discontinued the study due to the adverse event."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * value[x] only boolean
 
 Extension: SeriousnessCriteria
 Id: seriousness-criteria
 Title: "Criteria reviewed in determining serious adverse event"
 Description: "TBD - Element to capture the presence or absence of specific factors (criteria) associated with serious adverse events."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * extension contains
     criterionCode 1..1 MS and
     criterionPresent 1..1
@@ -176,12 +205,16 @@ Extension: ResolvedDate
 Id: resolve-date
 Title: "Adverse Event resolution date"
 Description: "The date the adverse event was resolved."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * value[x] only dateTime
 
 Extension: ResearchSubjectRef
 Id: research-subject-ref
 Title: "Research Subject record of subject"
 Description: "Communicates Research Subject related metadata."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * value[x] only Reference(ResearchSubject)
 
 //AdverseEvent.resultingEffect
@@ -189,6 +222,8 @@ Extension: ResultingEffect
 Id: resultingEffect
 Title: "Resulting Effect"
 Description: "Information about the condition that occurred as a result of the adverse event, such as hives due to the exposure to a substance (for example, a drug or a chemical) or a broken leg as a result of the fall."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * value[x] only Reference(Condition or Observation)
 
 //AdverseEvent.participant
@@ -196,6 +231,8 @@ Extension: Participant
 Id: participant
 Title: "Participant"
 Description: "Indicates who or what participated in the adverse event and how they were involved."
+* ^context.type = #element
+* ^context.expression = "AdverseEvent"
 * extension contains
     function 0..1 and
 	actor 1..1
