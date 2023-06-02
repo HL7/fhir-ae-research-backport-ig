@@ -4,6 +4,15 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="Condition/GIBleedUseCase15" key="Condition-GIBleedUseCase15" name=""/>
+<artifact id="Medication/medication-tylenol" key="Medication-medication-tylenol" name=""/>
+<artifact id="Medication/study-medication-ABC" key="Medication-study-medication-ABC" name=""/>
+<artifact id="Medication/study-medication-MMD" key="Medication-study-medication-MMD" name=""/>
+<artifact id="MedicationAdministration/medication-administration-tylenol" key="MedicationAdministration-medication-administration-tylenol" name=""/>
+<artifact id="MedicationAdministration/study-medication-administration-ABC" key="MedicationAdministration-study-medication-administration-ABC" name=""/>
+<artifact id="MedicationAdministration/study-medication-administration-MMD" key="MedicationAdministration-study-medication-administration-MMD" name=""/>
+<artifact id="Patient/patient-moumic" key="Patient-patient-moumic" name=""/>
+<artifact id="Procedure/procedure-upper-endoscopy" key="Procedure-procedure-upper-endoscopy" name=""/>
 <artifact id="Condition/AEHepaticFailureUseCase7" key="Condition-AEHepaticFailureUseCase7" name="AEHepaticFailureUseCase7"/>
 <artifact id="Condition/AEHepaticFailureUseCase7complication" key="Condition-AEHepaticFailureUseCase7complication" name="AEHepaticFailureUseCase7complication"/>
 <artifact id="StructureDefinition/AdverseEvent-clinical-research" key="StructureDefinition-AdverseEvent-clinical-research" name="Adverse Event Clinical Research"/>
@@ -29,7 +38,10 @@
 <artifact id="Patient/ClinicalTrialSubject5" key="Patient-ClinicalTrialSubject5" name="ClinicalTrialSubject5"/>
 <artifact id="StructureDefinition/contributing-factor" key="StructureDefinition-contributing-factor" name="Contributing Factor"/>
 <artifact id="StructureDefinition/seriousness-criteria" key="StructureDefinition-seriousness-criteria" name="Criteria reviewed in determining serious adverse event"/>
+<artifact id="AdverseEvent/ClinicalResearchAdverseEventUseCase15" key="AdverseEvent-ClinicalResearchAdverseEventUseCase15" name="Example AdverseEvent - ClinicalResearchAdverseEventUseCase15"/>
+<artifact id="AdverseEvent/ClinicalResearchAdverseEventUseCase16" key="AdverseEvent-ClinicalResearchAdverseEventUseCase16" name="Example AdverseEvent - ClinicalResearchAdverseEventUseCase16"/>
 <artifact id="StructureDefinition/expected-in-research-study" key="StructureDefinition-expected-in-research-study" name="Expected In Research Study"/>
+<artifact id="CodeSystem/fda-add-seriousness-criteria-cs" key="CodeSystem-fda-add-seriousness-criteria-cs" name="FDA Additional Seriousness Criteria CodeSystem"/>
 <artifact id="StructureDefinition/instance-codeable-concept" key="StructureDefinition-instance-codeable-concept" name="Instance Codeable Concept"/>
 <artifact id="Observation/blood-pressure-janet" key="Observation-blood-pressure-janet" name="Janet Blood Pressure Observation"/>
 <artifact id="Patient/JanetPatient" key="Patient-JanetPatient" name="Janet Patient"/>
@@ -47,6 +59,8 @@
 <artifact id="StructureDefinition/preventive-action" key="StructureDefinition-preventive-action" name="Preventive Action"/>
 <artifact id="Provenance/provenance-for-blood-pressure-janet" key="Provenance-provenance-for-blood-pressure-janet" name="Provenance for Janet Blood Pressure Observation"/>
 <artifact id="Provenance/provenance-for-weight" key="Provenance-provenance-for-weight" name="Provenance for Janet weight Observation"/>
+<artifact id="ResearchStudy/research-study-DISNEY" key="ResearchStudy-research-study-DISNEY" name="Research Study DISNEY"/>
+<artifact id="ResearchStudy/research-study-XYZ" key="ResearchStudy-research-study-XYZ" name="Research Study XYZ"/>
 <artifact id="StructureDefinition/research-subject-ref" key="StructureDefinition-research-subject-ref" name="Research Subject record of subject"/>
 <artifact id="StructureDefinition/resultingEffect" key="StructureDefinition-resultingEffect" name="Resulting Effect"/>
 <artifact id="StructureDefinition/severity-or-grade" key="StructureDefinition-severity-or-grade" name="Severity Or Grade"/>
