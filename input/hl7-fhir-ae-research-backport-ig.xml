@@ -237,7 +237,7 @@
 			<page>
 				<nameUrl value="background.html"/>
 				<title value="Background and Workflow"/>
-				<generation value="html"/>
+				<generation value="markdown"/>
 			</page>
 			<page>
 				<nameUrl value="examples.html"/>
