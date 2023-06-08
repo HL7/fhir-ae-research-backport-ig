@@ -96,37 +96,8 @@ Description: "Ameliorating actions taken after the adverse event occurred in ord
 
 
 
-//AdverseEvent.suspectEntity.causality
-Extension: Causality
-Id: causality
-//Context: suspect-entity
-Title: "Causality - information on the possible cause of the event"
-Description: "Causality - information on the possible cause of the event."
-* ^context.type = #extension
-//* ^context.expression = "http://hl7.org/fhir/uv/ae-research-backport-ig/StructureDefinition/suspect-entity"
-//* ^context.expression = "AdverseEvent.extension[suspect-entity]"
-//* ^context.expression = "AdverseEvent.extension[suspect-entity].extension"
-//* ^context.expression = "[AdverseEvent.extension, Extension]"
-
-* extension contains
-    assessmentMethod 0..1 and
-    entityRelatedness 0..1 and
-    author 0..1
-* extension[assessmentMethod] ^short = "Method of evaluating the relatedness of the suspected entity to the event."
-* extension[assessmentMethod].valueCodeableConcept from http://hl7.org/fhir/ValueSet/adverse-event-causality-method (preferred)
-* extension[assessmentMethod].valueCodeableConcept ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* extension[assessmentMethod].valueCodeableConcept ^binding.extension.valueString = "AdverseEventCausalityMethod"
-* extension[assessmentMethod].valueCodeableConcept ^binding.description = "Codes for the method of evaluating the relatedness of the suspected entity to the event, such as ProbabilityScale | Bayesian | Checklist."
-
-* extension[entityRelatedness] ^short = "Result of the assessment regarding the relatedness of the suspected entity to the event"
-* extension[entityRelatedness].valueCodeableConcept from adverse-event-causality-related-vs (preferred)
-
-* extension[author] ^short = "Author of the information on the possible cause of the event"
-* extension[author].valueReference only Reference(Patient or Practitioner or PractitionerRole or RelatedPerson or ResearchSubject)
-
-
-
 //AdverseEvent.suspectEntity
+//AdverseEvent.suspectEntity.causality
 Extension: SuspectEntity
 Id: suspect-entity
 Title: "Suspect Entity"
@@ -135,12 +106,30 @@ Description: "Describes the entity that is suspected to have caused the adverse 
 * ^context.expression = "AdverseEvent"
 * extension contains
     instance 1..1 and
-    Causality named causality 1..1
+	causality 1..1
 * extension[instance] ^short = "Refers to the specific entity that is suspected of causing the adverse event"
 * extension[instance].valueCodeableConcept 
 //from http://snomed.info/sct (example)
 * extension[instance].valueReference only Reference(Immunization or Procedure or Substance or Medication or MedicationAdministration or MedicationStatement or Device or BiologicallyDerivedProduct or ResearchStudy)
-* extension[causality]
+
+//AdverseEvent.suspectEntity.causality
+* extension[causality] ^short = "Causality - information on the possible cause of the event"
+
+* extension[causality].extension contains
+    assessmentMethod 0..1 and
+    entityRelatedness 0..1 and
+    author 0..1
+* extension[causality].extension[assessmentMethod] ^short = "Method of evaluating the relatedness of the suspected entity to the event."
+* extension[causality].extension[assessmentMethod].valueCodeableConcept from http://hl7.org/fhir/ValueSet/adverse-event-causality-method (preferred)
+* extension[causality].extension[assessmentMethod].valueCodeableConcept ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
+* extension[causality].extension[assessmentMethod].valueCodeableConcept ^binding.extension.valueString = "AdverseEventCausalityMethod"
+* extension[causality].extension[assessmentMethod].valueCodeableConcept ^binding.description = "Codes for the method of evaluating the relatedness of the suspected entity to the event, such as ProbabilityScale | Bayesian | Checklist."
+
+* extension[causality].extension[entityRelatedness] ^short = "Result of the assessment regarding the relatedness of the suspected entity to the event"
+* extension[causality].extension[entityRelatedness].valueCodeableConcept from adverse-event-causality-related-vs (preferred)
+
+* extension[causality].extension[author] ^short = "Author of the information on the possible cause of the event"
+* extension[causality].extension[author].valueReference only Reference(Patient or Practitioner or PractitionerRole or RelatedPerson or ResearchSubject)
 
 
 //AdverseEvent.supportingInfo
