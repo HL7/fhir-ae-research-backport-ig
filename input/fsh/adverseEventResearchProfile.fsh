@@ -14,14 +14,6 @@ Description: "Considered likely or probable or anticipated in the research study
 * ^context.expression = "AdverseEvent"
 * value[x] only boolean
 
-Extension: InstanceCodeableConcept
-Id: instance-codeable-concept
-Title: "Instance Codeable Concept"
-Description: "Codeable concept for the specific entity that caused the adverse event."
-* ^context.type = #element
-* ^context.expression = "AdverseEvent"
-* value[x] only CodeableConcept
-
 Extension: Status
 Id: status
 Title: "Workflow Status"
