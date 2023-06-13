@@ -245,6 +245,11 @@
 				<generation value="markdown"/>
 			</page>
 			<page>
+				<nameUrl value="exampleCancerClinicalTrial.html"/>
+				<title value="Cancer Clinical Trial Example"/>
+				<generation value="markdown"/>
+			</page>
+			<page>
 				<extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
 					<valueCode value="trial-use"/>
 				</extension>

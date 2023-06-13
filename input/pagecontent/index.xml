@@ -25,7 +25,7 @@ A single Adverse Event (AE) may need to be reported in multiple ways. Choosing t
   <p>
   In the pre-market clinical research setting, serious adverse events must be reported to the sponsor, clinical research organization, and regulatory agencies within a specific time frame for Institutional Review Boards (IRBs) and Data Safety Monitoring Board (DSMB) review. By using this IG, a clinical investigator can document an AE in the EHR, it can be received by a secondary clinical trial management system for triage and then forwarded to the sponsor and regulatory agencies. Similarly, a patient on a clinical trial can record an adverse event in their PHR that is then shared with the clinical investigator and reported to the sponsor and regulatory agencies as necessary. In a post-market situation, a patient, provider, or manufacturer can record the adverse event in a system and then report it to the FDA as a FHIR based MedWatch form.
   </p>
-      <p>
+  <p>
   Within this guide are several examples. Every effort has been made to capture the most important details of the use of the AdverseEvent profile. However, some examples may provide only a stub to referenced resources (e.g. instances of Patient Resource will be referenced using logical ids but are not resolvable, implementation of Patient is left for other guidance and is not the subject of this guide). Connectathons are ideal opportunities to create, compare and consider the holistic implementation of all FHIR Resources.
   </p>
   
@@ -82,7 +82,10 @@ A single Adverse Event (AE) may need to be reported in multiple ways. Choosing t
   <a name="acknowledgments"> </a>
   <h3>Acknowledgments</h3>
   <p>
-  The development of the Clinical Research Adverse Event Implementation Guide was made possible by the <a href="https://confluence.hl7.org/display/VA/Vulcan+Accelerator+Home">Vulcan FHIR Accelerator</a>, a member driven community that exists to help Clinical and Translational Research start using FHIR to manage the vast amount of data they have to work with. This IG is sponsored by the <a href="https://www.hl7.org/Special/committees/rcrim/index.cfm">HL7 Biomedical Research and Regulation Work Group</a>. 
+  This IG is sponsored by the HL7 <a href="https://www.hl7.org/Special/committees/rcrim/index.cfm">HL7 Biomedical Research and Regulation</a> Work Group and co-sponsored by the HL7 <a href="https://www.hl7.org/Special/committees/patientcare/index.cfm">Patient Care</a> and <a href="https://www.hl7.org/Special/committees/healthcaredevices/index.cfm">Devices</a> Work Groups.
+  </p>
+  <p>
+  The development of the Clinical Research Adverse Event Implementation Guide was made possible by the <a href="https://confluence.hl7.org/display/VA/Vulcan+Accelerator+Home">Vulcan FHIR Accelerator</a>, a member driven community that exists to help Clinical and Translational Research start using FHIR to manage the vast amount of data they have to work with. 
   </p>
   <p>
   The authors of this guide wish to recognize the following Vulcan member organizations that contributed their time and expertise to the continued development of this guide:
