@@ -32,3 +32,20 @@ Patient SCHJO on Research Study XYZ, Study ID XYZ-123, Subject number XYZ-123-00
 (Link to [Example AdverseEvent Clinical Research Profile](AdverseEvent-ClinicalResearchAdverseEventUseCase16.html))
 
 Patient MOUMIC on Research Study DISNEY, Study ID DUCK-828, Subject number DUCK-828-012. MOUMIC was enrolled in the study on 21-Jan-2022 taking Study Medication 20 mg subcutaneously daily every morning for diabetes.  At visit 3 on 21-Feb-2022, the patient stated that he had started to experience intermittent headaches on 1-Feb-2022 that were mild. They occurred once a week and resolved with Tylenol but were still ongoing. The investigator said the headaches were “UNLIKELY RELATED” to study drug.  The action taken with the study treatment was the “DOSE NOT CHANGED” and the outcome was noted to be “NOT RECOVERED/NOT RESOLVED”.
+
+### Use Case 17 Non-Serious Adverse Event Related to Study Procedure (not study drug)
+
+(Link to [Use Case 17](https://confluence.hl7.org/pages/viewpage.action?pageId=49646529#AdverseEventUseCases-UseCase17:AErelatedtostudyprocedure(notstudydrug)))
+
+(Link to [Example AdverseEvent Clinical Research Profile](AdverseEvent-ClinicalResearchAdverseEventUseCase17.html))
+
+Patient SLP on Research Study ACME, Study ID ACME-789, Subject number ACME-789-100. SLP was enrolled in the study on 2-Jan-2021, taking Study Medication WBY 10 mg orally daily every morning for moderate asthma.  
+On 15-Jan-2021, the subject has the protocol-prescribed procedure of a Lung CT Scan, with contrast dye.  As a result of the contrast dye, the subject experiences moderate hives and itching from the contrast dye.  This is reported as an Adverse Event, related to study procedure.  He is treated with a Benadryl injection and recovers the same day.
+
+The investigator said the reaction to the contrast dye was “UNLIKELY RELATED” to study drug.  The action taken with the study treatment was the “DOSE NOT CHANGED” and the outcome was noted to be “RECOVERED/RESOLVED”.
+
+### Cancer Clinical Trial with Non-serious Adverse Events
+
+This [use case persona](exampleCancerClinicalTrial.html) describes a hypothetical cancer patient on a cancer clinical trial with example instances to demonstrate how the adverse event profile can be used to guide the creation of resources representing a clinically realistic scenario.
+
+
