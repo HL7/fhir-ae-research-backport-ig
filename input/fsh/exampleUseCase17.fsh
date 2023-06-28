@@ -95,7 +95,7 @@ Description: "Adverse event from procedure, not study drug"
 * extension[resolve-date].valueDateTime = "2021-01-15"
 * study = Reference(research-study-acme)
 * extension[research-subject-ref].valueReference = Reference(clinical-trial-acme-subject)
-* extension[suspect-entity][0].extension[instance].valueReference = Reference(study-medication-administration-wby)
+* extension[suspect-entity][0].extension[instance].valueReference = Reference(study-medication-administration-WBY)
 * extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrelated "Not Related"
 * extension[suspect-entity][+].extension[instance].valueReference = Reference(clinical-trial-acme-procedure)
 * extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#possibly "Possibly Related"
