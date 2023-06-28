@@ -21,7 +21,7 @@ Description: "Example study medication MMD"
 
 Instance: study-medication-administration-MMD
 InstanceOf: MedicationAdministration
-Description: "Example for clinial trial medication MMD"
+Description: "Example for clinical trial medication MMD"
 * status = #in-progress "In Progress"
 * medicationReference = Reference(study-medication-MMD)
 * subject = Reference(patient-moumic)
@@ -55,7 +55,7 @@ Description: "Non-Serious Adverse Event Research Study Medication Example"
 * subject = Reference(patient-moumic)
 * event = http://terminology.hl7.org/CodeSystem/MDRAE#10019211 "Headache"
 * outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved	"Not recovering/not resolved"
-* extension[severity-or-grade].valueCodeableConcept = http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs#1 "Mild"
+* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#1 "Mild"
 
 * study = Reference(research-study-DISNEY)
 * extension[suspect-entity][0].extension[instance].valueReference = Reference(study-medication-administration-MMD)

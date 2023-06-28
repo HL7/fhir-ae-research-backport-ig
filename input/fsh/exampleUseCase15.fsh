@@ -25,7 +25,7 @@ Description: "Example study medication ABC"
 
 Instance: study-medication-administration-ABC
 InstanceOf: MedicationAdministration
-Description: "Example for clinial trial medication ABC"
+Description: "Example for clinical trial medication ABC"
 * status = #in-progress "In Progress"
 * medicationReference = Reference(study-medication-ABC)
 * subject = Reference(SCHJO)
@@ -49,7 +49,7 @@ Description: "Serious Adverse Event Research Study Medication Example"
 * subject = Reference(SCHJO)
 * event = http://terminology.hl7.org/CodeSystem/MDRAE#10017955 "Gastrointestinal haemorrhage"
 * outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#roveringorresolving "Recovering/Resolving"
-* extension[severity-or-grade].valueCodeableConcept = http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs#3 "Severe"
+* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#3 "Severe"
 
 //* resultingCondition[0] = Reference(GIBleedUseCase15)
 * extension[ResultingEffect][0].valueReference = Reference(GIBleedUseCase15)

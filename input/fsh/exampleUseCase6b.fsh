@@ -497,3 +497,6 @@ When Janet clicked “Submit” on the electronic form, the data automatically f
 //Questionnaire? DocReference? 
 
 //The data is then absorbed within the receiver’s system to auto populate a MedWatch Form FDA 3500B for submission to the FDA within 24 hours.
+
+//Severity or grade is applied by clinical researcher, so a Patient would not provide one
+//* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#3 "Severe"

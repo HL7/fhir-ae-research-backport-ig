@@ -56,7 +56,7 @@ Description: "Example Oncologist"
 
 Instance: medication-request-example-kadcyla
 InstanceOf: MedicationRequest
-Description: "Example showing clinial trial medication Kadcyla"
+Description: "Example showing clinical trial medication Kadcyla"
 * status = #active "active"
 * intent = #order
 * medicationCodeableConcept = http://www.nlm.nih.gov/research/umls/rxnorm#1371046 "KADCYLA"
@@ -73,7 +73,7 @@ Description: "Example showing clinial trial medication Kadcyla"
 
 Instance: medication-request-example-tucatinib
 InstanceOf: MedicationRequest
-Description: "Example showing clinial trial medication Tucatinib"
+Description: "Example showing clinical trial medication Tucatinib"
 //* extension[treatmentIntent].valueCodeableConcept = SCT#373808002 "Curative - procedure intent (qualifier value)"
 * status = #active "active"
 * intent = #order
@@ -91,7 +91,7 @@ Description: "Example showing clinial trial medication Tucatinib"
 
 Instance: medication-administration-kadcyla
 InstanceOf: MedicationAdministration
-Description: "Example showing clinial trial medication adminstration Kadcyla"
+Description: "Example showing clinical trial medication adminstration Kadcyla"
 * status = #completed "completed"
 * medicationCodeableConcept = http://www.nlm.nih.gov/research/umls/rxnorm#1371046 "KADCYLA"
 * subject = Reference(patient-example-kaitlyn-b)
@@ -107,7 +107,7 @@ Description: "Example showing clinial trial medication adminstration Kadcyla"
 
 Instance: medication-administration-tucatinib
 InstanceOf: MedicationAdministration
-Description: "Example showing clinial trial medication adminstration Tucatinib"
+Description: "Example showing clinical trial medication adminstration Tucatinib"
 * status = #completed "completed"
 * medicationCodeableConcept = http://www.nlm.nih.gov/research/umls/rxnorm#2361290 "tucatinib 150 MG Oral Tablet"
 * subject = Reference(patient-example-kaitlyn-b)
@@ -141,7 +141,7 @@ Description: "Alliance COMPASS trial research subject"
 // Tucatinib was also dose reduced to 250mg twice daily per dose 
 Instance: medication-administration-kadcyla-reduced
 InstanceOf: MedicationAdministration
-Description: "Example reduced dose of clinial trial medication adminstration Kadcyla"
+Description: "Example reduced dose of clinical trial medication adminstration Kadcyla"
 * status = #completed "completed"
 * medicationCodeableConcept = http://www.nlm.nih.gov/research/umls/rxnorm#1371046 "KADCYLA"
 * subject = Reference(patient-example-kaitlyn-b)
@@ -156,7 +156,7 @@ Description: "Example reduced dose of clinial trial medication adminstration Kad
 
 Instance: medication-administration-tucatinib-reduced
 InstanceOf: MedicationAdministration
-Description: "Example reduced does of clinial trial medication adminstration Tucatinib"
+Description: "Example reduced does of clinical trial medication adminstration Tucatinib"
 * status = #completed "completed"
 * medicationCodeableConcept = http://www.nlm.nih.gov/research/umls/rxnorm#2361290 "tucatinib 150 MG Oral Tablet"
 * subject = Reference(patient-example-kaitlyn-b)
@@ -176,7 +176,7 @@ Description: "Grade 1 ALT"
 * modifierExtension[status].valueCode = #in-progress
 * event = http://terminology.hl7.org/CodeSystem/MDRAE#10001551  "Alanine aminotransferase increased" 
 * event.text = "Alanine aminotransferase (ALT) increased at 50"
-* extension[severity-or-grade].valueCodeableConcept = http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs#1 "Mild"
+* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#1 "Mild"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved "Not recovering/not resolved"
 * date = "2020-04-22"
@@ -198,7 +198,7 @@ Description: "Grade 3 ALT"
 * modifierExtension[status].valueCode = #in-progress
 * event = http://terminology.hl7.org/CodeSystem/MDRAE#10001551  "Alanine aminotransferase increased" 
 * event.text = "Alanine aminotransferase (ALT) increased to 200"
-* extension[severity-or-grade].valueCodeableConcept = http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade#3 "Severe"
+* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#3 "Severe"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved "Not recovering/not resolved"
 * date = "2020-05-13"
@@ -222,7 +222,7 @@ Description: "ALT back to grade 1 and resolved"
 * modifierExtension[status].valueCode = #completed
 * event = http://terminology.hl7.org/CodeSystem/MDRAE#10001551  "Alanine aminotransferase increased" 
 * event.text = "Alanine aminotransferase (ALT) decreased to 60"
-* extension[severity-or-grade].valueCodeableConcept = http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade#1 "Mild"
+* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#1 "Mild"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#recoveredorresolved "Recovered/Resolved"
 * date = "2020-05-20"
@@ -265,7 +265,7 @@ Description: "Grade 1 Nausea/vomiting"  // both are AEs, which to use or make th
 * modifierExtension[status].valueCode = #completed
 * event = http://terminology.hl7.org/CodeSystem/MDRAE#10028813  "Nausea" 
 * event.text = "Nausea"
-* extension[severity-or-grade].valueCodeableConcept = http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade#1 "Mild"
+* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#1 "Mild"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved "Not recovering/not resolved" 
 // resolved on 6/10/20 after 3 more visits - goes to grade 3 then back to 1 then WNL

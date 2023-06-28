@@ -383,6 +383,7 @@ CodeSystem: AdverseEventSeverityOrGradeCS
 Id: adverse-event-severity-or-grade-cs
 Title: "AdverseEvent Severity or Grade Codes"
 Description: "Hierarchical Code System for codes that indicate severity of the adverse event or grade."
+* ^url = "http://hl7.org/fhir/uv/ae-research-backport-ig/CodeSystem/adverse-event-severity-or-grade-cs"
 * ^experimental = true
 * ^caseSensitive = true
 * ^hierarchyMeaning = #is-a
@@ -429,7 +430,8 @@ Title: "AdverseEvent Severity or Grade Value Set"
 Description: "This value set includes codes that indicate severity of the adverse event or grade."
 * ^status = #draft
 * ^experimental = true
-* include codes from system http://hl7.org/fhir/uv/ae-research-backport-ig/CodeSystem/adverse-event-severity-or-grade-cs
+* include codes from system adverse-event-severity-or-grade-cs
+//http://hl7.org/fhir/uv/ae-research-backport-ig/CodeSystem/adverse-event-severity-or-grade-cs
     where parent in "severity, grade"
 * ^expansion.timestamp = "2022-05-22T13:56:07Z"
 * ^expansion.total = 8
@@ -476,7 +478,7 @@ Description: "This value set includes codes that indicate severity of the advers
 
 Invariant: aeClinRes-seriousness-1
 Description: "If seriousness is serious then must have at least one seriousness criterion."
-Expression: "(seriousness.coding.system='http://terminology.hl7.org/CodeSystem/adverse-event-seriousness' and seriousness.coding.code='serious' and extension.where(url='http://hl7.org/fhir/uv/ae-research-backport-ig/StructureDefinition/seriousness-criteria').exists()) or (seriousness.coding.system='http://terminology.hl7.org/CodeSystem/adverse-event-seriousness' and seriousness.coding.code='non-serious')"
+Expression: "(AdverseEvent.seriousness.coding.system='http://terminology.hl7.org/CodeSystem/adverse-event-seriousness' and AdverseEvent.seriousness.coding.code='serious' and extension.where(url='http://hl7.org/fhir/uv/ae-research-backport-ig/StructureDefinition/seriousness-criteria').exists()) or (seriousness.coding.system='http://terminology.hl7.org/CodeSystem/adverse-event-seriousness' and seriousness.coding.code='non-serious')"
 Severity: #error
 //XPath: " "
 
@@ -492,6 +494,9 @@ Parent: AdverseEvent
 Id: AdverseEvent-clinical-research
 Title: "Adverse Event Clinical Research"
 Description: "An example profile of AdverseEvent for Research reporting."
+
+* obeys aeClinRes-seriousness-1
+
 * modifierExtension contains
     Status named status 1..1 ?! SU 
 
@@ -576,7 +581,8 @@ Description: "An example profile of AdverseEvent for Research reporting."
 //* seriousness from http://hl7.org/fhir/ValueSet/adverse-event-seriousness (required)
 * seriousness from adverse-event-seriousness-non-only-vs (required)
 
-* seriousness obeys aeClinRes-seriousness-1
+* seriousness
+//obeys aeClinRes-seriousness-1
 * seriousness ^short = "Investigator defined severity of the adverse event, in relation to the subject not the resulting condition"
 * outcome 1..1 MS
 * outcome from adverse-event-outcome-clinical-research-vs (required)

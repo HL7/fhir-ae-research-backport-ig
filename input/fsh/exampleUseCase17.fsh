@@ -33,16 +33,17 @@ Description: "Clinical trial ACME protocol-prescribed procedure of a Lung CT Sca
 * status = http://hl7.org/fhir/event-status#completed "Completed"
 * code = http://snomed.info/sct#241540006 "CT of lungs"
 
-Instance: study-medication-WBY
+Instance: resstudy-medication-WBY
 InstanceOf: Medication
+Description: "Example clinical trial medication WBY"
 * code = http://www.nlm.nih.gov/research/umls/rxnorm#115713
 * code.text = "montelukast sodium"
 
 Instance: study-medication-administration-WBY
 InstanceOf: MedicationAdministration
-Description: "Example for clinial trial medication WBY"
+Description: "Example for clinical trial medication WBY"
 * status = #in-progress "In Progress"
-* medicationReference = Reference(study-medication-WBY)
+* medicationReference = Reference(resstudy-medication-WBY)
 * subject = Reference(patient-slp)
 * effectiveDateTime = "2021-01-02"
 * dosage.dose = 10 'mg' "mg"
@@ -87,7 +88,7 @@ Description: "Adverse event from procedure, not study drug"
 * modifierExtension[status].valueCode = #completed
 * event = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C57954 "Urticaria" 
 * event.text = "Moderate hives"
-* extension[severity-or-grade].valueCodeableConcept = http://hl7.org/fhir/uv/adverseeventclinicalresearch/CodeSystem/adverse-event-severity-or-grade-cs#2 "Moderate"
+* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#2 "Moderate"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#recoveredorresolved "Recovered/Resolved"
 * date = "2021-01-15"

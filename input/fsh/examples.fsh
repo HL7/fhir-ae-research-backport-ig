@@ -75,7 +75,7 @@ Description: "example"
 //* extension[seriousness].extension[seriousnessCriteria].valueCodeableConcept = seriousness-criteria-cs#requiresPreventImpairment "required intervention to prevent permanent damage"
 * extension[seriousness-criteria].extension[criterionCode].valueCodeableConcept = fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
 //#requiresPreventImpairment "required intervention to prevent permanent damage"
-* extension[severity-or-grade].valueCodeableConcept = adverse-event-severity-or-grade-cs#3 "Severe"
+* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#3 "Severe"
 
 
 
@@ -130,6 +130,8 @@ Description: "example"
 * extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#34 "resultsInDeath"
 
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
+* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#4 "Life Threatening or Disabling"
+
 
 Instance: AEHepaticFailureUseCase7
 InstanceOf: Condition
