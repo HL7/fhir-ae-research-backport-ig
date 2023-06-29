@@ -550,7 +550,7 @@
       <title value="Table of Contents"/>
       <generation value="html"/-->
 			<nameUrl value="index.html"/>
-			<title value="Future AdverseEvents for Clinical Research Home Page"/>
+			<title value="AdverseEvents for Clinical Research Home Page"/>
 			<generation value="html"/>
 			<page>
 				<nameUrl value="background.html"/>
@@ -561,13 +561,15 @@
 				<nameUrl value="examples.html"/>
 				<title value="Real World examples"/>
 				<generation value="markdown"/>
+			
+				<page>
+					<nameUrl value="exampleCancerClinicalTrial.html"/>
+					<title value="Cancer Clinical Trial Example"/>
+					<generation value="markdown"/>
+				</page>
+			
 			</page>
-			<page>
-				<nameUrl value="exampleCancerClinicalTrial.html"/>
-				<title value="Cancer Clinical Trial Example"/>
-				<generation value="markdown"/>
-			</page>
-			<page>
+			<!--page>
 				<extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
 					<valueCode value="trial-use"/>
 				</extension>
@@ -593,12 +595,12 @@
 				<nameUrl value="spec.html"/>
 				<title value="Detailed Specification"/>
 				<generation value="markdown"/>
-				<!--page>
+				<page>
           <nameUrl value="spec3.html"/>
           <title value="Spec sub-page"/>
           <generation value="markdown"/>
-        </page-->
-			</page>
+        </page>
+			</page-->
 			<page>
 				<nameUrl value="downloads.html"/>
 				<title value="Useful Downloads"/>
