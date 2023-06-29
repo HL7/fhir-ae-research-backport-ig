@@ -24,15 +24,15 @@ The study sponsors determined that is an unanticipated problem that must be repo
 
 Use case for MedWatch Form FDA 3500B being used during a clinical trial
   
-A 64-year old woman %(Janet%) is participating in a breast cancer clinical trial. As part of her participation in the study, she was instructed to use a specific consumer facing FHIR application to report an adverse event that resulted in any of the following: hospitalization, required help to prevent permanent harm, disability or health problem, birth defect, life-threatening, death, other serious/important medical incident. %(This list identifies serious events.%)  
+A 64-year old woman (Janet) is participating in a breast cancer clinical trial. As part of her participation in the study, she was instructed to use a specific consumer facing FHIR application to report an adverse event that resulted in any of the following: hospitalization, required help to prevent permanent harm, disability or health problem, birth defect, life-threatening, death, other serious/important medical incident. (This list identifies serious events.)  
 
-Janet created an account in the consumer facing FHIR application and imported her health records from her three %(3%) health systems. The data from her health systems were aggregated to allow her a single view of all her medical information. Janet was able to add more information that was not included in her imported data %(OTC drugs, vitamins, etc.%).  
+Janet created an account in the consumer facing FHIR application and imported her health records from her three (3) health systems. The data from her health systems were aggregated to allow her a single view of all her medical information. Janet was able to add more information that was not included in her imported data (OTC drugs, vitamins, etc.).  
 
-After receiving the study drug %(bresentrik%) during a study visit, Janet went home and began vomiting uncontrollably. Her husband called an ambulance and Janet was taken to the hospital where she was treated in the ER and released.  
+After receiving the study drug (bresentrik) during a study visit, Janet went home and began vomiting uncontrollably. Her husband called an ambulance and Janet was taken to the hospital where she was treated in the ER and released.  
 
-The following morning, Janet opened the study designated consumer facing FHIR application and completed the MedWatch Form FDA 3500B as earlier directed. The form provides her the opportunity to choose to auto fill several of the areas to allow for faster/easier completion of the form %(demographics, meds, allergies, conditions, labs%). She is given the option to display and choose the relevant items from each category %(example%: only current meds she is taking, current labs, etc. which might be a subset of her full PHR%).  
+The following morning, Janet opened the study designated consumer facing FHIR application and completed the MedWatch Form FDA 3500B as earlier directed. The form provides her the opportunity to choose to auto fill several of the areas to allow for faster/easier completion of the form (demographics, meds, allergies, conditions, labs). She is given the option to display and choose the relevant items from each category (example: only current meds she is taking, current labs, etc. which might be a subset of her full PHR).  
 
-When Janet clicked “Submit” on the electronic form, the data automatically flowed to the investigator %(or to whomever was designated to receive the data%). The data is then absorbed within the receiver’s system to auto populate a MedWatch Form FDA 3500B for submission to the FDA within 24 hours.
+When Janet clicked “Submit” on the electronic form, the data automatically flowed to the investigator (or to whomever was designated to receive the data). The data is then absorbed within the receiver’s system to auto populate a MedWatch Form FDA 3500B for submission to the FDA within 24 hours.
 
 
 ### Use Case 15 - Serious Adverse Event Research Study
