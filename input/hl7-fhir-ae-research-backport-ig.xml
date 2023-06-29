@@ -27,7 +27,7 @@
 			<value value="http://hl7.org/Special/committees/[something]"/>
 		</telecom>
 	</contact>
-	<description value="A brief description of what the ig is about (probably the same text as in your readme)"/>
+	<description value="A brief description of what the ig is about (maybe the same text as in your readme)"/>
 	<jurisdiction>
 		<!-- This first repetition will drive SNOMED release used -->
 		<coding>
