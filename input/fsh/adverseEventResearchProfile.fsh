@@ -53,20 +53,20 @@ Description: "The contributing factors suspected to have increased the probabili
 
 
 //AdverseEvent.preventiveAction
-Extension: PreventiveAction
-Id: preventive-action
-Title: "Preventive Action"
-Description: "Preventive actions that contributed to avoiding the adverse event."
-* ^context.type = #element
-* ^context.expression = "AdverseEvent"
-* extension contains
-    item 1..1
-* extension[item] ^short = "Action that contributed to avoiding the adverse event"
-* extension[item].valueReference only Reference(Immunization or Procedure or DocumentReference or MedicationAdministration or MedicationRequest)
-* extension[item].valueCodeableConcept from adverse-event-preventive-action-vs (example)
-* extension[item].valueCodeableConcept ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* extension[item].valueCodeableConcept ^binding.extension.valueString = "AdverseEventPreventiveAction"
-* extension[item].valueCodeableConcept ^binding.description = "Codes describing the preventive actions that contributed to avoiding the adverse event."
+//Extension: PreventiveAction
+//Id: preventive-action
+//Title: "Preventive Action"
+//Description: "Preventive actions that contributed to avoiding the adverse event."
+//* ^context.type = #element
+//* ^context.expression = "AdverseEvent"
+//* extension contains
+//    item 1..1
+//* extension[item] ^short = "Action that contributed to avoiding the adverse event"
+//* extension[item].valueReference only Reference(Immunization or Procedure or DocumentReference or MedicationAdministration or MedicationRequest)
+//* extension[item].valueCodeableConcept from adverse-event-preventive-action-vs (example)
+//* extension[item].valueCodeableConcept ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
+//* extension[item].valueCodeableConcept ^binding.extension.valueString = "AdverseEventPreventiveAction"
+//* extension[item].valueCodeableConcept ^binding.description = "Codes describing the preventive actions that contributed to avoiding the adverse event."
 
 
 
@@ -202,7 +202,7 @@ Description: "Communicates Research Subject related metadata."
 Extension: ResultingEffect
 Id: resultingEffect
 Title: "Resulting Effect"
-Description: "Information about the condition that occurred as a result of the adverse event, such as hives due to the exposure to a substance (for example, a drug or a chemical) or a broken leg as a result of the fall."
+Description: "Information about the condition that occurred as a result of the adverse event."
 * ^context.type = #element
 * ^context.expression = "AdverseEvent"
 * value[x] only Reference(Condition or Observation)
@@ -345,18 +345,18 @@ Description: "This value set includes codes that describe the contributing facto
 * include codes from system SNOMED_CT where concept is-a #373873005
 * include codes from system SNOMED_CT where concept is-a #106181007
 
-ValueSet: AdverseEventPreventiveAction
-Id: adverse-event-preventive-action-vs
-Title: "AdverseEvent Preventive Action"
-Description: "This value set includes codes that describe the preventive actions that contributed to avoiding the adverse event."
-* ^status = #draft
-* ^experimental = true
-* include codes from system SNOMED_CT where concept is-a #425457005
-* include codes from system SNOMED_CT where concept is-a #365861007
-* include codes from system SNOMED_CT where concept is-a #71388002
-* include codes from system SNOMED_CT where concept is-a #410942007
-* include codes from system SNOMED_CT where concept is-a #373873005
-* include codes from system SNOMED_CT where concept is-a #106181007
+//ValueSet: AdverseEventPreventiveAction
+//Id: adverse-event-preventive-action-vs
+//Title: "AdverseEvent Preventive Action"
+//Description: "This value set includes codes that describe the preventive actions that contributed to avoiding the adverse event."
+//* ^status = #draft
+//* ^experimental = true
+//* include codes from system SNOMED_CT where concept is-a #425457005
+//* include codes from system SNOMED_CT where concept is-a #365861007
+//* include codes from system SNOMED_CT where concept is-a #71388002
+//* include codes from system SNOMED_CT where concept is-a #410942007
+//* include codes from system SNOMED_CT where concept is-a #373873005
+//* include codes from system SNOMED_CT where concept is-a #106181007
 
 ValueSet: AdverseEventMitigatingAction
 Id: adverse-event-mitigating-action-vs
@@ -513,7 +513,7 @@ Description: "An example profile of AdverseEvent for Research reporting."
 //	SupportingMedicationInfo named supporting-medication-info 0..* and
 	SuspectEntity named suspect-entity 0..* SU and
 	ContributingFactor named contributing-factor 0..* SU and
-	PreventiveAction named preventive-action 0..* SU and
+//	PreventiveAction named preventive-action 0..* SU and
 	MitigatingAction named mitigating-action 0..* SU and
 	SupportingInfo named supporting-info 0..* SU and
 	Participant named participant 0..* and
@@ -546,8 +546,8 @@ Description: "An example profile of AdverseEvent for Research reporting."
 
 * extension[ContributingFactor] ^short = "Contributing factors suspected to have increased the probability or severity of the adverse event"
 * extension[ContributingFactor] ^definition = "A contributing factors suspected to have increased the probability or severity of the adverse event."
-* extension[PreventiveAction] ^short = "Preventive actions that contributed to avoiding the adverse event"
-* extension[PreventiveAction] ^definition = "Preventive actions that contributed to avoiding the adverse event."
+//* extension[PreventiveAction] ^short = "Preventive actions that contributed to avoiding the adverse event"
+//* extension[PreventiveAction] ^definition = "Preventive actions that contributed to avoiding the adverse event."
 * extension[MitigatingAction] ^short = "Ameliorating actions taken after the adverse event occurred in order to reduce the extent of harm"
 * extension[MitigatingAction] ^definition = "The ameliorating action taken after the adverse event occurred in order to reduce the extent of harm."
 * extension[SupportingInfo] ^short = "Subject medical history or document relevant to this adverse event"
