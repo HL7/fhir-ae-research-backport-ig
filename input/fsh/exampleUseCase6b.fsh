@@ -72,7 +72,8 @@ Description: "Breast Cancer clinical trial example"
 * status = http://hl7.org/fhir/research-study-status#active
 * primaryPurposeType = http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type#treatment "Treatment"
 * phase = http://terminology.hl7.org/CodeSystem/research-study-phase#phase-2-phase-3
-* category = http://examplesystem#interventional "interventional"
+//* category = http://hl7.org/fhir/study-design#SEVCO:01001 "Interventional research"
+* category.text = "Interventional research"
 * condition = http://snomed.info/sct#254837009 "Breast Cancer"
 * contact.telecom.system = http://hl7.org/fhir/contact-point-system#phone
 * contact.telecom.value = "123-123-1234"
@@ -85,15 +86,15 @@ Description: "Breast Cancer clinical trial example"
 * site.display = "This would be a reference to a Location containing the facility where the trial is taking place"
 * arm[0].name = "Arm A"
 //* arm[0].type = http://hl7.org/fhir/research-study-arm-type#experimental
-* arm[0].type = http://examplesystem#experimental
+* arm[0].type.text = "Experimental"
 * arm[0].description = "Bresentrik (B) plus pertuzumab-matching placebo"
 * arm[+].name = "Arm B"
 //* arm[=].type = http://examplesystem#experimental
-* arm[=].type = http://examplesystem#experimental "experimental"
+* arm[=].type.text = "Experimental"
 * arm[=].description = "Bresentrik (B) plus pertuzumab"
 * arm[+].name = "Arm C"
 //* arm[=].type = http://examplesystem#active-comparator
-* arm[=].type = http://examplesystem#active-comparator "active-comparator"
+* arm[=].type.text = "Active Comparator"
 * arm[=].description = "Standard of care (Taxane (paclitaxel or docetaxel), trastuzumab, and pertuzumab)"
 * protocol.display = "This would reference the PlanDefinition which would contain references to Bresentrik"
 
