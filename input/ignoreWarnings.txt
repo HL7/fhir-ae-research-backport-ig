@@ -81,10 +81,7 @@ INFORMATION: AdverseEvent/ClinicalResearchAdverseEventUseCase16: AdverseEvent.ev
 INFORMATION: AdverseEvent/ClinicalResearchAdverseEventUseCase17: AdverseEvent.event.coding[0]: Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated
 
 
-
 # I do not know where this error is coming from
-
-# information	UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
 INFORMATION: ValueSet/adverse-event-causality-related-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
 INFORMATION: ValueSet/adverse-event-outcome-clinical-research-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
 INFORMATION: ValueSet/adverse-event-seriousness-criteria-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
