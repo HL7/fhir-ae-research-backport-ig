@@ -4,6 +4,8 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="MedicationRequest/medicationrequest-for-study-medication-administration-ABC" key="MedicationRequest-medicationrequest-for-study-medication-administration-ABC" name=""/>
+<artifact id="MedicationRequest/medicationrequest0301-discontinue" key="MedicationRequest-medicationrequest0301-discontinue" name=""/>
 <artifact id="Condition/AEHepaticFailureUseCase7" key="Condition-AEHepaticFailureUseCase7" name="AEHepaticFailureUseCase7"/>
 <artifact id="Condition/AEHepaticFailureUseCase7complication" key="Condition-AEHepaticFailureUseCase7complication" name="AEHepaticFailureUseCase7complication"/>
 <artifact id="StructureDefinition/AdverseEvent-clinical-research" key="StructureDefinition-AdverseEvent-clinical-research" name="Adverse Event Clinical Research"/>
@@ -15,7 +17,6 @@
 <artifact id="StructureDefinition/caused-subject-to-discontinue-study" key="StructureDefinition-caused-subject-to-discontinue-study" name="Adverse event caused subject to discontinue the study"/>
 <artifact id="ValueSet/adverse-event-contributing-factor-vs" key="ValueSet-adverse-event-contributing-factor-vs" name="AdverseEvent Contributing Factor"/>
 <artifact id="ValueSet/adverse-event-mitigating-action-vs" key="ValueSet-adverse-event-mitigating-action-vs" name="AdverseEvent Mitigating Action"/>
-<artifact id="ValueSet/adverse-event-preventive-action-vs" key="ValueSet-adverse-event-preventive-action-vs" name="AdverseEvent Preventive Action"/>
 <artifact id="ValueSet/adverse-event-seriousness-non-only-vs" key="ValueSet-adverse-event-seriousness-non-only-vs" name="AdverseEvent Seriousness Non-serious Codes Only"/>
 <artifact id="CodeSystem/adverse-event-severity-or-grade-cs" key="CodeSystem-adverse-event-severity-or-grade-cs" name="AdverseEvent Severity or Grade Codes"/>
 <artifact id="ValueSet/adverse-event-severity-or-grade-vs" key="ValueSet-adverse-event-severity-or-grade-vs" name="AdverseEvent Severity or Grade Value Set"/>
@@ -27,7 +28,6 @@
 <artifact id="AdverseEvent/ClinicalResearchAdverseEventUseCase16" key="AdverseEvent-ClinicalResearchAdverseEventUseCase16" name="ClinicalResearchAdverseEventUseCase16"/>
 <artifact id="AdverseEvent/ClinicalResearchAdverseEventUseCase17" key="AdverseEvent-ClinicalResearchAdverseEventUseCase17" name="ClinicalResearchAdverseEventUseCase17"/>
 <artifact id="AdverseEvent/ClinicalResearchAdverseEventUseCase7" key="AdverseEvent-ClinicalResearchAdverseEventUseCase7" name="ClinicalResearchAdverseEventUseCase7"/>
-<artifact id="AdverseEvent/ClinicalResearchAdverseEventexample1" key="AdverseEvent-ClinicalResearchAdverseEventexample1" name="ClinicalResearchAdverseEventexample1"/>
 <artifact id="Patient/ClinicalTrialSubject5" key="Patient-ClinicalTrialSubject5" name="ClinicalTrialSubject5"/>
 <artifact id="StructureDefinition/contributing-factor" key="StructureDefinition-contributing-factor" name="Contributing Factor"/>
 <artifact id="StructureDefinition/seriousness-criteria" key="StructureDefinition-seriousness-criteria" name="Criteria reviewed in determining serious adverse event"/>
@@ -48,7 +48,6 @@
 <artifact id="StructureDefinition/mitigating-action" key="StructureDefinition-mitigating-action" name="Mitigating Action"/>
 <artifact id="StructureDefinition/note" key="StructureDefinition-note" name="Note"/>
 <artifact id="StructureDefinition/participant" key="StructureDefinition-participant" name="Participant"/>
-<artifact id="StructureDefinition/preventive-action" key="StructureDefinition-preventive-action" name="Preventive Action"/>
 <artifact id="Provenance/provenance-for-blood-pressure-janet" key="Provenance-provenance-for-blood-pressure-janet" name="Provenance for Janet Blood Pressure Observation"/>
 <artifact id="Provenance/provenance-for-weight" key="Provenance-provenance-for-weight" name="Provenance for Janet weight Observation"/>
 <artifact id="StructureDefinition/research-subject-ref" key="StructureDefinition-research-subject-ref" name="Research Subject record of subject"/>

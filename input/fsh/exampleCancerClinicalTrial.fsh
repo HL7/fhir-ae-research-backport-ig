@@ -135,6 +135,7 @@ Description: "Alliance COMPASS trial research subject"
 * status = http://hl7.org/fhir/research-subject-status#on-study "On-study"
 * study = Reference(clinical-trial-example-compass)
 * individual = Reference(patient-example-kaitlyn-b)
+* consent.display = "this would be a reference to a Consent instance"
 
 // mitigating action 
 // Kadcyla was dose reduced to 3.0mg and 
@@ -174,17 +175,17 @@ InstanceOf: AdverseEvent-clinical-research
 Description: "Grade 1 ALT"
 * subject = Reference(patient-example-kaitlyn-b)
 * modifierExtension[status].valueCode = #in-progress
-* event = http://terminology.hl7.org/CodeSystem/MDRAE#10001551  "Alanine aminotransferase increased" 
+* event = http://terminology.hl7.org/CodeSystem/mdr#10001551  "Alanine aminotransferase increased" 
 * event.text = "Alanine aminotransferase (ALT) increased at 50"
 * extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#1 "Mild"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved "Not recovering/not resolved"
 * date = "2020-04-22"
 * recorder = Reference(practitioner-oncology-nurse-jane)
-* extension[participant][0].extension[function].valueCodeableConcept = http://terminology.hl7.org/5.0.0/CodeSystem-v3-ParticipationType#AUTHEN 
+* extension[participant][0].extension[function].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUTHEN 
 * extension[participant][=].extension[actor].valueReference = Reference(practitioner-owen-oncologist)
 * study = Reference(clinical-trial-example-compass)
-* extension[research-subject-ref].valueReference = Reference(clinical-trial-example-subject)
+//* extension[research-subject-ref].valueReference = Reference(clinical-trial-example-subject)
 * extension[suspect-entity][0].extension[instance].valueReference = Reference(medication-administration-kadcyla)
 * extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#possibly "Possibly Related"
 * extension[suspect-entity][+].extension[instance].valueReference = Reference(medication-administration-tucatinib)
@@ -196,17 +197,17 @@ InstanceOf: AdverseEvent-clinical-research
 Description: "Grade 3 ALT"
 * subject = Reference(patient-example-kaitlyn-b)
 * modifierExtension[status].valueCode = #in-progress
-* event = http://terminology.hl7.org/CodeSystem/MDRAE#10001551  "Alanine aminotransferase increased" 
+* event = http://terminology.hl7.org/CodeSystem/mdr#10001551  "Alanine aminotransferase increased" 
 * event.text = "Alanine aminotransferase (ALT) increased to 200"
 * extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#3 "Severe"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved "Not recovering/not resolved"
 * date = "2020-05-13"
 * recorder = Reference(practitioner-oncology-nurse-jane)
-* extension[participant][0].extension[function].valueCodeableConcept = ParticipationType#AUTHEN 
+* extension[participant][0].extension[function].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUTHEN 
 * extension[participant][0].extension[actor].valueReference = Reference(practitioner-owen-oncologist)
 * study = Reference(clinical-trial-example-compass)
-* extension[research-subject-ref].valueReference = Reference(clinical-trial-example-subject)
+//* extension[research-subject-ref].valueReference = Reference(clinical-trial-example-subject)
 * extension[suspect-entity][0].extension[instance].valueReference = Reference(medication-administration-kadcyla)
 * extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#possibly "Possibly Related"
 * extension[suspect-entity][+].extension[instance].valueReference = Reference(medication-administration-tucatinib)
@@ -220,17 +221,17 @@ InstanceOf: AdverseEvent-clinical-research
 Description: "ALT back to grade 1 and resolved"
 * subject = Reference(patient-example-kaitlyn-b)
 * modifierExtension[status].valueCode = #completed
-* event = http://terminology.hl7.org/CodeSystem/MDRAE#10001551  "Alanine aminotransferase increased" 
+* event = http://terminology.hl7.org/CodeSystem/mdr#10001551  "Alanine aminotransferase increased" 
 * event.text = "Alanine aminotransferase (ALT) decreased to 60"
 * extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#1 "Mild"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#recoveredorresolved "Recovered/Resolved"
 * date = "2020-05-20"
 * recorder = Reference(practitioner-oncology-nurse-jane)
-* extension[participant][0].extension[function].valueCodeableConcept = ParticipationType#AUTHEN 
+* extension[participant][0].extension[function].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUTHEN 
 * extension[participant][0].extension[actor].valueReference = Reference(practitioner-owen-oncologist)
 * study = Reference(clinical-trial-example-compass)
-* extension[research-subject-ref].valueReference = Reference(clinical-trial-example-subject)
+//* extension[research-subject-ref].valueReference = Reference(clinical-trial-example-subject)
 * extension[suspect-entity][0].extension[instance].valueReference = Reference(medication-administration-kadcyla)
 * extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#possibly "Possibly Related"
 * extension[suspect-entity][+].extension[instance].valueReference = Reference(medication-administration-tucatinib)
@@ -263,7 +264,7 @@ InstanceOf: AdverseEvent-clinical-research
 Description: "Grade 1 Nausea/vomiting"  // both are AEs, which to use or make them separate?
 * subject = Reference(patient-example-kaitlyn-b)
 * modifierExtension[status].valueCode = #completed
-* event = http://terminology.hl7.org/CodeSystem/MDRAE#10028813  "Nausea" 
+* event = http://terminology.hl7.org/CodeSystem/mdr#10028813  "Nausea" 
 * event.text = "Nausea"
 * extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#1 "Mild"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
@@ -271,10 +272,10 @@ Description: "Grade 1 Nausea/vomiting"  // both are AEs, which to use or make th
 // resolved on 6/10/20 after 3 more visits - goes to grade 3 then back to 1 then WNL
 * date = "2020-05-25"
 * recorder = Reference(practitioner-oncology-nurse-jane)
-* extension[participant][0].extension[function].valueCodeableConcept = ParticipationType#AUTHEN 
+* extension[participant][0].extension[function].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUTHEN 
 * extension[participant][0].extension[actor].valueReference = Reference(practitioner-owen-oncologist)
 * study = Reference(clinical-trial-example-compass)
-* extension[research-subject-ref].valueReference = Reference(clinical-trial-example-subject)
+//* extension[research-subject-ref].valueReference = Reference(clinical-trial-example-subject)
 * extension[suspect-entity][0].extension[instance].valueReference = Reference(medication-administration-kadcyla)
 * extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#possibly "Possibly Related"
 * extension[suspect-entity][+].extension[instance].valueReference = Reference(medication-administration-tucatinib)

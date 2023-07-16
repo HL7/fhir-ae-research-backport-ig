@@ -86,7 +86,7 @@ InstanceOf: AdverseEvent-clinical-research
 Description: "Adverse event from procedure, not study drug"
 * subject = Reference(patient-slp)
 * modifierExtension[status].valueCode = #completed
-* event = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C57954 "Urticaria" 
+* event = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C57954 "Grade 2 - Urticaria" 
 * event.text = "Moderate hives"
 * extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#2 "Moderate"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
@@ -94,7 +94,7 @@ Description: "Adverse event from procedure, not study drug"
 * date = "2021-01-15"
 * extension[resolve-date].valueDateTime = "2021-01-15"
 * study = Reference(research-study-acme)
-* extension[research-subject-ref].valueReference = Reference(clinical-trial-acme-subject)
+//* extension[research-subject-ref].valueReference = Reference(clinical-trial-acme-subject)
 * extension[suspect-entity][0].extension[instance].valueReference = Reference(study-medication-administration-WBY)
 * extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrelated "Not Related"
 * extension[suspect-entity][+].extension[instance].valueReference = Reference(clinical-trial-acme-procedure)
@@ -103,5 +103,5 @@ Description: "Adverse event from procedure, not study drug"
 * extension[note][0].valueAnnotation.text = "The action taken with the study treatment was the study drug dose not changed"
 * extension[caused-subject-to-discontinue-study].valueBoolean = false	
 * extension[mitigating-action][+].extension[item].valueReference = Reference(medication-administration-forhives)
-* extension[mitigating-action][+].extension[item].valueCodeableConcept.text = "study drug dose not changed"
-* extension[contributing-factor][+].extension[item].valueReference = Reference(medication-administration-contrast-dye)
+//* extension[mitigating-action][+].extension[item].valueCodeableConcept.text = "study drug dose not changed"
+//* extension[contributing-factor][+].extension[item].valueReference = Reference(medication-administration-contrast-dye)

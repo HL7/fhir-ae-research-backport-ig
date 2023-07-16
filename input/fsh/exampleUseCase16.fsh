@@ -53,7 +53,7 @@ Title: "ClinicalResearchAdverseEventUseCase16"
 Description: "Non-Serious Adverse Event Research Study Medication Example"
 * modifierExtension[status].valueCode = #completed //http://hl7.org/fhir/event-status#completed
 * subject = Reference(patient-moumic)
-* event = http://terminology.hl7.org/CodeSystem/MDRAE#10019211 "Headache"
+* event = http://terminology.hl7.org/CodeSystem/mdr#10019211 "Headache"
 * outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved	"Not recovering/not resolved"
 * extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#1 "Mild"
 
@@ -64,7 +64,7 @@ Description: "Non-Serious Adverse Event Research Study Medication Example"
 
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * extension[mitigating-action][+].extension[item].valueReference = Reference(medication-administration-tylenol)
-* extension[mitigating-action][+].extension[item].valueCodeableConcept.text = "study drug dose not changed"
+//* extension[mitigating-action][+].extension[item].valueCodeableConcept.text = "study drug dose not changed"
 
 * extension[caused-subject-to-discontinue-study].valueBoolean = false	
 * extension[expected-in-research-study].valueBoolean = true

@@ -70,7 +70,7 @@ Description: "Breast Cancer clinical trial example"
 * identifier.assigner.display = "Allesgut Pharmaceuticals"
 * title = "Breast Cancer Clinical Trial bresentrik study" 
 * status = http://hl7.org/fhir/research-study-status#active
-* primaryPurposeType = http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type#treatment
+* primaryPurposeType = http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type#treatment "Treatment"
 * phase = http://terminology.hl7.org/CodeSystem/research-study-phase#phase-2-phase-3
 * category = http://examplesystem#interventional "interventional"
 * condition = http://snomed.info/sct#254837009 "Breast Cancer"
@@ -401,8 +401,22 @@ Description: "Use case 6B - Patient report of Adverse Event, example of data tha
 //"Required help to prevent permanent harm"
 //A2 Did any of the following happen?
 * extension[seriousness-criteria][0].extension[criterionPresent].valueBoolean = true
-* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
+* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = $fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
 //#requiresPreventImpairment "required intervention to prevent permanent damage"
+
+* extension[seriousness-criteria][0].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#35 "Results In Persistent Or Significant Disability"
+* extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#33 "Requires Inpatient Hospitalization"
+* extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#34 "Results In Death"
+* extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#21 "Is Life Threatening"
+* extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#12 "Congenital Anomaly or Birth Defect"
+* extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#26 "Other Medically Important Condition"
+* extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
+
 
 //A3
 //After receiving the study drug (bresentrik) during a study visit, 

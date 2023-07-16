@@ -19,66 +19,6 @@ Description: "Use case 7. Clinical Trial subject number 5. Acute Hepatic Failure
   * family = "Clinical Trail"
 * identifier
 
-//Instance:  EveAnyperson
-//InstanceOf: http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
-//Title:   "Eve Anyperson"
-//Usage:  #example
-//* name.given = "Eve"
-//* name.family = "Anyperson"
-//* birthDate = 1960-04-25
-//* extension[us-core-race].extension[ombCategory].valueCoding = RaceAndEthnicityCDC#2106-3 "White"
-//* extension[us-core-ethnicity].extension[ombCategory].valueCoding = RaceAndEthnicityCDC#2186-5 "Non Hispanic or Latino"
-
-
-Instance: ClinicalResearchAdverseEventexample1
-InstanceOf: AdverseEvent-clinical-research
-Usage: #example
-Title: "ClinicalResearchAdverseEventexample1"
-Description: "example"
-//* actuality = http://hl7.org/fhir/adverse-event-actuality#actual 
-* modifierExtension[status].valueCode = #completed //http://hl7.org/fhir/event-status#completed
-* subject = Reference(ClinicalTrialSubject5)
-* outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved "Not recovering/not resolved"
-//http://snomed.info/sct#405532008 "Adverse incident resulting in potentially permanent disabling damage"
-//* seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
-//* resultingCondition[0] = Reference(AEHepaticFailureUseCase7) "condition caused"
-* extension[ResultingEffect][0].valueReference = Reference(AEHepaticFailureUseCase7) 
-//* e"condition caused"
-//* resultingCondition[1] = Reference(AEHepaticFailureUseCase7complication)
-* extension[ResultingEffect][1].valueReference = Reference(AEHepaticFailureUseCase7complication)
-* category = http://terminology.hl7.org/CodeSystem/adverse-event-category#medication-mishap "Medication Mishap"
-* study.display = "NCT1010101"
-* extension[suspect-entity][0].extension[instance].valueReference.display = "Aspirin"
-//* extension[suspect-entity][=].instance.display = "see instance-codeable-concept"
-//* suspectEntity[=].causality.entityRelatedness = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
-* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
-* extension[suspect-entity][+].extension[instance].valueReference.display = "Study Medication Use Case 7"
-//* extension[suspect-entity][=].instance.display = "see instance-codeable-concept"
-//* suspectEntity[=].causality.entityRelatedness = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
-* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
-
-* extension[suspect-entity][+].extension[instance].valueReference = Reference(medadmin0301)
-//* suspectEntity[=].causality.entityRelatedness = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
-* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
-
-//* suspectEntity[=].study-information
-//* suspectEntity[=].extension.url
-//.extension[studyAssociatedWithAE].display = "NCT1010101"
-//.extension[StudyAssociatedWithAE].display = "NCT1010101"
-* seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
-
-* recorder.display = "Clinical Research Associate"
-* detected = "1905-08-23"
-* recordedDate = "1905-08-24"
-* event = http://snomed.info/sct#370901008 "Serious reportable event associated with product or device"
-* extension[seriousness-criteria].extension[criterionPresent].valueBoolean = true
-//* extension[seriousness].extension[seriousnessCriteria].valueCodeableConcept = seriousness-criteria-cs#requiresPreventImpairment "required intervention to prevent permanent damage"
-* extension[seriousness-criteria].extension[criterionCode].valueCodeableConcept = fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
-//#requiresPreventImpairment "required intervention to prevent permanent damage"
-* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#3 "Severe"
-
-
-
 //https://confluence.hl7.org/pages/viewpage.action?pageId=49646529#AdverseEventUseCases-UseCase7-Clinicaltrial:significantadverseevent
 Instance: ClinicalResearchAdverseEventUseCase7
 InstanceOf: AdverseEvent-clinical-research
@@ -88,50 +28,72 @@ Description: "example"
 //* actuality = http://hl7.org/fhir/adverse-event-actuality#actual 
 * modifierExtension[status].valueCode = http://hl7.org/fhir/event-status#completed
 * subject = Reference(ClinicalTrialSubject5)
-* outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#roveringorresolving "Recovering/Resolving"
+* outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#recoveringorresolving "Recovering/Resolving"
 //* seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
 //* resultingCondition[0] = Reference(AEHepaticFailureUseCase7)
 * extension[ResultingEffect][0].valueReference = Reference(AEHepaticFailureUseCase7)
 //* resultingCondition[1] = Reference(AEHepaticFailureUseCase7complication)
 * extension[ResultingEffect][1].valueReference = Reference(AEHepaticFailureUseCase7complication)
-* category = http://terminology.hl7.org/CodeSystem/adverse-event-category#medication-mishap "Medication Mishap"
+//* category = http://terminology.hl7.org/CodeSystem/adverse-event-category#medication-mishap "Medication Mishap"
 * study.display = "NCT1010101"
-* extension[suspect-entity][0].extension[instance].valueReference.display = "Aspirin"
+//https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4435341/
+//* extension[suspect-entity][0].extension[instance].valueReference.display = "Aspirin"
 //* extension[suspect-entity][0].instance.display = "see instance-codeable-concept"
 //* suspectEntity[=].causality.entityRelatedness = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
-* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
-* extension[suspect-entity][+].extension[instance].valueReference.display = "Study Medication Use Case 7"
-//* extension[suspect-entity][=].instance.display = "see instance-codeable-concept"
-//* suspectEntity[=].causality.entityRelatedness = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
+//* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
+
+* extension[suspect-entity][+].extension[instance].valueReference = Reference(medadmin0301) "Study Medication Use Case 7"
 * extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
 
-* extension[suspect-entity][+].extension[instance].valueReference = Reference(medadmin0301)
-//* suspectEntity[=].causality.entityRelatedness = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
-* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
-
-//* suspectEntity[=].study-information
-//* suspectEntity[=].extension.url
-//.extension[studyAssociatedWithAE].display = "NCT1010101"
-//.extension[StudyAssociatedWithAE].display = "NCT1010101"
-//* suspectEntity[=].extension[StudyInfoassociatedWithAE].ResearchSubjectAssociatedWithAE.display = "NCT1010101 subject 5"
-//* suspectEntity[=].extension.ExpectedInResearchStudy = true
-//* suspectEntity[=].extension.AEcausedStudyDiscontinuation = true
 * recorder.display = "Clinical Research Associate"
 * detected = "1905-08-23"
 * recordedDate = "1905-08-24"
 * event = http://snomed.info/sct#370901008 "Serious reportable event associated with product or device"
 
-* extension[seriousness-criteria][0].extension[criterionPresent].valueBoolean = true
-* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
-//#requiresPreventImpairment "required intervention to prevent permanent damage"
-* extension[seriousness-criteria][+].extension[criterionPresent].valueBoolean = true
-* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#33 "resultsinHospitalization"
-* extension[seriousness-criteria][+].extension[criterionPresent].valueBoolean = false
-* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#34 "resultsInDeath"
+* extension[seriousness-criteria][0].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#35 "Results In Persistent Or Significant Disability"
+* extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#33 "Requires Inpatient Hospitalization"
+* extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = true
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#34 "Results In Death"
+* extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#21 "Is Life Threatening"
+* extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = true
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#12 "Congenital Anomaly or Birth Defect"
+* extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#26 "Other Medically Important Condition"
+* extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = $fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
+* extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = true
+
 
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
 * extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#4 "Life Threatening or Disabling"
 
+* extension[mitigating-action][+].extension[item].valueReference = Reference(medicationrequest0301-discontinue)
+* extension[mitigating-action][=].extension[item].valueReference.display = "Medication Request where study drug prescription was discontinued"
+
+
+//Here we indicate medication discontinued with stopped status
+Instance: medicationrequest0301-discontinue
+InstanceOf: MedicationRequest
+Usage: #example
+Title: "Medication Request for discontinued clinical trial medication 0301"
+Description: "Study medication info Medication Request for clinical trial medication 0301 - discontinued"
+* contained[0] = med0301
+* status = #stopped "Stopped"
+* intent = #order
+* identifier.use = #official
+* identifier.system = "http://www.bmc.nl/portal/medstatements"
+* identifier.value = "med0301-studyDrug" 
+* medicationReference = Reference(med0301) 
+* medicationReference.display = "study medication"
+* subject = Reference(ClinicalTrialSubject5)
+* authoredOn = "1905-08-23"
+* requester.display = "Could be reference to inline contained profile such as Reference(practitioner-1) Ronald Bone, MD"
+* reasonCode = http://snomed.info/sct#9014002 "Psoriasis"
+* dosageInstruction.text = "500mg IV q6h x 3 days"
+* dosageInstruction.route = http://snomed.info/sct#47625008 "Intravenous route (qualifier value)"
+* dosageInstruction.method.text = "IV Push"
 
 Instance: AEHepaticFailureUseCase7
 InstanceOf: Condition
