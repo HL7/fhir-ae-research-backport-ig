@@ -642,7 +642,7 @@ Within this guide are several examples. Every effort has been made to capture th
 			<page>
 				<nameUrl value="downloads.html"/>
 				<title value="Useful Downloads"/>
-				<generation value="html"/>
+				<generation value="markdown"/>
 			</page>
 			<page>
 				<nameUrl value="changes.html"/>
@@ -653,7 +653,7 @@ Within this guide are several examples. Every effort has been made to capture th
 		<!-- copyright year is a mandatory parameter -->
 		<parameter>
 			<code value="copyrightyear"/>
-			<value value="2019+"/>
+			<value value="2020+"/>
 		</parameter>
 		<!-- releaselabel should be the ballot status for HL7-published IGs. -->
 		<parameter>

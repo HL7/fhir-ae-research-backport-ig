@@ -96,12 +96,14 @@ Description: "Adverse event from procedure, not study drug"
 * study = Reference(research-study-acme)
 //* extension[research-subject-ref].valueReference = Reference(clinical-trial-acme-subject)
 * extension[suspect-entity][0].extension[instance].valueReference = Reference(study-medication-administration-WBY)
-* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrelated "Not Related"
-* extension[suspect-entity][+].extension[instance].valueReference = Reference(clinical-trial-acme-procedure)
-* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#possibly "Possibly Related"
+* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#unlikely "Unlikely Related"
+
+* extension[suspect-entity][+].extension[instance].valueReference = Reference(medication-administration-contrast-dye)
+* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#related "Related"
 * extension[expected-in-research-study].valueBoolean = false
 * extension[note][0].valueAnnotation.text = "The action taken with the study treatment was the study drug dose not changed"
 * extension[caused-subject-to-discontinue-study].valueBoolean = false	
 * extension[mitigating-action][+].extension[item].valueReference = Reference(medication-administration-forhives)
 //* extension[mitigating-action][+].extension[item].valueCodeableConcept.text = "study drug dose not changed"
-//* extension[contributing-factor][+].extension[item].valueReference = Reference(medication-administration-contrast-dye)
+* extension[contributing-factor][+].extension[item].valueReference = Reference(clinical-trial-acme-procedure)
+
