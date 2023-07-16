@@ -65,7 +65,9 @@ INFORMATION: AdverseEvent/ClinicalResearchAdverseEventUseCase16: AdverseEvent.ou
 INFORMATION: AdverseEvent/ClinicalResearchAdverseEventUseCase17: AdverseEvent.extension[2].extension[1].extension[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'urn:oid:2.16.840.1.113883.3.989.2.1.1.19' is unknown so the code cannot be validated
 INFORMATION: AdverseEvent/ClinicalResearchAdverseEventUseCase17: AdverseEvent.extension[3].extension[1].extension[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'urn:oid:2.16.840.1.113883.3.989.2.1.1.19' is unknown so the code cannot be validated
 INFORMATION: AdverseEvent/ClinicalResearchAdverseEventUseCase17: AdverseEvent.outcome.coding[0]: Code System URI 'urn:oid:2.16.840.1.113883.3.989.2.1.1.19' is unknown so the code cannot be validated
-
+INFORMATION: ValueSet/adverse-event-causality-related-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
+INFORMATION: ValueSet/adverse-event-outcome-clinical-research-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
+INFORMATION: ValueSet/adverse-event-seriousness-criteria-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
 
 # Code System URI 'http://terminology.hl7.org/CodeSystem/mdr' is unknown so the code cannot be validated
 
@@ -81,7 +83,3 @@ INFORMATION: AdverseEvent/ClinicalResearchAdverseEventUseCase16: AdverseEvent.ev
 INFORMATION: AdverseEvent/ClinicalResearchAdverseEventUseCase17: AdverseEvent.event.coding[0]: Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated
 
 
-# I do not know where this error is coming from
-#INFORMATION: ValueSet/adverse-event-causality-related-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
-#INFORMATION: ValueSet/adverse-event-outcome-clinical-research-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
-#INFORMATION: ValueSet/adverse-event-seriousness-criteria-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
