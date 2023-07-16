@@ -82,6 +82,6 @@ INFORMATION: AdverseEvent/ClinicalResearchAdverseEventUseCase17: AdverseEvent.ev
 
 
 # I do not know where this error is coming from
-INFORMATION: ValueSet/adverse-event-causality-related-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
-INFORMATION: ValueSet/adverse-event-outcome-clinical-research-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
-INFORMATION: ValueSet/adverse-event-seriousness-criteria-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
+#INFORMATION: ValueSet/adverse-event-causality-related-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
+#INFORMATION: ValueSet/adverse-event-outcome-clinical-research-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
+#INFORMATION: ValueSet/adverse-event-seriousness-criteria-vs: ValueSet.compose[0].include[0].concept[0]: UNKNOWN_CODESYSTEM; The provided code http://hl7.org/fhir/ValueSet/@all is not in the value set '' (from Tx-Server)
