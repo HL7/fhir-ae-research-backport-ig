@@ -53,13 +53,13 @@ Title: "ClinicalResearchAdverseEventUseCase16"
 Description: "Non-Serious Adverse Event Research Study Medication Example"
 * modifierExtension[status].valueCode = #completed //http://hl7.org/fhir/event-status#completed
 * subject = Reference(patient-moumic)
-* event = http://terminology.hl7.org/CodeSystem/mdr#10019211 "Headache"
-* outcome = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved	"Not recovering/not resolved"
+* event = https://www.meddra.org#10019211 "Headache"
+* outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49494	"Not recovering/not resolved"
 * extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#1 "Mild"
 
 * study = Reference(research-study-DISNEY)
 * extension[suspect-entity][0].extension[instance].valueReference = Reference(study-medication-administration-MMD)
-* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = urn:oid:2.16.840.1.113883.3.989.2.1.1.19#unlikely "Unlikely Related"
+* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53257 "Unlikely Related"
 * date = "2022-02-01"
 
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"

@@ -234,19 +234,25 @@ Description: "This value set includes codes that describe the type of involvemen
 * http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUT	"author (originator)"
 
 ValueSet: AdverseEventSerCrit
-Id: adverse-event-seriousness-criteria-vs
+Id: adverse-event-seriousness-criteria-vs 
 Title: "Adverse Event Seriousness Criteria"
-Description: "Action criteria usually associated with serious events that pose a threat to a patient's life or functioning. Adverse Events criteria to expand on the seriousness of the adverse event. Typically used in reporting for Clinical Research, post-market surveillance (e.g. Form FDA 3500A MedWatch). The adverse event seriousness criteria value set is based on the ICH E2D Post-Approval Safety Data Management: Definitions and Standards for Expedited Reporting guidance (https://database.ich.org/sites/default/files/E2D_Guideline.pdf). For information on OID see https://admin.ich.org/sites/default/files/inline-files/OID_Information_Paper_1.pdf from the INTERNATIONAL CONFERENCE ON HARMONISATION OF TECHNICAL REQUIREMENTS FOR REGISTRATION OF PHARMACEUTICALS FOR HUMAN USE (ICH) document ICH E2B(R3), the Electronic Transmission of Individual Case Safety Reports (ICSRs) Implementation Guide Data Elements and Message Specification, and ICH M8, the Electronic Common Technical Document"
+Description: "Action criteria usually associated with serious events that pose a threat to a patient's life or functioning. Adverse Events criteria to expand on the seriousness of the adverse event. Typically used in reporting for Clinical Research, post-market surveillance (e.g. Form FDA 3500A MedWatch). The adverse event seriousness criteria value set is based on the ICH E2D Post-Approval Safety Data Management: Definitions and Standards for Expedited Reporting guidance (https://database.ich.org/sites/default/files/E2D_Guideline.pdf). For information on ICH see https://admin.ich.org/sites/default/files/inline-files/OID_Information_Paper_1.pdf from the INTERNATIONAL CONFERENCE ON HARMONISATION OF TECHNICAL REQUIREMENTS FOR REGISTRATION OF PHARMACEUTICALS FOR HUMAN USE (ICH) document ICH E2B(R3), the Electronic Transmission of Individual Case Safety Reports (ICSRs) Implementation Guide Data Elements and Message Specification, and ICH M8, the Electronic Common Technical Document"
 * ^status = #draft
 * ^experimental = true
 //* codes from system seriousness-criteria-cs
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#34	"Results In Death" //"Was the serious adverse event life-threatening?"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#21	"Is Life Threatening" 
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#33	"Requires Inpatient Hospitalization"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#35	"Results In Persistent Or Significant Disability"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#12	"Congenital Anomaly or Birth Defect"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#26	"Other Medically Important Condition" 
-* fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#34	"Results In Death" //"Was the serious adverse event life-threatening?"
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#21	"Is Life Threatening" 
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#33	"Requires Inpatient Hospitalization"
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#35	"Results In Persistent Or Significant Disability"
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#12	"Congenital Anomaly or Birth Defect"
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#26	"Other Medically Important Condition" 
+
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48275	"Results In Death" //"Was the serious adverse event life-threatening?"
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C84266	"Is Life Threatening" 
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C83052	"Requires Inpatient Hospitalization"
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C11338	"Results In Persistent Or Significant Disability"
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C83117	"Congenital Anomaly or Birth Defect"
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C82521	"Other Medically Important Condition" 
 
 CodeSystem: FDAaddSeriousnessCriteriaCS
 Id: fda-add-seriousness-criteria-cs
@@ -260,14 +266,23 @@ Description: "Additional codes found on https://www.fda.gov/safety/reporting-ser
 ValueSet: OutcomeAEClinRes
 Id: adverse-event-outcome-clinical-research-vs
 Title: "Adverse Event Clinical Research Outcomes"
-Description: "This value set includes codes that describe the type of outcome from the adverse event as typically used in reporting for Clinical Research, post-market surveillance (e.g. Medwatch forms). This list comes from ICH E2B R3 (https://database.ich.org/sites/default/files/E2D_Guideline.pdf), specifically CDISC CL.C66768.OUT. For information on OID see https://admin.ich.org/sites/default/files/inline-files/OID_Information_Paper_1.pdf from the INTERNATIONAL CONFERENCE ON HARMONISATION OF TECHNICAL REQUIREMENTS FOR REGISTRATION OF PHARMACEUTICALS FOR HUMAN USE (ICH) document ICH E2B(R3), the Electronic Transmission of Individual Case Safety Reports (ICSRs) Implementation Guide Data Elements and Message Specification, and ICH M8, the Electronic Common Technical Document."
+Description: "This value set includes codes that describe the type of outcome from the adverse event as typically used in reporting for Clinical Research, post-market surveillance (e.g. Medwatch forms). NCI codes used here This list originates from the ICH E2B R3 (https://database.ich.org/sites/default/files/E2D_Guideline.pdf), specifically CDISC CL.C66768.OUT. For information on ICH see https://admin.ich.org/sites/default/files/inline-files/OID_Information_Paper_1.pdf from the INTERNATIONAL CONFERENCE ON HARMONISATION OF TECHNICAL REQUIREMENTS FOR REGISTRATION OF PHARMACEUTICALS FOR HUMAN USE (ICH) document ICH E2B(R3), the Electronic Transmission of Individual Case Safety Reports (ICSRs) Implementation Guide Data Elements and Message Specification, and ICH M8, the Electronic Common Technical Document."
 * ^status = #draft
 * ^experimental = true
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#fatal "Fatal" //"Was the serious adverse event life-threatening?"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved "Not recovering/not resolved" 
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#resolvedwithsequelae "Recovered/Resolved with sequelae"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#recoveredorresolved "Recovered/Resolved"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#recoveringorresolving "Recovering/Resolving"
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#fatal "Fatal" //"Was the serious adverse event life-threatening?"
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrecoveredorresolved "Not recovering/not resolved" 
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#resolvedwithsequelae "Recovered/Resolved with sequelae"
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#recoveredorresolved "Recovered/Resolved"
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#recoveringorresolving "Recovering/Resolving"
+
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48275 "Fatal" //"Was the serious adverse event life-threatening?"
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49494 "Not recovering/not resolved" 
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49495 "Recovered/Resolved with sequelae"
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49498 "Recovered/Resolved"
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49496 "Recovering/Resolving"
+
+
+
 
 //CodeSystem: SeriousnessCriteriaCS
 //Id: seriousness-criteria-cs
@@ -286,7 +301,7 @@ Title: "AdverseEvent Supporting Information"
 Description: "This value set includes codes that describe the supporting information relevant to the event."
 * ^status = #draft
 * ^experimental = true
-* ^copyright = "This resource includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyright of the International Health Terminology Standards Development Organisation (IHTSDO). Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomed-ct or info@snomed.org"
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * include codes from system SNOMED_CT where concept is-a #609328004
 * include codes from system SNOMED_CT where concept is-a #416471007
 * include codes from system SNOMED_CT where concept is-a #425457005
@@ -300,13 +315,18 @@ Description: "This value set includes codes that describe the supporting informa
 ValueSet: CausalityRelatedness
 Id: adverse-event-causality-related-vs
 Title: "Causality Relatedness values"
-Description: "Valueset for stating if a suspected entity is Not Related, Unlikely Related, Possibly Related, or Related to the cause of the adverse event. This values are derived from the ICH. For information on OID see https://admin.ich.org/sites/default/files/inline-files/OID_Information_Paper_1.pdf from the INTERNATIONAL CONFERENCE ON HARMONISATION OF TECHNICAL REQUIREMENTS FOR REGISTRATION OF PHARMACEUTICALS FOR HUMAN USE (ICH) document ICH E2B(R3), the Electronic Transmission of Individual Case Safety Reports (ICSRs) Implementation Guide Data Elements and Message Specification, and ICH M8, the Electronic Common Technical Document"
+Description: "Value set for stating if a suspected entity is Not Related, Unlikely Related, Possibly Related, or Related to the cause of the adverse event. Using NCI codes. The values originate with ICH. For information on ICH see https://admin.ich.org/sites/default/files/inline-files/OID_Information_Paper_1.pdf from the INTERNATIONAL CONFERENCE ON HARMONISATION OF TECHNICAL REQUIREMENTS FOR REGISTRATION OF PHARMACEUTICALS FOR HUMAN USE (ICH) document ICH E2B(R3), the Electronic Transmission of Individual Case Safety Reports (ICSRs) Implementation Guide Data Elements and Message Specification, and ICH M8, the Electronic Common Technical Document"
 * ^status = #draft
 * ^experimental = true
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrelated "Not Related"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#unlikely "Unlikely Related"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#possibly "Possibly Related"
-* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#related "Related"
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#notrelated "Not Related"
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#unlikely "Unlikely Related"
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#possibly "Possibly Related"
+//* urn:oid:2.16.840.1.113883.3.989.2.1.1.19#related "Related"
+
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53256 "Not Related"
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53257 "Unlikely Related"
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53258 "Possibly Related"
+* http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53260 "Related"
 
 ValueSet: AdverseEventStatus
 Id: adverse-event-status-vs
@@ -325,6 +345,7 @@ Title: "AdverseEvent Type"
 Description: "This value set includes codes that describe the adverse event or incident that occurred or was averted."
 * ^status = #draft
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * include codes from system SNOMED_CT where concept is-a #370894009
 * SNOMED_CT#1912002
 
@@ -334,7 +355,7 @@ Title: "AdverseEvent Contributing Factor"
 Description: "This value set includes codes that describe the contributing factors suspected to have increased the probability or severity of the adverse event."
 * ^status = #draft
 * ^experimental = true
-* ^copyright = "This resource includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyright of the International Health Terminology Standards Development Organisation (IHTSDO). Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomed-ct or info@snomed.org"
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * include codes from system SNOMED_CT where concept is-a #609328004
 * include codes from system SNOMED_CT where concept is-a #416471007
 * include codes from system SNOMED_CT where concept is-a #425457005
@@ -364,6 +385,7 @@ Title: "AdverseEvent Mitigating Action"
 Description: "This value set includes codes that describe the ameliorating actions taken after the adverse event occurred in order to reduce the extent of harm."
 * ^status = #draft
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * include codes from system SNOMED_CT where concept is-a #71388002
 * include codes from system SNOMED_CT where concept is-a #410942007
 * include codes from system SNOMED_CT where concept is-a #373873005
