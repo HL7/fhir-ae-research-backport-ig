@@ -11,7 +11,6 @@ Code System URI 'https://www.meddra.org' is unknown so the code cannot be valida
 Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated
 Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
 Unknown System 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' specified, so Concepts and Filters can't be checked (Details: Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated)
-Unknown System 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' specified, so Concepts and Filters can't be checked (Details: The CodeSystem http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl is unknown (from Tx-Server))
 Unable to check whether the code is in the value set http://hl7.org/fhir/uv/ae-research-backport-ig/ValueSet/adverse-event-outcome-clinical-research-vs|1.0.0-ballot
 
 
