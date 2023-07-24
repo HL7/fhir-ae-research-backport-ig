@@ -10,7 +10,7 @@
 	"descmd": "FHIR STU Release 1 AdverseEvent Clinical Research Profile R4 Backport",
 	"first" : true,
 	"title": "Adverse Event Clinical Research R4 Backport",
-	"ci-build" : "https://build.fhir.org/ig/HL7/fhir-ae-research-backport-ig/", 
+	"ci-build" : "https://build.fhir.org/ig/HL7/fhir-ae-research-backport-ig", 
 	"category": "Research",
 	"introduction": "The intent of this guide is to provide a profile on the FHIR AdverseEvent Resource suitable for Clinical Research, this is a convenience backport into FHIR R4."
 }
