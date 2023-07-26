@@ -664,7 +664,7 @@ Within this guide are several examples. Every effort has been made to capture th
 		<parameter>
 			<!--code value="releaselabel"/-->
 			<code value="releaselabel"/>
-			<value value="ci-build"/>
+			<value value="ballot"/>
 		</parameter>
 		<parameter>
 			<!--code value="find-other-resources"/-->
