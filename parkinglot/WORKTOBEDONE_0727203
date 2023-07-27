@@ -1,0 +1,35 @@
+
+From: Bret Heale <bheale@elimu.io>
+Sent: Tuesday, 25 July, 2023 11:41 AM
+To: Bret Heale <bheale@humanizedhealthconsulting.com>
+Cc: Rebecca Baker <rbaker@cdisc.org>; Michelle Casagni <mcasagni@mitre.org>; Hamidi, Mike <kamiar.hamidi@pfizer.com>; Christi Denney <christi_d@lilly.com>; Scott Gordon (Gideon.Gordon@fda.hhs.gov) <gideon.gordon@fda.hhs.gov>
+Subject: Re: [EXT] Re: AE IG "context" paragraph - codes for Action Taken with Study Treatment AND Outcome of Event
+ 
+What does everyone think of the following:
+
+on index.html page:
+
+How to Use this Guide
+This implementation guide is focused on the use of the AdverseEvent Resource in Clinical Research. When reviewing profiles begin with the snapshot view to understand the entire set of data elements and rules for implementation. The differential only shows changes from the parent. The snapshot shows all the constraints and rules, including those inherited from the parent. Those new to FHIR should review the Understanding FHIR section below.
+
+Please refer to the Vulcan AdverseEvent Clinical Research sub-group page<Link-to-confluence> for important additional FHIR guidance in Clinical Research, such as CDISC to FHIR mappings, Real World Data use, and Schedule of Activities.
+
+What do you think?
+
+This is a minimal approach but means that you can change the guidance anytime you want. If the links and guidance are placed in the IG, then they are locked at publication time. Also, the IG itself is one of the tools. There should be a Vulcan Clinical Research IMplementation Guide that uses all of the IGs and puts together the whole flow - likely this will be relam dependent, however, as regulations differ across countries. at least, that is what I'm thinking. 
+
+Much appreciated!
+Bret
+
+
+
+from Rebecca Baker
+It may be helpful to implementers in clinical research to reference the Joint FHIR to CDISC IG and the LAB IG in the “How to Use this Guide” section.  This provides information for clinical research data in FHIR going to SDTM which is the submission standard for clinical research data. There are links to the CT page on the CDISC site (first reference) for the IG for LOINC to LB data mapping and UNIT to UCUM data mapping.
+Links below:
+CDISC. FHIR to CDISC Joint Mapping Implementation Guide v1.0. Published online September 1, 2021. https://www.cdisc.org/standards/real-world-data/fhir-cdisc-joint-mapping-implementation-guide-v1-0
+HL7. FHIR to CDISC Joint Mapping Implementation Guide v1.0.0 - STU 1. Published online September 1, 2021. Accessed December 15, 2021. http://hl7.org/fhir/uv/cdisc-mapping/STU1/
+HL7. Clinical Research Sponsor Laboratory Semantics in FHIR IG v1.0.0-STU 1. Published online September 2019. Accessed 2022-02-12. http://hl7.org/fhir/uv/cdisc-lab/index.html
+
+Alternatively, add a reference section with the links to the documents on the Adverse Event Confluence page (if appropriate). We found several good resources that might be helpful to end users.
+
+ 
