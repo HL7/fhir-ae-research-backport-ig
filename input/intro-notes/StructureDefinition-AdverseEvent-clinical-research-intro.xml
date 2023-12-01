@@ -1,7 +1,7 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
 	<div>
 		<a name="scope"></a>
-		<h3>Scope and Usage</h3>
+		<h3>Scope</h3>
 		<p>
 			The Clinical Research adverse event profile of AdverseEvent, is for the clinical research setting.  Adverse events are tracked and evaluated as part of the clinical research process in a research study, as the occurrence of an adverse event may surface a potential confounder or a potential side-effect of the study treatment. In the research setting an adverse event is the result of an intervention that caused unintentional harm to a specific subject or group of subjects, potential adverse events are not reported (this is surfaced in the profile as a constraint of ‘actual’ for the value of ‘actuality’). Examples of adverse events include the administration of an incorrect drug or an incorrect dose of a drug causing an adverse reaction, the use of an implanted device that causes an infection, or a biologic used during a research study that causes unanticipated renal failure. These events are characterized by the need to capture cause and effect (although they might not be known at the time of the event), severity, and outcome. 
     </p>
@@ -15,6 +15,28 @@
 		</div-->
 		<p></p>
 	</div>
+	
+		<div>
+		<a name="Use of data elements"></a>
+		<h3>Use of data elements</h3>
+		<p>
+			The concepts modeled in each of these data elements include important distinctions and serve separate purposes in the context of a clinical trial. Specifically:
+       </p><p>
+Severity and grade characterize the degree or intensity of an adverse event, but not necessarily the degree of impact on the subject or the subject’s health. For example, headache can be severe but not life-threatening, whereas even a less severe hemorrhage could be far more dangerous. 
+       </p><p>
+Seriousness criteria describe the medical significance of the event, and the risk to the subject’s life or their ability to function. Seriousness criteria also have very specific implications with regard to reporting to regulatory bodies for clinical trials. Clinical trial protocols commonly specify precise reporting requirements based on seriousness criteria.
+       </p><p>
+The event element is used to specify what occurred to the subject. That is, the event itself that can be further characterized in its severity and its seriousness. While it is true that the event type includes values for death or mortality, in cases where a subject experiences another type of event, the model must provide a distinct structure to capture that information.
+       </p><p>
+The adverse event outcome concept is required to capture whether events were or are ongoing. This information is a necessary component of evaluating clinical trials and may be needed for regulatory reporting. While in some particular cases certain adverse events may result in an outcome of death, creating coincidental overlap with information that may be captured elsewhere in the model, in many cases this structure is required to reflect information with a separate, distinct meaning. 
+       </p><p>
+The approach in the IG reflects our efforts to ensure that the model supports the core use cases required for data capture and reporting for clinical trials. The individuals and organizations creating and using clinical trial data are required to understand these use cases and their implications for populating the data structures defined in the IG; and in many cases the consequences for mishandling these data have regulatory implications. 
+		</p><p>
+		
+		Finally, please note that AdverseEvent.extension:seriousness-criteria and AdverseEvent.severity or AdverseEvent.extension:grade SHALL NOT be used to communicate that the patient has died. The value of "Death" used in these elements reflects the possibility of the event occurring.
+		</p>
+		
+	</div>
 	<div>
 		<a name="Note on identifiers"></a>
 		<h3>Note on identifiers</h3>
@@ -22,6 +44,8 @@
 			The FHIR identifier data element provides for a place to put a business identifier. It has a rich set of metadata that can be associated with the identifier such as assigner, namespace, valid period, use and type. Business identifiers such as the Investigational New Drug (IND#) can be represented. However, the use case will determine if the business identifier should be placed on the AdverseEvent Clinical Research Profile, or a more appropriate Resource. In the case of IND#, for example, the IND# should be placed on a Medication Resource data instance as one of the slices of Medication.identifier. 
 		</p>
 	</div>
+
+	
 	
   <!--p>See <a href="sequencing.html">Variant Reporting</a> for details on use.</p-->
 </div>

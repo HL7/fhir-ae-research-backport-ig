@@ -621,6 +621,8 @@ Description: "An example profile of AdverseEvent for Research reporting."
 
 //* expectedInResearchStudy 0..* MS contentReference http://build.fhir.org/adverseevent-definitions.html#AdverseEvent.expectedInResearchStudy //"expectedInResearchStudy" "Considered likely or probable or anticipated in the research study"
 
+* event 1..1
+
 //* occurrence[x] only Period
 //* occurrencePeriod 0..1 MS
 * seriousness 1..1 MS 
