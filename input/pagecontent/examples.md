@@ -4,7 +4,7 @@ The following use cases are exemplified with FHIR instances in this guide. Every
 
 ### Clinical trial: significant adverse event
 
-(Link to [Example AdverseEvent Clinical Research Profile](AdverseEvent-ClinicalResearchAdverseEventUseCase7.html))
+(Link to [Example AdverseEvent Clinical Research Profile](AdverseEvent-ClinicalTrialSignificantAdverseEvent.html))
 
 This scenario involves a phase 2, clinical study evaluating the safety and efficacy of a new oral agent administered daily for treatment of severe psoriasis unresponsive to FDA-approved treatments.  There are two arms of the study – subjects receiving the new oral agent or a placebo.  Only the research pharmacist is aware of the arm assignment.    The fifth subject enrolled in the trial develops severe hepatic failure complicated by encephalopathy one month after starting the study. 
 
@@ -24,19 +24,19 @@ Any other types of seriousness are submitted within 15 calendar days.
 
 ### Serious Adverse Event Research Study
 
-(Link to [Example AdverseEvent Clinical Research Profile](AdverseEvent-ClinicalResearchAdverseEventUseCase15.html))
+(Link to [Example AdverseEvent Clinical Research Profile](AdverseEvent-SeriousAdverseEventResearchStudy.html))
 
 Patient SCHJO on Research Study XYZ, Study ID XYZ-123, Subject number XYZ-123-002. SCHJO was enrolled in the study on 12-Jun-2021 taking Study Medication ABC 10 mg orally daily every morning for atrial fibrillation to prevent thromboembolism.  On 2-Dec-2021, the subject XYZ-123-002 was hospitalized with a Gastrointestinal (GI) bleed. The investigator was notified of the event on the day of admission when the patient presented with vomiting a large amount of coffee-ground like hematemesis.  The investigator stopped the study drug because the event was “Possibly related” to the study drug.  The patient’s hemoglobin dropped to 6.5 g/dL and received 2 units of PRBCs.  The patient had an upper endoscopy that showed a moderate amount of bleeding from the esophagus. The site was cauterized, and the patient had no further bleeding after the procedure. The GI bleed resolved within one week after discontinuation of study drug and the patient was discharged on 9-Dec-2021 in good condition.
 
 ### Non-Serious Adverse Event Research Study Medication
 
-(Link to [Example AdverseEvent Clinical Research Profile](AdverseEvent-ClinicalResearchAdverseEventUseCase16.html))
+(Link to [Example AdverseEvent Clinical Research Profile](AdverseEvent-NonSeriousAdverseEventResearchStudyMed.html))
 
 Patient MOUMIC on Research Study DISNEY, Study ID DUCK-828, Subject number DUCK-828-012. MOUMIC was enrolled in the study on 21-Jan-2022 taking Study Medication 20 mg subcutaneously daily every morning for diabetes.  At visit 3 on 21-Feb-2022, the patient stated that he had started to experience intermittent headaches on 1-Feb-2022 that were mild. They occurred once a week and resolved with Tylenol but were still ongoing. The investigator said the headaches were “UNLIKELY RELATED” to study drug.  The action taken with the study treatment was the “DOSE NOT CHANGED” and the outcome was noted to be “NOT RECOVERED/NOT RESOLVED”.
 
 ### Non-Serious Adverse Event Related to Study Procedure (not study drug)
 
-(Link to [Example AdverseEvent Clinical Research Profile](AdverseEvent-ClinicalResearchAdverseEventUseCase17.html))
+(Link to [Example AdverseEvent Clinical Research Profile](AdverseEvent-AdverseEventFromProcedureNotStudyDrug.html))
 
 Patient SLP on Research Study ACME, Study ID ACME-789, Subject number ACME-789-100. SLP was enrolled in the study on 2-Jan-2021, taking Study Medication WBY 10 mg orally daily every morning for moderate asthma.  
 On 15-Jan-2021, the subject has the protocol-prescribed procedure of a Lung CT Scan, with contrast dye.  As a result of the contrast dye, the subject experiences moderate hives and itching from the contrast dye.  This is reported as an Adverse Event, related to study procedure.  He is treated with a Benadryl injection and recovers the same day.

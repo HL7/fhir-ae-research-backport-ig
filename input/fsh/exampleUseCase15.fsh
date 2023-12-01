@@ -1,5 +1,5 @@
 // Adverse Event Example Use Case 15
-Instance: GIBleedUseCase15
+Instance: GIBleed
 InstanceOf: Condition
 Description: "Gastrointestinal (GI) bleed"
 * subject = Reference(SCHJO)
@@ -10,7 +10,7 @@ Description: "Gastrointestinal (GI) bleed"
 //Research Study XYZ, Study ID XYZ-123,
 Instance: research-study-XYZ
 InstanceOf: ResearchStudy
-Description: "Use Case 15 Research Study XYZ"
+Description: "Research Study XYZ"
 * title = "Research Study XYZ"
 * identifier.value = "XYZ-123"
 * status =  http://hl7.org/fhir/research-study-status#active "Active"
@@ -71,9 +71,9 @@ Description: "Example Procedure Upper Endoscopy"
 * status = http://hl7.org/fhir/event-status#completed "Completed"
 * code = http://snomed.info/sct#1255196002 "Esophagogastroduodenoscopy with control of hemorrhage of esophagus (procedure)"
 
-Instance: ClinicalResearchAdverseEventUseCase15
+Instance: SeriousAdverseEventResearchStudy
 InstanceOf: AdverseEvent-clinical-research
-Title: "ClinicalResearchAdverseEventUseCase15"
+Title: "SeriousAdverseEventResearchStudy"
 Description: "Serious Adverse Event Research Study Medication Example"
 * modifierExtension[status].valueCode = #completed //http://hl7.org/fhir/event-status#completed
 * subject = Reference(SCHJO)
@@ -81,8 +81,8 @@ Description: "Serious Adverse Event Research Study Medication Example"
 * outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49498"Recovered/Resolved"
 * extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#3 "Severe"
 
-//* resultingCondition[0] = Reference(GIBleedUseCase15)
-* extension[ResultingEffect][0].valueReference = Reference(GIBleedUseCase15)
+//* resultingCondition[0] = Reference(GIBleed)
+* extension[ResultingEffect][0].valueReference = Reference(GIBleed)
 * study = Reference(research-study-XYZ)
 * extension[suspect-entity][0].extension[instance].valueReference = Reference(study-medication-administration-ABC)
 * extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53258 "Possibly Related"

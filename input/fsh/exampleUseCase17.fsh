@@ -81,7 +81,7 @@ Description: "Example medication administration for hives"
 * dosage.dose = 50 'mg' "mg"
 * dosage.route = http://snomed.info/sct#129326001 "Injection"
 
-Instance: ClinicalResearchAdverseEventUseCase17
+Instance: AdverseEventFromProcedureNotStudyDrug
 InstanceOf: AdverseEvent-clinical-research
 Description: "Adverse event from procedure, not study drug"
 * subject = Reference(patient-slp)

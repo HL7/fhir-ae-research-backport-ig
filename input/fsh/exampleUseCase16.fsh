@@ -1,13 +1,13 @@
 Instance: patient-moumic
 InstanceOf: Patient
-Title: "Use Case 16 Patient MOUMIC"
-Description: "Use Case 16 Patient MOUMIC on Research Study DISNEY"
+Title: "Patient MOUMIC"
+Description: "Patient MOUMIC on Research Study DISNEY"
 * name.family = "Example"
 * name.given[0] = "MOUMIC"
 
 Instance: research-study-DISNEY
 InstanceOf: ResearchStudy
-Description: "Use Case 16 Research Study DISNEY"
+Description: "Research Study DISNEY"
 * title = "Research Study DISNEY"
 * identifier.value = "DUCK-828"
 * status =  http://hl7.org/fhir/research-study-status#active "Active"
@@ -47,9 +47,9 @@ Description: "Example of Tylenol"
 * dosage.route = http://snomed.info/sct#26643006 "Oral use"
 
 
-Instance: ClinicalResearchAdverseEventUseCase16
+Instance: NonSeriousAdverseEventResearchStudyMed
 InstanceOf: AdverseEvent-clinical-research
-Title: "ClinicalResearchAdverseEventUseCase16"
+Title: "NonSeriousAdverseEventResearchStudyMed"
 Description: "Non-Serious Adverse Event Research Study Medication Example"
 * modifierExtension[status].valueCode = #completed //http://hl7.org/fhir/event-status#completed
 * subject = Reference(patient-moumic)

@@ -2,8 +2,8 @@
 Instance: SCHJO
 InstanceOf: Patient
 Usage: #example
-Title: "Use Case 1 - Serious Adverse Event"
-Description: "Use Case 1 - SAE Patient SCHJO on Research Study XYZ, Study ID XYZ-123, Subject number XYZ-123-002. "
+Title: "Serious Adverse Event"
+Description: "SAE Patient SCHJO on Research Study XYZ, Study ID XYZ-123, Subject number XYZ-123-002. "
 * name
   * given[0] = "SCHJO"
   //* family = "Clinical Trail"
@@ -13,27 +13,27 @@ Instance: ClinicalTrialSubject5
 InstanceOf: Patient
 Usage: #example
 Title: "ClinicalTrialSubject5"
-Description: "Use case 7. Clinical Trial subject number 5. Acute Hepatic Failure."
+Description: "Clinical Trial subject number 5. Acute Hepatic Failure."
 * name
   * given[0] = "Subject 5"
   * family = "Clinical Trail"
 * identifier
 
-//https://confluence.hl7.org/pages/viewpage.action?pageId=49646529#AdverseEventUseCases-UseCase7-Clinicaltrial:significantadverseevent
-Instance: ClinicalResearchAdverseEventUseCase7
+//https://confluence.hl7.org/pages/viewpage.action?pageId=49646529#AdverseEventUseCases--Clinicaltrial:significantadverseevent
+Instance: ClinicalTrialSignificantAdverseEvent
 InstanceOf: AdverseEvent-clinical-research
 Usage: #example
-Title: "ClinicalResearchAdverseEventUseCase7"
+Title: "ClinicalTrialSignificantAdverseEvent"
 Description: "example"
 //* actuality = http://hl7.org/fhir/adverse-event-actuality#actual 
 * modifierExtension[status].valueCode = http://hl7.org/fhir/event-status#completed
 * subject = Reference(ClinicalTrialSubject5)
 * outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49496 "Recovering/Resolving"
 //* seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
-//* resultingCondition[0] = Reference(AEHepaticFailureUseCase7)
-* extension[ResultingEffect][0].valueReference = Reference(AEHepaticFailureUseCase7)
-//* resultingCondition[1] = Reference(AEHepaticFailureUseCase7complication)
-* extension[ResultingEffect][1].valueReference = Reference(AEHepaticFailureUseCase7complication)
+//* resultingCondition[0] = Reference(AEHepaticFailure)
+* extension[ResultingEffect][0].valueReference = Reference(AEHepaticFailure)
+//* resultingCondition[1] = Reference(AEHepaticFailurecomplication)
+* extension[ResultingEffect][1].valueReference = Reference(AEHepaticFailurecomplication)
 //* category = http://terminology.hl7.org/CodeSystem/adverse-event-category#medication-mishap "Medication Mishap"
 * study.display = "NCT1010101"
 //https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4435341/
@@ -95,20 +95,20 @@ Description: "Study medication info Medication Request for clinical trial medica
 * dosageInstruction.route = http://snomed.info/sct#47625008 "Intravenous route (qualifier value)"
 * dosageInstruction.method.text = "IV Push"
 
-Instance: AEHepaticFailureUseCase7
+Instance: AEHepaticFailure
 InstanceOf: Condition
 Usage: #example
-Title: "AEHepaticFailureUseCase7"
+Title: "AEHepaticFailure"
 Description: "The fifth subject enrolled in the trial develops severe hepatic failure complicated by encephalopathy one month after starting the study. The study sponsors determined that is an unanticipated problem that must be reported because although the risk of mild liver injury was foreseen, severe liver injury resulting in hepatic failure was unexpected in severity; possibly related to participation in the research; and serious."
 * subject = Reference(ClinicalTrialSubject5)
 * severity = http://snomed.info/sct#24484000 "Severe"
 * code =  http://snomed.info/sct#197270009 "Acute Hepatic Failure"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 
-Instance: AEHepaticFailureUseCase7complication
+Instance: AEHepaticFailurecomplication
 InstanceOf: Condition
 Usage: #example
-Title: "AEHepaticFailureUseCase7complication"
+Title: "AEHepaticFailurecomplication"
 Description: "The fifth subject enrolled in the trial develops severe hepatic failure complicated by encephalopathy one month after starting the study. The study sponsors determined that is an unanticipated problem that must be reported because although the risk of mild liver injury was foreseen, severe liver injury resulting in hepatic failure was unexpected in severity; possibly related to participation in the research; and serious."
 * subject = Reference(ClinicalTrialSubject5)
 * severity = http://snomed.info/sct#24484000 "Severe"
