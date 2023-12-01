@@ -8,12 +8,19 @@
 		<!--div style="border: 1px solid maroon; padding: 10px; background-color: #fffbf7; min-height: 160px;">
 			<img src="assets/images/dragon.png" width="150" style="float:left; mix-blend-mode: multiply; margin-right: 10px;" title="Here Be Dragons!" height="150"/>
 			<p>
-				For examples and further guidance, it is strongly suggested that an implementer consult the <a href="https://confluence.hl7.org/display/VA/Adverse+Events">Clinical Care AdverseEvent Implementation Guide</a> and the <a href="https://confluence.hl7.org/display/VA/Adverse+Events">Clinical Research AdverseEvent Implementation Guide</a>
+				For examples and further guidance, it is strongly suggested that an implementer consult the <a href="https://confluence.hl7.org/display/VA/Adverse+Events">Clinical Care AdverseEvent Implementation Guide</a> and the <a href="https://confluence.hl7.org/display/VA/Adverse+Events">Cfor the study linical Research AdverseEvent Implementation Guide</a>
 				They contain valuable extensions, value sets and, importantly, examples.
 				
 			</p>
 		</div-->
 		<p></p>
+	</div>
+	<div>
+		<a name="Note on identifiers"></a>
+		<h3>Note on identifiers</h3>
+		<p>
+			The FHIR identifier data element provides for a place to put a business identifier. It has a rich set of metadata that can be associated with the identifier such as assigner, namespace, valid period, use and type. Business identifiers such as the Investigational New Drug (IND#) can be represented. However, the use case will determine if the business identifier should be placed on the AdverseEvent Clinical Research Profile, or a more appropriate Resource. In the case of IND#, for example, the IND# should be placed on a Medication Resource data instance as one of the slices of Medication.identifier. 
+		</p>
 	</div>
 	
   <!--p>See <a href="sequencing.html">Variant Reporting</a> for details on use.</p-->
