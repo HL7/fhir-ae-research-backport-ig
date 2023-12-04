@@ -79,7 +79,7 @@ Description: "Serious Adverse Event Research Study Medication Example"
 * subject = Reference(SCHJO)
 * event = https://www.meddra.org#10017955 "Gastrointestinal haemorrhage"
 * outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49498"Recovered/Resolved"
-* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#3 "Severe"
+* severity = http://terminology.hl7.org/CodeSystem/adverse-event-severity#severe "Severe"
 
 //* resultingCondition[0] = Reference(GIBleed)
 * extension[ResultingEffect][0].valueReference = Reference(GIBleed)
@@ -103,7 +103,8 @@ Description: "Serious Adverse Event Research Study Medication Example"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
 * extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C82521 "otherMedicallyImportantCondition"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
-* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = $fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C201939 "Required Intervention to Prevent Permanent Impairment/damage"
+//$fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = true
 
 * extension[mitigating-action][+].extension[item].valueReference = Reference(procedure-upper-endoscopy)

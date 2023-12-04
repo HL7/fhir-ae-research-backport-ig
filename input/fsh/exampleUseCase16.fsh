@@ -55,7 +55,7 @@ Description: "Non-Serious Adverse Event Research Study Medication Example"
 * subject = Reference(patient-moumic)
 * event = https://www.meddra.org#10019211 "Headache"
 * outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49494	"Not recovering/not resolved"
-* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#1 "Mild"
+* severity = http://terminology.hl7.org/CodeSystem/adverse-event-severity#mild "Mild"
 
 * study = Reference(research-study-DISNEY)
 * extension[suspect-entity][0].extension[instance].valueReference = Reference(study-medication-administration-MMD)

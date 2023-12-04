@@ -115,6 +115,7 @@ Description: "Janet weight observation"
 * effectiveDateTime = "2023-04-10"
 * valueQuantity = 20.09414 'kg' "kg"
 * method.text = "Patient-entered"
+* performer.display = "referred to in provenance for weight"
 
 
 //Provenance for weight
@@ -155,6 +156,7 @@ Description: "Janet Blood Pressure Observation"
 * component[+].code = http://loinc.org#8462-4 "Diastolic blood pressure"
 * component[=].code.text = "Diastolic blood pressure"
 * component[=].valueQuantity = 44 'mm[Hg]' "mmHg"
+* performer.display = "referred to in provenance for blood-pressure-janet"
 
 
 //Provenance for blood-pressure-janet
@@ -402,7 +404,7 @@ Description: "Patient report of Adverse Event, example of data that would be on 
 //"Required help to prevent permanent harm"
 //A2 Did any of the following happen?
 * extension[seriousness-criteria][0].extension[criterionPresent].valueBoolean = true
-* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = $fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
+* extension[seriousness-criteria][=].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C201939 "Required Intervention to Prevent Permanent Impairment/damage"
 //#requiresPreventImpairment "required intervention to prevent permanent damage"
 
 * extension[seriousness-criteria][0].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C11338 "Results In Persistent Or Significant Disability"
@@ -511,4 +513,4 @@ Any other types of seriousness are submitted within 15 calendar days."
 //The data is then absorbed within the receiver’s system to auto populate a MedWatch Form FDA 3500B for submission to the FDA within 24 hours.
 
 //Severity or grade is applied by clinical researcher, so a Patient would not provide one
-//* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#3 "Severe"
+//* severity = http://terminology.hl7.org/CodeSystem/adverse-event-severity#moderate "Moderate"

@@ -88,7 +88,7 @@ Description: "Adverse event from procedure, not study drug"
 * modifierExtension[status].valueCode = #completed
 * event = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C57954 "Grade 2 - Urticaria" 
 * event.text = "Moderate hives"
-* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#2 "Moderate"
+* severity = http://terminology.hl7.org/CodeSystem/adverse-event-severity#moderate "Moderate"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49498"Recovered/Resolved"
 * date = "2021-01-15"

@@ -62,12 +62,14 @@ Description: "example"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
 * extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C82521 "Other Medically Important Condition"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
-* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = $fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C201939 "Required Intervention to Prevent Permanent Impairment/damage"
+//$fda-add-seriousness-criteria-cs#requiresPreventImpairment "Required Intervention to Prevent Permanent Impairment or Damage (Devices)"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = true
 
 
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious
-* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#4 "Life Threatening or Disabling"
+* severity = http://terminology.hl7.org/CodeSystem/adverse-event-severity#severe "Severe"
+//* extension[severity-or-grade].valueCodeableConcept = $ae-severity-or-grade-cs#4 "Life Threatening or Disabling"
 
 * extension[mitigating-action][+].extension[item].valueReference = Reference(medicationrequest0301-discontinue)
 * extension[mitigating-action][=].extension[item].valueReference.display = "Medication Request where study drug prescription was discontinued"

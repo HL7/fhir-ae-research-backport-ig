@@ -8,6 +8,11 @@
 	<extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
 		<valueInteger value="2"/>
 	</extension>
+
+	<extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+		<valueCode value="brr"/>
+	</extension>
+	
 	<!--  <extension url="http://hl7.org/fhir/tools/StructureDefinition/igpublisher-spreadsheet">
     <valueString value="resources-spreadsheet.xml"/>
   </extension>-->
@@ -16,15 +21,15 @@
 	<version value="1.0.0-ballot"/>
 	<name value="AdverseEventClinicalResearchR4backport"/>
 	<title value="Adverse Event Clinical Research R4 Backport"/>
-	<status value="draft"/>
+	<status value="active"/>
 	<experimental value="false"/>
 	<date value="2023-07-01"/>
-	<publisher value="HL7 International - Biomedical Research and Regulation, Vulcan AdverseEvent groups"/>
+	<publisher value="HL7 International / Biomedical Research and Regulation"/>
     <contact>
         <name value="Biomedical Research and Regulation WG"/>
         <telecom>
             <system value="url"/>
-            <value value="http://hl7.org/Special/committees/rcrim"/>
+            <value value="http://www.hl7.org/Special/committees/rcrim"/>
         </telecom>
     </contact>
 	<description value="### Intent
@@ -67,6 +72,13 @@ Within this guide are several examples. Every effort has been made to capture th
     <packageId value="de.medizininformatikinitiative.kerndatensatz.fall"/>
     <version value="0.9.1"/>
   </dependsOn>-->
+    <dependsOn> 
+	<!--http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core-3.0.0-->
+	<uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <!--uri value="http://hl7.org/fhir/us/core"/-->
+    <packageId value="hl7.terminology.r5"/>
+    <version value="5.3.0"/>
+  </dependsOn> 
 	<definition>
 		<!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
       inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->
@@ -685,11 +697,25 @@ Within this guide are several examples. Every effort has been made to capture th
 			<value value="http://hl7.org/fhir/research-study-arm-type"/>
 		</parameter>
 		
-		<parameter>
+		<!--parameter>
 			<code value="special-url"/>
 			<value value="http://hl7.org/fhir/uv/ae-research-backport-ig/CodeSystem/adverse-event-severity-or-grade-cs"/>
-		</parameter>
-
+		</parameter-->
+		
+	<!--parameter>
+		<code value="special-url"/>
+		<value value="http://hl7.org/fhir/ValueSet/adverse-event-status"/>
+	</parameter>
+	
+	<parameter>
+		<code value="special-url"/>
+		<value value="http://hl7.org/fhir/adverse-event-status"/>
+	</parameter>
+	
+	<parameter>
+		<code value="special-url"/>
+		<value value="https://hl7.org/fhir/valueset-adverse-event-status.html"/>
+	</parameter-->
 		<parameter>
 			<code value="path-liquid"/>
 			<value value="templates\liquid"/>

@@ -1,17 +1,31 @@
 == Suppressed Messages ==
-# instructions for ignoreWarnings.txt https://confluence.hl7.org/pages/viewpage.action?pageId=66938614#ImplementationGuideParameters-ManagingWarningsandHints
-
 # Code System URI 'http://terminology.hl7.org/CodeSystem/mdr' is unknown so the code cannot be validated
 
 # Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated
 
 # This is the correct code system URI see https://terminology.hl7.org/5.2.0/CodeSystem-mdr.json.html and https://terminology.hl7.org/CodeSystem-v3-nciThesaurus.json.html 
-Binding http://hl7.org/fhir/uv/ae-research-backport-ig/ValueSet/adverse-event-outcome-clinical-research-vs could not be expanded
+
 Code System URI 'https://www.meddra.org' is unknown so the code cannot be validated
 The definition for the Code System with URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' doesnt provide any codes so the code cannot be validated
 Code System with URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' doesnt provide any codes so the code cannot be validated
 Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
 Unknown System 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' specified, so Concepts and Filters can't be checked (Details: Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated)
-Unable to check whether the code is in the value set http://hl7.org/fhir/uv/ae-research-backport-ig/ValueSet/adverse-event-outcome-clinical-research-vs|1.0.0-ballot
 
+
+# correct code system
+Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' could not be found so the code cannot be validated
+
+# correct code system
+The definition for the Code System with URI 'https://www.meddra.org' doesnt provide any codes so the code cannot be validated
+
+# new THO requests see https://jira.hl7.org/browse/UP-485
+ValueSet http://terminology.hl7.org/ValueSet/adverse-event-clinical-research-grades not found
+The valueSet reference http://terminology.hl7.org/ValueSet/adverse-event-clinical-research-grades on element Extension.value[x] could not be resolved
+ValueSet http://terminology.hl7.org/ValueSet/adverse-event-clinical-research-outcomes not found
+The valueSet reference http://terminology.hl7.org/ValueSet/adverse-event-clinical-research-outcomes on element AdverseEvent.outcome could not be resolved
+Binding http://terminology.hl7.org/ValueSet/adverse-event-clinical-research-outcomes could not be located
+ValueSet http://terminology.hl7.org/ValueSet/adverse-event-seriousness-criteria-vs not found
+The valueSet reference http://terminology.hl7.org/ValueSet/adverse-event-seriousness-criteria-vs on element Extension.extension.value[x] could not be resolved
+ValueSet http://terminology.hl7.org/ValueSet/adverse-event-clinical-research-causality-relatedness not found
+The valueSet reference http://terminology.hl7.org/ValueSet/adverse-event-clinical-research-causality-relatedness on element Extension.extension.extension.value[x] could not be resolved
 
