@@ -72,11 +72,14 @@ Within this guide are several examples. Every effort has been made to capture th
     <packageId value="de.medizininformatikinitiative.kerndatensatz.fall"/>
     <version value="0.9.1"/>
   </dependsOn>-->
-    <dependsOn> 
-	<!--http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core-3.0.0-->
+    <!--dependsOn> 
 	<uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
-    <!--uri value="http://hl7.org/fhir/us/core"/-->
     <packageId value="hl7.terminology.r5"/>
+    <version value="5.3.0"/>
+  </dependsOn--> 
+  <dependsOn> 
+	<uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology"/>
     <version value="5.5.0"/>
   </dependsOn> 
 	<definition>
