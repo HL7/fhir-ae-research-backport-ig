@@ -32,6 +32,7 @@ Unknown Code 'C41338' in the system 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesau
 Unknown Code 'C49494' in the system 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' version '' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment 
 Unknown Code 'C41340' in the system 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' version '' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
 Unknown Code 'C53256' in the system 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' version '' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+Binding http://terminology.hl7.org/ValueSet/adverse-event-clinical-research-outcomes could not be expanded
 
 
 # Error is due to a known issue that is slated to be addressed see Zulip thread https://chat.fhir.org/#narrow/stream/179166-implementers/topic/Values.20for.20Device.2EudiCarrier.2Eissuer
