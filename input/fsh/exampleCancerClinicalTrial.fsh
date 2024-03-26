@@ -225,7 +225,7 @@ Description: "ALT back to grade 1 and resolved"
 * event.text = "Alanine aminotransferase (ALT) decreased to 60"
 * extension[ae-grade].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41338 "Grade 1 Mild Adverse Event"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
-* outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49498"Recovered/Resolved"
+* outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49498 "Recovered/Resolved"
 * date = "2020-05-20"
 * recorder = Reference(practitioner-oncology-nurse-jane)
 * extension[participant][0].extension[function].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUTHEN 

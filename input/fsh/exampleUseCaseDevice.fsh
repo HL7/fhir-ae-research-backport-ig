@@ -61,7 +61,7 @@ InstanceOf: ResearchSubject
 Description: "Alliance COMPASS trial research subject"
 * identifier[0].use = #usual
 * identifier[=].value = "ABC21348"
-* status = #active
+* status = #withdrawn
 * study = Reference(clinical-trial-example-compass)
 * individual = Reference(patient-example-kaitlyn-b1)
 * consent.display = "this would be a reference to a Consent instance"

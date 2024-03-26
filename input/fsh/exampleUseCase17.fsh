@@ -90,7 +90,7 @@ Description: "Adverse event from procedure, not study drug"
 * event.text = "Moderate hives"
 * severity = http://terminology.hl7.org/CodeSystem/adverse-event-severity#moderate "Moderate"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
-* outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49498"Recovered/Resolved"
+* outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49498 "Recovered/Resolved"
 * date = "2021-01-15"
 * extension[resolve-date].valueDateTime = "2021-01-15"
 * study = Reference(research-study-acme)

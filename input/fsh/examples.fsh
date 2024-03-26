@@ -43,7 +43,7 @@ Description: "example"
 //* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
 
 * extension[suspect-entity][+].extension[instance].valueReference = Reference(medadmin0301) "Study Medication Use Case 7"
-* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess#certain "Certain"
+* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53260 "Related"
 
 * recorder.display = "Clinical Research Associate"
 * detected = "1905-08-23"

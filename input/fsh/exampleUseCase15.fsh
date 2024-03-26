@@ -78,7 +78,7 @@ Description: "Serious Adverse Event Research Study Medication Example"
 * modifierExtension[status].valueCode = #completed //http://hl7.org/fhir/event-status#completed
 * subject = Reference(SCHJO)
 * event = https://www.meddra.org#10017955 "Gastrointestinal haemorrhage"
-* outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49498"Recovered/Resolved"
+* outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49498 "Recovered/Resolved"
 * severity = http://terminology.hl7.org/CodeSystem/adverse-event-severity#severe "Severe"
 
 //* resultingCondition[0] = Reference(GIBleed)
