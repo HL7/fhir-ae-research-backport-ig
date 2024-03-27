@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/ae-research-backport-ig/2023Sep" ciUrl="http://build.fhir.org/ig/HL7/fhir-ae-research-backport-ig" defaultVersion="1.0.0-ballot" defaultWorkgroup="brr" gitUrl="https://github.com/HL7/fhir-ae-research-backport-ig" url="http://hl7.org/fhir/uv/ae-research-backport-ig">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/ae-research-backport-ig/2023Sep" ciUrl="http://build.fhir.org/ig/HL7/fhir-ae-research-backport-ig" defaultVersion="1.0.0" defaultWorkgroup="brr" gitUrl="https://github.com/HL7/fhir-ae-research-backport-ig" url="http://hl7.org/fhir/uv/ae-research-backport-ig">
 <version code="current" url="http://build.fhir.org/ig/HL7/fhir-ae-research-backport-ig"/>
-<version code="1.0.0-ballot" url="http://hl7.org/fhir/uv/ae-research-backport-ig/2023Sep"/>
+<version code="1.0.0" url="http://hl7.org/fhir/uv/ae-research-backport-ig/STU1"/>
+<version code="1.0.0-ballot" deprecated="true" url="http://hl7.org/fhir/uv/ae-research-backport-ig/2023Sep"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
@@ -36,6 +37,7 @@
 <artifact id="Patient/ClinicalTrialSubject5" key="Patient-ClinicalTrialSubject5" name="ClinicalTrialSubject5"/>
 <artifact id="StructureDefinition/contributing-factor" key="StructureDefinition-contributing-factor" name="Contributing Factor"/>
 <artifact id="StructureDefinition/seriousness-criteria" key="StructureDefinition-seriousness-criteria" name="Criteria reviewed in determining serious adverse event"/>
+<artifact id="Device/device-infuser" key="Device-device-infuser" name="Device - Infuser that exploded"/>
 <artifact id="Patient/patient-slp" key="Patient-patient-slp" name="Example patient SLP"/>
 <artifact id="StructureDefinition/expected-in-research-study" key="StructureDefinition-expected-in-research-study" name="Expected In Research Study"/>
 <artifact deprecated="true" id="CodeSystem/fda-add-seriousness-criteria-cs" key="CodeSystem-fda-add-seriousness-criteria-cs" name="FDA Additional Seriousness Criteria CodeSystem"/>
@@ -74,24 +76,29 @@
 <artifact id="AdverseEvent/adverse-event-compass-ex1a" key="AdverseEvent-adverse-event-compass-ex1a" name="adverse-event-compass-ex1a"/>
 <artifact id="AdverseEvent/adverse-event-compass-ex1b" key="AdverseEvent-adverse-event-compass-ex1b" name="adverse-event-compass-ex1b"/>
 <artifact id="AdverseEvent/adverse-event-compass-ex2" key="AdverseEvent-adverse-event-compass-ex2" name="adverse-event-compass-ex2"/>
+<artifact id="AdverseEvent/adverse-event-device-death" key="AdverseEvent-adverse-event-device-death" name="adverse-event-device-death"/>
 <artifact id="Procedure/clinical-trial-acme-procedure" key="Procedure-clinical-trial-acme-procedure" name="clinical-trial-acme-procedure"/>
 <artifact id="ResearchSubject/clinical-trial-acme-subject" key="ResearchSubject-clinical-trial-acme-subject" name="clinical-trial-acme-subject"/>
 <artifact id="ResearchStudy/clinical-trial-example-compass" key="ResearchStudy-clinical-trial-example-compass" name="clinical-trial-example-compass"/>
 <artifact id="ResearchSubject/clinical-trial-example-subject" key="ResearchSubject-clinical-trial-example-subject" name="clinical-trial-example-subject"/>
+<artifact id="ResearchSubject/clinical-trial-example-subject1" key="ResearchSubject-clinical-trial-example-subject1" name="clinical-trial-example-subject1"/>
 <artifact id="MedicationAdministration/medication-administration-contrast-dye" key="MedicationAdministration-medication-administration-contrast-dye" name="medication-administration-contrast-dye"/>
 <artifact id="MedicationAdministration/medication-administration-forhives" key="MedicationAdministration-medication-administration-forhives" name="medication-administration-forhives"/>
 <artifact id="MedicationAdministration/medication-administration-kadcyla" key="MedicationAdministration-medication-administration-kadcyla" name="medication-administration-kadcyla"/>
 <artifact id="MedicationAdministration/medication-administration-kadcyla-reduced" key="MedicationAdministration-medication-administration-kadcyla-reduced" name="medication-administration-kadcyla-reduced"/>
+<artifact id="MedicationAdministration/medication-administration-kadcyla1" key="MedicationAdministration-medication-administration-kadcyla1" name="medication-administration-kadcyla1"/>
 <artifact id="MedicationAdministration/medication-administration-tucatinib" key="MedicationAdministration-medication-administration-tucatinib" name="medication-administration-tucatinib"/>
 <artifact id="MedicationAdministration/medication-administration-tucatinib-reduced" key="MedicationAdministration-medication-administration-tucatinib-reduced" name="medication-administration-tucatinib-reduced"/>
 <artifact id="MedicationAdministration/medication-administration-tylenol" key="MedicationAdministration-medication-administration-tylenol" name="medication-administration-tylenol"/>
 <artifact id="Medication/medication-contrast-dye" key="Medication-medication-contrast-dye" name="medication-contrast-dye"/>
 <artifact id="Medication/medication-forhives" key="Medication-medication-forhives" name="medication-forhives"/>
 <artifact id="MedicationRequest/medication-request-example-kadcyla" key="MedicationRequest-medication-request-example-kadcyla" name="medication-request-example-kadcyla"/>
+<artifact id="MedicationRequest/medication-request-example-kadcyla1" key="MedicationRequest-medication-request-example-kadcyla1" name="medication-request-example-kadcyla1"/>
 <artifact id="MedicationRequest/medication-request-example-tucatinib" key="MedicationRequest-medication-request-example-tucatinib" name="medication-request-example-tucatinib"/>
 <artifact id="MedicationRequest/medication-request-example-zofran" key="MedicationRequest-medication-request-example-zofran" name="medication-request-example-zofran"/>
 <artifact id="Medication/medication-tylenol" key="Medication-medication-tylenol" name="medication-tylenol"/>
 <artifact id="Patient/patient-example-kaitlyn-b" key="Patient-patient-example-kaitlyn-b" name="patient-example-kaitlyn-b"/>
+<artifact id="Patient/patient-example-kaitlyn-b1" key="Patient-patient-example-kaitlyn-b1" name="patient-example-kaitlyn-b1"/>
 <artifact id="Practitioner/practitioner-oncology-nurse-jane" key="Practitioner-practitioner-oncology-nurse-jane" name="practitioner-oncology-nurse-jane"/>
 <artifact id="Practitioner/practitioner-owen-oncologist" key="Practitioner-practitioner-owen-oncologist" name="practitioner-owen-oncologist"/>
 <artifact id="Procedure/procedure-upper-endoscopy" key="Procedure-procedure-upper-endoscopy" name="procedure-upper-endoscopy"/>
