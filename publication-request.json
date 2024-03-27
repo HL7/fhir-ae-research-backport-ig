@@ -1,16 +1,14 @@
 {
   "package-id": "hl7.fhir.uv.ae-research-backport-ig",
 	"version": "1.0.0",
-	"path": "http://hl7.org/fhir/uv/ae-research-backport-ig",
+	"path": "http://hl7.org/fhir/uv/ae-research-backport-ig/STU1",
          "mode" : "milestone",
 	"status": "trial-use",
 	"sequence": "STU 1",
 	
 	"desc": "FHIR STU Release 1 AdverseEvent Clinical Research Profile R4 Backport",
 	"descmd": "FHIR STU Release 1 AdverseEvent Clinical Research Profile R4 Backport",
-	"first" : true,
+	"first" : false,
 	"title": "Adverse Event Clinical Research R4 Backport",
-	"ci-build" : "https://build.fhir.org/ig/HL7/fhir-ae-research-backport-ig", 
-	"category": "Research",
-	"introduction": "The intent of this guide is to provide a profile on the FHIR AdverseEvent Resource suitable for Clinical Research, this is a convenience backport into FHIR R4."
+	"ci-build" : "https://build.fhir.org/ig/HL7/fhir-ae-research-backport-ig" 
 }
