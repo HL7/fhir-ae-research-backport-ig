@@ -177,7 +177,13 @@ Description: "Grade 1 ALT"
 * modifierExtension[status].valueCode = #in-progress
 * event = https://www.meddra.org#10001551  "Alanine aminotransferase increased" 
 * event.text = "Alanine aminotransferase (ALT) increased at 50"
-* extension[ae-grade].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41338 "Grade 1 Mild Adverse Event"
+
+* extension[resultingEffect][0].valueReference.display = "Reference to Observation of Alanine aminotransferase (ALT) increased at 50"
+* extension[supporting-info][+].extension[item].valueReference.display = "Supporting info would have context such as an Reference to Observation of Alanine aminotransferase (ALT) increased at 50"
+
+* extension[ae-grade].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41338
+* extension[ae-grade].valueCodeableConcept.text = "Grade 1 Mild Adverse Event"
+
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49494 "Not recovering/not resolved"
 * date = "2020-04-22"
@@ -199,7 +205,13 @@ Description: "Grade 3 ALT"
 * modifierExtension[status].valueCode = #in-progress
 * event = https://www.meddra.org#10001551  "Alanine aminotransferase increased" 
 * event.text = "Alanine aminotransferase (ALT) increased to 200"
-* extension[ae-grade].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41340 "Grade 3 Severe Adverse Event"
+
+* extension[resultingEffect][0].valueReference.display = "Reference to Observation of Alanine aminotransferase (ALT) increased at 200"
+* extension[supporting-info][+].extension[item].valueReference.display = "Supporting info would have context such as an Reference to Observation of Alanine aminotransferase (ALT) increased at 200"
+
+* extension[ae-grade].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41340
+* extension[ae-grade].valueCodeableConcept.text = "Grade 3 Severe Adverse Event"
+
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49494 "Not recovering/not resolved"
 * date = "2020-05-13"
@@ -223,7 +235,12 @@ Description: "ALT back to grade 1 and resolved"
 * modifierExtension[status].valueCode = #completed
 * event = https://www.meddra.org#10001551  "Alanine aminotransferase increased" 
 * event.text = "Alanine aminotransferase (ALT) decreased to 60"
-* extension[ae-grade].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41338 "Grade 1 Mild Adverse Event"
+
+* extension[resultingEffect][0].valueReference.display = "Reference to Observation of Alanine aminotransferase (ALT) decreased to 60"
+* extension[supporting-info][+].extension[item].valueReference.display = "Supporting info would have context such as an Reference to Observation of Alanine aminotransferase (ALT) decreased to 60"
+
+* extension[ae-grade].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41338
+* extension[ae-grade].valueCodeableConcept.text = "Grade 1 Mild Adverse Event"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49498 "Recovered/Resolved"
 * date = "2020-05-20"
@@ -266,7 +283,15 @@ Description: "Grade 1 Nausea/vomiting"  // both are AEs, which to use or make th
 * modifierExtension[status].valueCode = #completed
 * event = https://www.meddra.org#10028813  "Nausea" 
 * event.text = "Nausea"
-* extension[ae-grade].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41338 "Grade 1 Mild Adverse Event"
+
+* extension[resultingEffect][0].valueReference.display = "Reference to Condition instance of Nausea that resolved"
+* extension[supporting-info][+].extension[item].valueReference.display = "Supporting info would have context such as an Reference to Condition instance of Nausea, where Condition.status is resolved."
+
+* extension[ae-grade].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41338
+* extension[ae-grade].valueCodeableConcept.text = "Grade 1 Mild Adverse Event"
+
+* extension[ae-grade].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41338
+* extension[ae-grade].valueCodeableConcept.text = "Grade 1 Mild Adverse Event"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49494 "Not recovering/not resolved" 
 // resolved on 6/10/20 after 3 more visits - goes to grade 3 then back to 1 then WNL

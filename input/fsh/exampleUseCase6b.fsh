@@ -357,8 +357,6 @@ Description: "Study medication, bresentrik"
 //* code = http://www.nlm.nih.gov/research/umls/rxnorm#000000 "bresentrik 15 MG/ML Oral Solution"
 * code.text = "bresentrik 15 MG/ML Oral Solution"
 
-
-
 //Janet went home and began vomiting uncontrollably. 
 //problem
 //Her husband called an ambulance and Janet was taken to the hospital where she was treated in the ER and released.
@@ -411,7 +409,7 @@ Description: "Patient report of Adverse Event, example of data that would be on 
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
 * extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C83052 "Requires Inpatient Hospitalization"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
-* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48275 "Results In Death"
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48275 "Death Related to Adverse Event"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
 * extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C84266 "Is Life Threatening"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
@@ -419,7 +417,6 @@ Description: "Patient report of Adverse Event, example of data that would be on 
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
 * extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C82521 "Other Medically Important Condition"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
-
 
 //A3
 //After receiving the study drug (bresentrik) during a study visit, 
@@ -462,13 +459,13 @@ Any other types of seriousness are submitted within 15 calendar days."
 // in suspect entity
 // note also need supporting-Info medicationRequest
 * extension[suspect-entity][+].extension[instance].valueReference = Reference(bresentrik) 
-* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53258 "Possibly"
+* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53258 "Possibly Related"
 * extension[suspect-entity][=].extension[causality].extension[author].valueReference = Reference(JanetPatient) "Janet"
 
 * extension[supporting-info][+].extension[item].valueReference = Reference(MedicationAdministration/medicationAdministration-for-bresentrik)
 
 * extension[suspect-entity][+].extension[instance].valueReference = Reference(BreastCancerTrial)
-* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53258 "Possibly"
+* extension[suspect-entity][=].extension[causality].extension[entityRelatedness].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53258 "Possibly Related"
 * extension[suspect-entity][=].extension[causality].extension[author].valueReference = Reference(JanetPatient) "Janet"
 * study = Reference(BreastCancerTrial)
  

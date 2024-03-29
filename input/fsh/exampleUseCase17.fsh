@@ -81,13 +81,34 @@ Description: "Example medication administration for hives"
 * dosage.dose = 50 'mg' "mg"
 * dosage.route = http://snomed.info/sct#129326001 "Injection"
 
+Instance: AEModeratehives
+InstanceOf: Condition
+Usage: #example
+Title: "AEModeratehives"
+Description: "Moderate Hives"
+* subject = Reference(patient-slp)
+* severity = http://snomed.info/sct#6736007 "Moderate severity"
+* severity.text = "Moderate"
+* code.coding[0] = http://snomed.info/sct#402408009 "Acute urticaria"
+* code.coding[1] = https://www.meddra.org#10040785 "Urticaria"
+* code.text = "Moderate hives"
+
+//http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C57954 "Grade 2 - Urticaria" 
+//medra Urticaria 10040785
+
+* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
+
 Instance: AdverseEventFromProcedureNotStudyDrug
 InstanceOf: AdverseEvent-clinical-research
 Description: "Adverse event from procedure, not study drug"
 * subject = Reference(patient-slp)
 * modifierExtension[status].valueCode = #completed
-* event = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C57954 "Grade 2 - Urticaria" 
+* event = https://www.meddra.org#10019211 "Hypersensitivity reaction"
 * event.text = "Moderate hives"
+
+* extension[resultingEffect][0].valueReference = Reference(AEModeratehives)
+* extension[resultingEffect][0].valueReference.display  = "Moderate hives"
+
 * severity = http://terminology.hl7.org/CodeSystem/adverse-event-severity#moderate "Moderate"
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#non-serious "Non-serious"
 * outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C49498 "Recovered/Resolved"
@@ -106,4 +127,3 @@ Description: "Adverse event from procedure, not study drug"
 * extension[mitigating-action][+].extension[item].valueReference = Reference(medication-administration-forhives)
 //* extension[mitigating-action][+].extension[item].valueCodeableConcept.text = "study drug dose not changed"
 * extension[contributing-factor][+].extension[item].valueReference = Reference(clinical-trial-acme-procedure)
-

@@ -552,6 +552,14 @@ Within this guide are several examples. Every effort has been made to capture th
 		</resource>
 		<resource>
 			<reference>
+				<reference value="Condition/AEModeratehives" />
+				<display value="AEModeratehives" />
+			</reference>
+			<name value="AEModeratehives" />
+			<description value="Moderate hives" />
+		</resource>
+		<resource>
+			<reference>
 				<reference value="AdverseEvent/AdverseEventFromProcedureNotStudyDrug" />
 				<display value="AdverseEventFromProcedureNotStudyDrug" />
 			</reference>
@@ -580,6 +588,14 @@ Within this guide are several examples. Every effort has been made to capture th
 			</reference>
 			<name value="Patient MOUMIC" />
 			<description value="Patient MOUMIC on Research Study DISNEY" />
+		</resource>
+		<resource>
+			<reference>
+				<reference value="Condition/AEHeadache" />
+				<display value="AEHeadache" />
+			</reference>
+			<name value="AEHeadache" />
+			<description value="Headache" />
 		</resource>
 		<resource>
 			<reference>

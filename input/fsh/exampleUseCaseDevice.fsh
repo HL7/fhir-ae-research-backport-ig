@@ -78,7 +78,8 @@ Description: "Device suspected entity"
 
 * category = http://terminology.hl7.org/CodeSystem/adverse-event-category#device "Device"
 
-* extension[ae-grade].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48275 "Grade 5 Death related to adverse event"
+* extension[ae-grade].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48275
+* extension[ae-grade].valueCodeableConcept.text = "Grade 5 Death related to adverse event"
 
 * seriousness = http://terminology.hl7.org/CodeSystem/adverse-event-seriousness#serious "Serious"
 
@@ -86,7 +87,7 @@ Description: "Device suspected entity"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
 * extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C83052	"Requires Inpatient Hospitalization"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
-* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48275	"Results In Death"
+* extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48275	"Death Related to Adverse Event"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = true
 * extension[seriousness-criteria][+].extension[criterionCode].valueCodeableConcept = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C84266	"Is Life Threatening"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
@@ -99,7 +100,8 @@ Description: "Device suspected entity"
 * extension[seriousness-criteria][=].extension[criterionPresent].valueBoolean = false
 
 * extension[resultingEffect][0].valueReference.display = "Condition with Deep puncture wound (disorder) - SNOMED CT code. Note this different than the AdverseEvent.code in this instance."
-* outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48275 "Fatal"
+* outcome = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48275 
+* outcome.text = "Fatal"
 * date = "2020-05-20"
 
 * recorder = Reference(practitioner-oncology-nurse-jane)

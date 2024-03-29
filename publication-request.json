@@ -8,7 +8,5 @@
 	
 	"desc": "FHIR STU Release 1 AdverseEvent Clinical Research Profile R4 Backport",
 	"descmd": "FHIR STU Release 1 AdverseEvent Clinical Research Profile R4 Backport",
-	"first" : false,
-	"title": "Adverse Event Clinical Research R4 Backport",
-	"ci-build" : "https://build.fhir.org/ig/HL7/fhir-ae-research-backport-ig" 
+	"first" : false
 }
