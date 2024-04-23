@@ -6,7 +6,7 @@ Title: "Serious Adverse Event"
 Description: "SAE Patient SCHJO on Research Study XYZ, Study ID XYZ-123, Subject number XYZ-123-002. "
 * name
   * given[0] = "SCHJO"
-  //* family = "Clinical Trail"
+  //* family = "Clinical Trial"
 //* identifier
 
 Instance: ClinicalTrialSubject5
@@ -16,7 +16,7 @@ Title: "ClinicalTrialSubject5"
 Description: "Clinical Trial subject number 5. Acute Hepatic Failure."
 * name
   * given[0] = "Subject 5"
-  * family = "Clinical Trail"
+  * family = "Clinical Trial"
 * identifier
 
 //https://confluence.hl7.org/pages/viewpage.action?pageId=49646529#AdverseEventUseCases--Clinicaltrial:significantadverseevent
