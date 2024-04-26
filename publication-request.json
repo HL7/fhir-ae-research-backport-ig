@@ -2,7 +2,7 @@
         "package-id": "hl7.fhir.uv.ae-research-backport-ig",
 	"version": "1.0.1",
 	"path": "http://hl7.org/fhir/uv/ae-research-backport-ig/STU1",
-        "mode" : "technical-correction",
+       "mode" : "technical-correction",
 	"status": "trial-use",
 	"sequence": "STU 1",
 	
